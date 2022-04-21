@@ -1,0 +1,73 @@
+@font-face {
+  font-family: letrapalpancho;
+  src: url("../../../gothamlight.otf");
+}
+
+* {
+  font-family: letrapalpancho;
+}
+
+body {
+  background: #F2EED5;
+}
+
+.container {
+  margin-top: 12%;
+}
+
+.containerchild {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+
+ .divplane-inicio {
+    margin: auto;
+    width: 100%;
+    min-width: 230px;
+    max-width: 300px;
+    max-height: 100%;
+    min-height: 600px;
+    background-color:darkred;
+    border-collapse: collapse;
+    margin: auto;
+    padding-left: 2%;
+    padding-right: 1%;
+    border-radius: 10px 100px / 120px;
+    box-shadow: 10px 10px 15px grey;
+}
+  
+  
+.title-inicio {
+  padding-top: 5%;
+  text-align: center;
+  font-size: 40px;
+  color: bisque;
+
+}
+
+.text-inicio {
+  padding-top: 4%;
+  padding-bottom: 6%;
+  font-size: 160%;
+  text-align: center;
+  margin: 5%;
+  color:white;
+}
+
+.img-inicio {
+  text-align: center;
+ 
+}
+
+.jpic-inicio {
+  align-items: center;
+  padding-bottom: 5%;
+  background-position: bottom;
+}
+
+.jpic-inicio:hover {
+  filter:brightness(0.7);
+}

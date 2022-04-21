@@ -1,0 +1,62 @@
+.tittleentre {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.tittleentre  h1 {
+    font-size: 50px;
+    color: darkred;
+}
+
+td > .btn {
+    background-color: darkred;
+    color: #fff;
+}
+
+.list-groupentrepadre {
+    background-color: blue;
+    width: 90%;
+    margin: auto;
+    margin-top: 12%;
+    overflow: hidden;
+}
+
+.perfilcontent {
+    float: left;
+    left: 200px;
+    width: 30%;
+    background-color: aqua;
+}
+
+.entregacontent {
+    float: left;
+    left: 200px;
+    width: 70%;
+    background-color: red;
+}
+
+.contentre {
+    background-color: #fff;
+    margin-top: 0;
+    padding: 0;
+    margin: auto;
+}
+
+.table {
+    text-align: center;
+    border-collapse: collapse;        
+}
+
+.encabetable {
+    font-size: 20px;
+    background-color: darkred;
+    color: wheat;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.scrolltable1 {
+    height: 500px;
+    overflow-y: auto;
+}

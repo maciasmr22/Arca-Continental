@@ -1,0 +1,67 @@
+@font-face {
+    font-family: letrapalpancho;
+    src: url("../../../gothamlight.otf");
+  }
+  
+* {
+    font-family: letrapalpancho;
+}
+
+.toolbar {
+    position: fixed;
+    top: 0%;
+    left:0%;
+    width: 100%;
+    background-color: #fff;
+    height: 9%;
+    z-index: 2;
+    border-bottom: 1px solid darkred;
+}
+
+.toolbar-nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1rem;    
+}
+
+.toolbar__logo { 
+    margin-left: 10px;
+}
+
+.logo {
+    max-width:10%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    
+}
+
+.spacer {
+    flex:1;
+}
+
+.toolbar-nav-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.toolbar-nav-items li {
+    padding: 0 3rem;
+}
+
+ .text-link {
+    color: #703824;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+.toolbar-nav-items .text-link:hover,
+.toolbar-nav-items .text-link:active {
+    color:darkred;
+}
+
+.toolbar-nav-items .text-link1:hover {
+    color: orangered;
+}

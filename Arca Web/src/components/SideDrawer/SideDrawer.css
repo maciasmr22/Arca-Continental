@@ -1,0 +1,74 @@
+.side-drawer {
+    height: 200%;
+    background-color: white;
+    box-shadow: 1px 0px 7px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 9%;
+    left: 0;
+    width: 22%;
+    max-width: 22%;
+    min-width: 20%;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.side-drawer.open {
+    position: fixed;
+    transform: translateX(0);
+}
+
+.side-drawer ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content:first baseline;
+    padding: 0;
+}
+
+.side-drawer li {
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.side-drawer li:hover {
+    background-color: darkgrey;
+    padding-left: 8%;
+}
+
+.side-drawer .link-txt {
+    color: #000;
+    text-decoration: none;
+    font-size: 110%;
+    margin-top: 15%;
+    padding-left:12%;
+}
+
+.side-drawer .link-txt:hover,
+.side-drawer .link-txt:active  {
+    color: darkred;
+}
+
+.side-drawer .menu-item {
+    color: #000;
+    padding-right: 6%;
+    padding-left: 12%;
+    font-size: 120%;
+}
+
+.side-drawer .menu-item1 {
+    color:#000;
+    padding-right: 7%;
+    padding-left: 12%;
+    font-size: 110%;
+}
+
+.side-drawer .menu-item:hover  {
+    color:darkred;
+}
+
+.side-drawer .menu-item1:hover {
+    color:darkred;
+}
+
