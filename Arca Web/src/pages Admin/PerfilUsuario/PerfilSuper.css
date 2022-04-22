@@ -1,0 +1,178 @@
+@charset "utf-8";
+.tittleentre {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.tittleentre h1 {
+  font-size: 50px;
+  color: darkred;
+}
+
+td > .btn {
+  background-color: darkred;
+  color: #fff;
+}
+
+.list-groupentrepadre {
+  width: 90%;
+  margin: auto;
+  margin-top: 8%;
+  overflow: hidden;
+}
+
+.perfilcontent {
+  float: left;
+  left: 200px;
+  width: 30%;
+  /*background-color: rgb(0, 255, 76);*/
+  text-align: center;
+}
+
+.entregacontent {
+  float: left;
+  left: 200px;
+  width: 70%;
+}
+
+.contentre {
+  background-color: #fff;
+  margin-top: 0;
+  padding: 0;
+  margin: auto;
+}
+
+.table {
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.encabetable {
+  font-size: 20px;
+  background-color: darkred;
+  color: wheat;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.scrolltable1 {
+  height: 500px;
+  overflow-y: auto;
+}
+
+.about-cont img {
+  height: 230px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.about-tex {
+  padding-top: 20px;
+  color: darkred;
+  font-size: 18px;
+  line-height: 15px;
+  font-style: normal;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.about-tex p {
+  text-align: left;
+}
+
+.progress-element {
+  margin: auto;
+  text-align: left;
+  width: 75%;
+}
+
+progress {
+  opacity: 0;
+}
+.progress-container-1 {
+  position: relative;
+  display: inline-block;
+  background: #eee;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progress-container-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 75%;
+  background: darkred;
+}
+.progress-container-2 {
+  position: relative;
+  display: inline-block;
+  background: #eee;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progress-container-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25%;
+  background: darkred;
+}
+.progress-container-3 {
+  position: relative;
+  display: inline-block;
+  background: #eee;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progress-container-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: darkred;
+}
+
+.progress-label {
+  position: relative;
+}
+
+.progress-label::after {
+  content: "75%";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.progress-label-2 {
+  position: relative;
+}
+.progress-label-2::after {
+  content: "25%";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.progress-label-3 {
+  position: relative;
+}
+.progress-label-3::after {
+  content: "50%";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
