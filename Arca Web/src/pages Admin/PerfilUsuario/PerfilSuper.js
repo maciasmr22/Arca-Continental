@@ -2,7 +2,8 @@ import React from 'react'
 //import { useNavigate } from 'react-router-dom'
 
 import perfil from "./entregasimg/empresario.png"
-import "./PerfilSuper.css"
+import "./Entregas.css"
+import Tarea from "./entregasimg/Tarea 1.pdf"
 
 function About() {
   //let navigate = useNavigate();
@@ -22,8 +23,18 @@ function About() {
                <p>Planta: Monterrey</p>
                <p>CEDIS en la que se encuentra</p>
                <p>Correo: example@gmail.com</p>
+               <form class="row g-3">
+        <div class="operarios-pre">
+            <label for="operarios" class="visually-hidden">Operarios</label>
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="123 operarios"></input>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+          </div>
+      </form>
           
        </div>
+      
        <div class="progress-element">
   <p class="progress-label">JI</p>
   <div class="progress-container-1">
@@ -61,50 +72,67 @@ function About() {
               <tr>
       <th scope="row">1</th>
       <td>Tarea de JM para la ....</td>
-      <td><button type="button" class="btn btn-sm" >Entrega</button></td>
+      <td>
+          <a href={Tarea} target="_blank">  
+          <button type="button" class="btn btn-sm">Ver Entrega</button>
+          </a>
+     
+      </td>
+     
       <td>100</td>
       <td>100</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Tarea de JM para la ....</td>
-      <td><button type="button" class="btn btn-sm" >Entrega</button></td>
+      <a href={Tarea} target="_blank">  
+          <button type="button" class="btn btn-sm">Ver Entrega</button>
+          </a>
       <td>89</td>
       <td>100</td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Tarea de JM para la ....</td>
-      <td><button type="button" class="btn btn-sm" >Entrega</button></td>
+      <a href={Tarea} target="_blank">  
+          <button type="button" class="btn btn-sm">Ver Entrega</button>
+          </a>
       <td>98</td>
       <td>100</td>
     </tr>
     <tr>
       <th scope="row">4</th>
       <td>Tarea de JM para la ....</td>
-      <td><button type="button" class="btn btn-sm" >Entrega</button></td>
-      <td>100</td>
+      <a href={Tarea} target="_blank">  
+          <button type="button" class="btn btn-sm">Ver Entrega</button>
+          </a>
+                <td>100</td>
       <td>100</td>
     </tr>
     <tr>
       <th scope="row">5</th>
       <td>Tarea de JM para la ....</td>
-      <td><button type="button" class="btn btn-sm" >Entrega</button></td>
-      <td>---</td>
+      <a href={Tarea} target="_blank">  
+          <button type="button" class="btn btn-sm">Ver Entrega</button>
+          </a>
+                <td>---</td>
       <td>100</td>
     </tr>
     <tr>
       <th scope="row">6</th>
       <td>Tarea de JM para la ....</td>
-      <td><button type="button" class="btn btn-sm" >Entrega</button></td>
-      <td>---</td>
+      <a href={Tarea} target="_blank">  
+          <button type="button" class="btn btn-sm">Ver Entrega</button>
+          </a>      <td>---</td>
       <td>100</td>
     </tr>
     <tr>
       <th scope="row">7</th>
       <td>Tarea de JM para la ....</td>
-      <td><button type="button" class="btn btn-sm" >Entrega</button></td>
-      <td>---</td>
+      <a href={Tarea} target="_blank">  
+          <button type="button" class="btn btn-sm">Ver Entrega</button>
+          </a>
+                <td>---</td>
       <td>100</td>
     </tr>
     <tr>
