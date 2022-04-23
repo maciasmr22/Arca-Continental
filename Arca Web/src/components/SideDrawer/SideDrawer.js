@@ -2,7 +2,7 @@ import React from 'react';
 import './SideDrawer.css';
 
 import { Link } from "react-router-dom";
-import { FaBookmark, FaCrown, FaWeixin, FaInfoCircle } from "react-icons/fa";
+import { FaGamepad, FaCrown, FaInfoCircle } from "react-icons/fa";
 
 const sideDrawer = props => {
     let drawerClasses = 'side-drawer';

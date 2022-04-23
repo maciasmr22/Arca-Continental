@@ -30,7 +30,7 @@ function Perfil() {
             <div className="box-1">
                 <div className="box-11">
                 <div className="box-img-1">
-                <img src= {medallabronce}/>
+                <img src= {medallabronce} alt="Medalla de Bronce"/>
                 <p>Job Relations</p>
                 <p>Puntaje: 800</p>
                 </div>
@@ -40,7 +40,7 @@ function Perfil() {
              <div className="box-2">
                  <div className="box-22">
                 <div className="box-img-2">
-                    <img src={medallaplata}/>
+                    <img src={medallaplata} alt="Medalla de Plata"/>
                     <p>Job Methods</p>
                     <p>Puntaje: 2000</p>
                     </div>
@@ -50,7 +50,7 @@ function Perfil() {
              <div className="box-3">
                 <div className="box-33">
                 <div className="box-img-3">
-                    <img src={medallaoro}/>
+                    <img src={medallaoro} alt="Medalla de Oro"/>
                     <p>Job Instruction</p>
                     <p>Puntaje: 3500</p>
                     </div>
