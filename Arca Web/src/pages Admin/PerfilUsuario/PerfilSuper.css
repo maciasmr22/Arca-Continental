@@ -9,7 +9,7 @@
   color: darkred;
 }
 
-td > .btn {
+a > .btn {
   background-color: darkred;
   color: #fff;
 }
