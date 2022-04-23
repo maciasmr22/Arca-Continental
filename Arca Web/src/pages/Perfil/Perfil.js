@@ -2,7 +2,7 @@ import React from 'react'
 //import { useNavigate } from 'react-router-dom'
 
 import perfil from "./entregasimg/empresario.png"
-import "./Perfil-Entregas.css"
+import "./Style.css"
 
 function About() {
   //let navigate = useNavigate();
