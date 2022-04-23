@@ -10,31 +10,25 @@ const sideDrawer = props => {
         drawerClasses = 'side-drawer open';
     }
     return (
-        <nav className = {drawerClasses}>
+        <nav className={drawerClasses}>
             <ul>
                 <li>
-                    <a id= "entrega" className = "menu-item1" href= '/entregas'>
-                        <FaBookmark />
-                        <Link className ="link-txt" to = '/entregas'>Entregas</Link>
+                    <a id="entrega" className="menu-item1" href='/videojuego'>
+                        <FaGamepad />
+                        <Link className="link-txt" to='/videojuego'>VideoJuego</Link>
                     </a>
-                    
+
                 </li>
                 <li>
-                <a id= "ranking" className = "menu-item" href= '/ranking'>
+                    <a id="ranking" className="menu-item" href='/ranking'>
                         <FaCrown />
-                        <Link className ="link-txt" to = '/ranking'>Ranking</Link>
+                        <Link className="link-txt" to='/ranking'>Ranking</Link>
                     </a>
                 </li>
                 <li>
-                <a id= "chat" className = "menu-item" href= '/chat'>
-                        <FaWeixin />
-                        <Link className ="link-txt" to = '/chat'>Chat</Link>
-                    </a>
-                </li>
-                <li>
-                <a id= "about" className = "menu-item" href= '/about-us'>
+                    <a id="about" className="menu-item" href='/about-us'>
                         <FaInfoCircle />
-                        <Link className ="link-txt" to = '/about-us'>Sobre TWI</Link>
+                        <Link className="link-txt" to='/about-us'>Sobre TWI</Link>
                     </a>
                 </li>
             </ul>

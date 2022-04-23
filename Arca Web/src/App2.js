@@ -5,14 +5,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Toolbar from './components/Toolbar/Toolbar';
 
 import AboutUs from './pages/AboutUs/AboutUs';
-import Chat from './pages/Chat/Chat';
-import Entregas from './pages/Entregas/Entregas';
 import Inicio from './pages/Inicio/Inicio';
-import Perfil from './pages/Perfil/Perfil';
+import PerfilEntregas from './pages/Perfil-Entregas/Perfil-Entregas';
 import Ranking from './pages/Ranking/Ranking';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
-//import Tareas from './pages/Tareas/Tareas';
 
 class App extends Component {
   
@@ -49,19 +46,9 @@ class App extends Component {
           </main>
           <Routes>
             <Route exact path = '/' element = {<Inicio />} /> 
-
-            <Route path = '/profile' element = {<Perfil />} />
-
-            <Route path = '/entregas' element = {<Entregas />} />
-
+            <Route path = '/profile' element = {<PerfilEntregas />} />
             <Route path = '/ranking' element = {<Ranking />} />
-
-            <Route path = '/chat' element = {<Chat />} /> 
-
             <Route path = '/about-us' element = {<AboutUs />} />
-
-           {/* <Route path= "/tareas" element = {<Tareas />} />   */}
-
           </Routes>
         </Router>
       </div>

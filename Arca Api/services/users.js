@@ -61,10 +61,19 @@ const getRankTWI = () => {
     return dbService.querypromise(sql)
 }
 
+const getLogin = (body) => {
+    const {correo, contrasenia} = body
+    sql = `SELECT Usuario_ID, Nombre, Correo, Planta, Tipo_Usuario FROM usuario 
+            WHERE usuario.Correo = "${correo}" AND 
+            usuario.Contrasenia = "${contrasenia}"`
+    return dbService.querypromise(sql)
+}
+
 module.exports = {
     getAllUsers,
     getRankJI,
     getRankJM,
     getRankJR,
-    getRankTWI
+    getRankTWI,
+    getLogin
 }

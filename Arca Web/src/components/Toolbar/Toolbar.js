@@ -2,7 +2,7 @@ import React from 'react';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import './Toolbar.css';
 import { Link } from "react-router-dom";
-import { FaHome, FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import arcaLogo from './arcaLogo.png';
 
 const toolbar = props => (
