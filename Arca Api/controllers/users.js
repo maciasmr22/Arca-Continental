@@ -1,4 +1,5 @@
 const UsersService = require('../services/users.js');
+const jwt = require("jsonwebtoken")
 
 module.exports = {
     getAllUsers : async (req, res, next) => {

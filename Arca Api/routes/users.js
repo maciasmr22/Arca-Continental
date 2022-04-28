@@ -9,6 +9,6 @@ router.get('/rankJM', UsersControllers.getRankJM)
 router.get('/rankJR', UsersControllers.getRankJR)
 router.get('/rankTWI', UsersControllers.getRankTWI)
 
-router.get('/login', UsersControllers.getLogin)
+router.post('/login', UsersControllers.getLogin)
 
 module.exports = router
