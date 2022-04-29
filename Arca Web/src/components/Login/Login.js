@@ -9,7 +9,7 @@ export default function Login({ setUser }) {
   const [correo, setCorreo] = useState();
   const [contrasenia, setContrasenia] = useState();
 
-  async function loginUser(credentials) {
+  function loginUser(credentials) {
     const url = "http://localhost:3001/users/login";
 
     const options = {
