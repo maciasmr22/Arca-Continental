@@ -1,9 +1,10 @@
-.fondosegunelleo {
-    height: 5000px;
+.bodylogin {
+    width: 100%;
+    height: 100%;
+    position: fixed;
     background-image: url("./img/fondofinal.jpeg");
-    /*background-repeat: no-repeat;*/
-    background-attachment: fixed;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;    
     background-size:cover;
   }
 
