@@ -8,12 +8,14 @@ const App = () => {
 
   const [user, setUser] = useState();
   
+  console.log("user: " + user);
 
   if (!user) {
     return (
       <Login setUser={setUser} />
     );
   }
+  
 
 
   return (
