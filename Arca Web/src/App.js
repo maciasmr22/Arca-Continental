@@ -8,12 +8,12 @@ const App = () => {
 
   const [user, setUser] = useState();
 
-
   if (!user) {
     return (
       <Login setUser={setUser} />
     );
   }
+  
 
 
   return (
