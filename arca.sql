@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 22, 2022 at 01:10 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-04-2022 a las 18:44:38
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `arca`
+-- Base de datos: `arca`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrador`
+-- Estructura de tabla para la tabla `administrador`
 --
 
 CREATE TABLE `administrador` (
@@ -33,7 +33,7 @@ CREATE TABLE `administrador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `administrador`
+-- Volcado de datos para la tabla `administrador`
 --
 
 INSERT INTO `administrador` (`Admin_ID`, `Usuario_ID`) VALUES
@@ -42,18 +42,7 @@ INSERT INTO `administrador` (`Admin_ID`, `Usuario_ID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `desbloqueopersonaje`
---
-
-CREATE TABLE `desbloqueopersonaje` (
-  `Super_ID` int(11) NOT NULL,
-  `Personaje_ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `entrega`
+-- Estructura de tabla para la tabla `entrega`
 --
 
 CREATE TABLE `entrega` (
@@ -70,7 +59,7 @@ CREATE TABLE `entrega` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ganamedalla`
+-- Estructura de tabla para la tabla `ganamedalla`
 --
 
 CREATE TABLE `ganamedalla` (
@@ -81,7 +70,7 @@ CREATE TABLE `ganamedalla` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `juega`
+-- Estructura de tabla para la tabla `juega`
 --
 
 CREATE TABLE `juega` (
@@ -93,7 +82,7 @@ CREATE TABLE `juega` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `medalla`
+-- Estructura de tabla para la tabla `medalla`
 --
 
 CREATE TABLE `medalla` (
@@ -103,7 +92,7 @@ CREATE TABLE `medalla` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `medalla`
+-- Volcado de datos para la tabla `medalla`
 --
 
 INSERT INTO `medalla` (`Meda_ID`, `Color`, `Elemento`) VALUES
@@ -120,43 +109,7 @@ INSERT INTO `medalla` (`Meda_ID`, `Color`, `Elemento`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personaje`
---
-
-CREATE TABLE `personaje` (
-  `Personaje_ID` int(11) NOT NULL,
-  `Nombre` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pregunta`
---
-
-CREATE TABLE `pregunta` (
-  `Preg_ID` int(11) NOT NULL,
-  `Meda_ID` int(11) NOT NULL,
-  `Texto` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `respuesta`
---
-
-CREATE TABLE `respuesta` (
-  `NumRespuesta` int(11) NOT NULL,
-  `Preg_ID` int(11) NOT NULL,
-  `Texto` varchar(250) NOT NULL,
-  `Correcta` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `subnivel`
+-- Estructura de tabla para la tabla `subnivel`
 --
 
 CREATE TABLE `subnivel` (
@@ -166,7 +119,7 @@ CREATE TABLE `subnivel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `subnivel`
+-- Volcado de datos para la tabla `subnivel`
 --
 
 INSERT INTO `subnivel` (`Sub_ID`, `Meda_ID`, `Instruccion`) VALUES
@@ -177,7 +130,7 @@ INSERT INTO `subnivel` (`Sub_ID`, `Meda_ID`, `Instruccion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supervisor`
+-- Estructura de tabla para la tabla `supervisor`
 --
 
 CREATE TABLE `supervisor` (
@@ -191,7 +144,7 @@ CREATE TABLE `supervisor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `supervisor`
+-- Volcado de datos para la tabla `supervisor`
 --
 
 INSERT INTO `supervisor` (`Super_ID`, `Usuario_ID`, `NumOperadores`, `CertiBronce`, `CertiPlata`, `CertiOro`, `Admin_ID`) VALUES
@@ -211,7 +164,7 @@ INSERT INTO `supervisor` (`Super_ID`, `Usuario_ID`, `NumOperadores`, `CertiBronc
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -224,7 +177,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`Usuario_ID`, `Nombre`, `Correo`, `Contrasenia`, `Planta`, `Tipo_Usuario`) VALUES
@@ -243,25 +196,18 @@ INSERT INTO `usuario` (`Usuario_ID`, `Nombre`, `Correo`, `Contrasenia`, `Planta`
 ('YALURE17', 'Luna Reyez Yahaira Lizbeth', 'rahaira.lunar22@arcacontal.com', 'arca2022', 'P. INSURGENTES', 'Supervisor');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `administrador`
+-- Indices de la tabla `administrador`
 --
 ALTER TABLE `administrador`
   ADD PRIMARY KEY (`Admin_ID`),
   ADD KEY `Usuario_ID` (`Usuario_ID`);
 
 --
--- Indexes for table `desbloqueopersonaje`
---
-ALTER TABLE `desbloqueopersonaje`
-  ADD KEY `Super_ID` (`Super_ID`),
-  ADD KEY `Personaje_ID` (`Personaje_ID`);
-
---
--- Indexes for table `entrega`
+-- Indices de la tabla `entrega`
 --
 ALTER TABLE `entrega`
   ADD KEY `Super_ID` (`Super_ID`),
@@ -269,53 +215,34 @@ ALTER TABLE `entrega`
   ADD KEY `Sub_ID` (`Sub_ID`);
 
 --
--- Indexes for table `ganamedalla`
+-- Indices de la tabla `ganamedalla`
 --
 ALTER TABLE `ganamedalla`
   ADD KEY `Meda_ID` (`Meda_ID`),
   ADD KEY `Super_ID` (`Super_ID`);
 
 --
--- Indexes for table `juega`
+-- Indices de la tabla `juega`
 --
 ALTER TABLE `juega`
   ADD KEY `Sub_ID` (`Sub_ID`),
   ADD KEY `Super_ID` (`Super_ID`);
 
 --
--- Indexes for table `medalla`
+-- Indices de la tabla `medalla`
 --
 ALTER TABLE `medalla`
   ADD PRIMARY KEY (`Meda_ID`);
 
 --
--- Indexes for table `personaje`
---
-ALTER TABLE `personaje`
-  ADD PRIMARY KEY (`Personaje_ID`);
-
---
--- Indexes for table `pregunta`
---
-ALTER TABLE `pregunta`
-  ADD PRIMARY KEY (`Preg_ID`),
-  ADD KEY `Meda_ID` (`Meda_ID`);
-
---
--- Indexes for table `respuesta`
---
-ALTER TABLE `respuesta`
-  ADD KEY `Preg_ID` (`Preg_ID`);
-
---
--- Indexes for table `subnivel`
+-- Indices de la tabla `subnivel`
 --
 ALTER TABLE `subnivel`
   ADD PRIMARY KEY (`Sub_ID`),
   ADD KEY `Meda_ID` (`Meda_ID`);
 
 --
--- Indexes for table `supervisor`
+-- Indices de la tabla `supervisor`
 --
 ALTER TABLE `supervisor`
   ADD PRIMARY KEY (`Super_ID`),
@@ -323,58 +250,39 @@ ALTER TABLE `supervisor`
   ADD KEY `Usuario_ID` (`Usuario_ID`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`Usuario_ID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `medalla`
+-- AUTO_INCREMENT de la tabla `medalla`
 --
 ALTER TABLE `medalla`
   MODIFY `Meda_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `personaje`
---
-ALTER TABLE `personaje`
-  MODIFY `Personaje_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pregunta`
---
-ALTER TABLE `pregunta`
-  MODIFY `Preg_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `subnivel`
+-- AUTO_INCREMENT de la tabla `subnivel`
 --
 ALTER TABLE `subnivel`
   MODIFY `Sub_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `administrador`
+-- Filtros para la tabla `administrador`
 --
 ALTER TABLE `administrador`
   ADD CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`Usuario_ID`) REFERENCES `usuario` (`Usuario_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `desbloqueopersonaje`
---
-ALTER TABLE `desbloqueopersonaje`
-  ADD CONSTRAINT `desbloqueopersonaje_ibfk_1` FOREIGN KEY (`Super_ID`) REFERENCES `supervisor` (`Super_ID`),
-  ADD CONSTRAINT `desbloqueopersonaje_ibfk_2` FOREIGN KEY (`Personaje_ID`) REFERENCES `personaje` (`Personaje_ID`);
-
---
--- Constraints for table `entrega`
+-- Filtros para la tabla `entrega`
 --
 ALTER TABLE `entrega`
   ADD CONSTRAINT `entrega_ibfk_1` FOREIGN KEY (`Super_ID`) REFERENCES `supervisor` (`Super_ID`),
@@ -382,39 +290,27 @@ ALTER TABLE `entrega`
   ADD CONSTRAINT `entrega_ibfk_3` FOREIGN KEY (`Sub_ID`) REFERENCES `subnivel` (`Sub_ID`);
 
 --
--- Constraints for table `ganamedalla`
+-- Filtros para la tabla `ganamedalla`
 --
 ALTER TABLE `ganamedalla`
   ADD CONSTRAINT `ganamedalla_ibfk_1` FOREIGN KEY (`Meda_ID`) REFERENCES `medalla` (`Meda_ID`),
   ADD CONSTRAINT `ganamedalla_ibfk_2` FOREIGN KEY (`Super_ID`) REFERENCES `supervisor` (`Super_ID`);
 
 --
--- Constraints for table `juega`
+-- Filtros para la tabla `juega`
 --
 ALTER TABLE `juega`
   ADD CONSTRAINT `juega_ibfk_1` FOREIGN KEY (`Sub_ID`) REFERENCES `subnivel` (`Sub_ID`),
   ADD CONSTRAINT `juega_ibfk_2` FOREIGN KEY (`Super_ID`) REFERENCES `supervisor` (`Super_ID`);
 
 --
--- Constraints for table `pregunta`
---
-ALTER TABLE `pregunta`
-  ADD CONSTRAINT `pregunta_ibfk_1` FOREIGN KEY (`Meda_ID`) REFERENCES `medalla` (`Meda_ID`);
-
---
--- Constraints for table `respuesta`
---
-ALTER TABLE `respuesta`
-  ADD CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`Preg_ID`) REFERENCES `pregunta` (`Preg_ID`);
-
---
--- Constraints for table `subnivel`
+-- Filtros para la tabla `subnivel`
 --
 ALTER TABLE `subnivel`
   ADD CONSTRAINT `subnivel_ibfk_1` FOREIGN KEY (`Meda_ID`) REFERENCES `medalla` (`Meda_ID`);
 
 --
--- Constraints for table `supervisor`
+-- Filtros para la tabla `supervisor`
 --
 ALTER TABLE `supervisor`
   ADD CONSTRAINT `supervisor_ibfk_2` FOREIGN KEY (`Admin_ID`) REFERENCES `administrador` (`Admin_ID`),
