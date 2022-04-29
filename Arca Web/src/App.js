@@ -5,7 +5,7 @@ import App2 from './App2'
 import Login from "./components/Login/Login";
 
 const App = () => {
-
+  
   const [user, setUser] = useState();
 
   if (!user) {
@@ -14,6 +14,16 @@ const App = () => {
     );
   }
   
+  // Creamos las variables del local storage :)
+
+  localStorage.setItem("correo", user.Correo);
+  localStorage.setItem("nombre", user.Nombre);
+  localStorage.setItem("planta", user.Planta);
+  localStorage.setItem("tipoU", user.Tipo_Usuario);
+  localStorage.setItem("usId", user.Usuario_ID);
+
+
+
 
 
   return (
