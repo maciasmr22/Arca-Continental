@@ -10,11 +10,13 @@ function Directorio() {
                     <th>Nombre</th>
                     <th>Planta</th>
                     <th>Correo</th>
-                    <th>Entregas</th>
+                    <th>Entrega</th>
+                    <th>Calificación</th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td/>
                         <td/>
                         <td/>
                         <td/>
