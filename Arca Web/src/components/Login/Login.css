@@ -1,74 +1,74 @@
-.fondosegunelleo {
-    height: 5000px;
-    background-image: url("./img/fondofinal.jpeg");
-    /*background-repeat: no-repeat;*/
-    background-attachment: fixed;
-    background-position: center;
-    background-size:cover;
-  }
+body{
+  
+  background-image: url("./img/fondofinal.jpeg");
+  /*background-repeat: no-repeat;*/
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
 
 .container-sm {
-    float: left;
-    background: #AD393D;
-    color: #000;
-    width: 35%;
-    max-width: 350px;
-    padding: 2px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 6px rgb(216, 216, 216);
+  float: left;
+  background: #ad393d;
+  color: #000;
+  width: 35%;
+  max-width: 350px;
+  padding: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 6px rgb(216, 216, 216);
 }
 
 .container-md {
-    background: WHITE;
-    padding: 2px;
-    border-radius: 20px;
+  background: WHITE;
+  padding: 2px;
+  border-radius: 20px;
 }
 
 .form-label {
-    font-size: 20px;
-    margin-left: 35px;
-    color: brown;
+  font-size: 20px;
+  margin-left: 35px;
+  color: brown;
 }
 
 .form-control {
-    margin: auto;
-    border: none;
-    border-bottom: 1px solid #AD393D;
-    width: 80%;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid #ad393d;
+  width: 80%;
 }
 
 .hijo button {
-    margin-left: 35px;
-    background: none;
-    border-color: red;
-    color: red;
-    margin-bottom: 20px;
+  margin-left: 35px;
+  background: none;
+  border-color: red;
+  color: red;
+  margin-bottom: 20px;
 }
 
 .hijo button:hover {
-    background: brown;
-    border-color: brown;
-    color: #fff;
+  background: brown;
+  border-color: brown;
+  color: #fff;
 }
 
 .inici {
-    color: red;
-    font-size: 30px;
-    text-align: center;
+  color: red;
+  font-size: 30px;
+  text-align: center;
 }
 
 .arca {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    border-radius: 20px;
-    padding: 5px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .arca img {
-    width: 200px;
+  width: 200px;
 }
