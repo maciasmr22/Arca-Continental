@@ -5,7 +5,7 @@ import './Login.css';
 import arcalogo from './img/arcalogo.png'
 
 export default function Login({ setUser }) {
-  {/* declaramos los hooks para correo y constraseña */ }
+  //Declaramos los hooks para correo y constraseña
   const [correo, setCorreo] = useState();
   const [contrasenia, setContrasenia] = useState();
 
@@ -33,10 +33,10 @@ export default function Login({ setUser }) {
 
   }
 
-  {/* esta funcion se encarga de el boton de submit creo :C */ }
+  //Esta funcion se encarga de el boton de submit creo :C 
   const handleSubmit = async e => {
-    e.preventDefault();
-    const user = await loginUser({
+    const user = e.preventDefault();
+    await loginUser({
       correo,
       contrasenia
     });
@@ -44,7 +44,7 @@ export default function Login({ setUser }) {
   }
 
   return (
-    <div className='fondosegunelleo'>
+    <div className='bodylogin'>
       <div class="container-sm">
         <div class="container-md">
           <div class="arca">
