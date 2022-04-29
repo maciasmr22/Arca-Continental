@@ -7,7 +7,7 @@ import Login from "./components/Login/Login";
 const App = () => {
 
   const [user, setUser] = useState();
-  
+
 
   if (!user) {
     return (
@@ -21,7 +21,7 @@ const App = () => {
 
       <App2 />
     </div>
-    );
-  }
+  );
+}
 
-  export default App;
+export default App;
