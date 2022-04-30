@@ -32,27 +32,65 @@ class App extends Component {
 
     let backdrop;
 
+
+    // Esto es para la sidebar
     if (this.state.sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
 
-    return (
-      <div style={{ height: '100%' }}>
-        <Router>
-          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-          {backdrop}
-          <main style={{ marginTop: '5%' }}>
-          </main>
-          <Routes>
-            <Route exact path='/' element={<Inicio />} />
-            <Route path='/profile' element={<PerfilEntregas />} />
-            <Route path='/ranking' element={<Ranking />} />
-            <Route path='/about-us' element={<AboutUs />} />
-          </Routes>
-        </Router>
+
+
+    
+    if(localStorage.getItem("tipoU") == "Administrador"){
+      return (
+        <div style={{ height: '100%' }}>
+          <Router>
+            
+            <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+            <SideDrawer show={this.state.sideDrawerOpen} />
+            {backdrop}
+            <main style={{ marginTop: '5%' }}>
+            </main>
+            <Routes>
+              <Route exact path='/' element={<Inicio />} />
+              <Route path='/profile' element={<PerfilEntregas />} />
+              <Route path='/ranking' element={<Ranking />} />
+              <Route path='/about-us' element={<AboutUs />} />
+            </Routes>
+          </Router>
+        </div>
+      );
+    }
+    else if(localStorage.getItem("tipoU") == "Supervisor"){
+      return (
+        <div style={{ height: '100%' }}>
+          <Router>
+            
+            <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+            <SideDrawer show={this.state.sideDrawerOpen} />
+            {backdrop}
+            <main style={{ marginTop: '5%' }}>
+            </main>
+            <Routes>
+              <Route exact path='/' element={<Inicio />} />
+              <Route path='/profile' element={<PerfilEntregas />} />
+              <Route path='/ranking' element={<Ranking />} />
+              <Route path='/about-us' element={<AboutUs />} />
+            </Routes>
+          </Router>
+        </div>
+      );
+    }
+    else{
+      return (
+      <div>
+        <h1> Error</h1>
       </div>
-    );
+      );
+    }
+
+
+   
   }
 }
 

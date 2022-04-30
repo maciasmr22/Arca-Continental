@@ -3,7 +3,13 @@ import React from 'react'
 import perfil from "./entregasimg/empresario.png"
 import "./Perfil-Entregas.css"
 
-function About() {
+function Perfil_Entregas() {
+
+  function Datos(credentials){
+
+
+  }
+  
   return (
 
     <div class="list-groupentrepadre">
@@ -14,9 +20,9 @@ function About() {
 
         <div class="about-tex">
 
-          <p>Nombre: Leopoldo Maximo</p>
-          <p>Planta: Monterrey</p>
-          <p>Correo: example@gmail.com</p>
+          <p>Nombre: {localStorage.getItem("nombre")}</p>
+          <p>Planta: {localStorage.getItem("planta")}</p>
+          <p>Correo: {localStorage.getItem("correo")}</p>
 
         </div>
         <div class="progress-element">
@@ -167,4 +173,4 @@ function About() {
   )
 }
 
-export default About
+export default Perfil_Entregas
