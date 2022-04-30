@@ -9,6 +9,7 @@ router.get('/rankJM', UsersControllers.getRankJM)
 router.get('/rankJR', UsersControllers.getRankJR)
 router.get('/rankTWI', UsersControllers.getRankTWI)
 
-router.post('/login', UsersControllers.getLogin)
+router.post('/login', UsersControllers.getLogin) 
+router.get('/imgPerfil/:identi', UsersControllers.getImg)
 
 module.exports = router

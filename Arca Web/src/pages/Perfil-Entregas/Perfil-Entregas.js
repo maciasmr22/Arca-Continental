@@ -1,22 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import perfil from "./entregasimg/empresario.png"
 import "./Perfil-Entregas.css"
 
 function Perfil_Entregas() {
+  const idU = localStorage.getItem("usId");
+  const [imagen, setImagen] = useState("");
+// "https://drive.google.com/uc?export=view&id=" + XD
 
-  function Datos(credentials){
+  useEffect(() => {
+
+    fetch(`http://localhost:3001/users/imgPerfil/${idU}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((json) => {
+        //https://drive.google.com/file/d/12w6kXRVoFL_9H7PfGajiNJtGWT4V--zY/view?usp=sharing
+        //12w6kXRVoFL_9H7PfGajiNJtGWT4V--zY/view?usp=sharing
+        console.log(json.users[0].Imagen)
+        setImagen("https://drive.google.com/uc?export=view&id=" + json.users[0].Imagen.slice(32).slice(0,-17))
+      })
+
+  })
 
 
-  }
-  
+
   return (
 
     <div class="list-groupentrepadre">
       <div className="perfilcontent">
         <div class="about-cont">
-          <img src="https://drive.google.com/uc?export=view&id=1YGj0m29oen5uzHAcKEraYPRnAAf8tQhI" class="img" alt='Foto de perfil'></img>
+          <img src={imagen}  class="img" alt='Foto de perfil'></img>
+          
         </div>
+
+        <h1 >Hola</h1>
 
         <div class="about-tex">
 

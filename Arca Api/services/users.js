@@ -69,11 +69,18 @@ const getLogin = (body) => {
     return dbService.querypromise(sql)
 }
 
+
+const getImg = (identi) => {
+    sql = `SELECT Imagen FROM supervisor WHERE Usuario_ID = "${identi}"`;
+    return dbService.querypromise(sql)
+}
+
 module.exports = {
     getAllUsers,
     getRankJI,
     getRankJM,
     getRankJR,
     getRankTWI,
-    getLogin
+    getLogin,
+    getImg
 }
