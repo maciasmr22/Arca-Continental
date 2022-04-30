@@ -14,7 +14,7 @@
     width: 100%;
     background-color: #fff;
     height: 9%;
-    z-index: 2;
+    z-index: 101;
     border-bottom: 1px solid darkred;
 }
 

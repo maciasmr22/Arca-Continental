@@ -5,7 +5,7 @@ import App2 from './App2'
 import Login from "./components/Login/Login";
 
 const App = () => {
-  
+
   const [user, setUser] = useState();
 
   if (!user) {
@@ -13,7 +13,7 @@ const App = () => {
       <Login setUser={setUser} />
     );
   }
-  
+
   // Creamos las variables del local storage :)
 
   localStorage.setItem("correo", user.Correo);

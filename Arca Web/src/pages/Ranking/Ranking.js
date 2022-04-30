@@ -14,8 +14,6 @@ import medBron from './img/medallabronce.png';
 
 import "./Ranking.css";
 
-
-
 function Ranking() {
     const [que, setQue] = useState("rankTWI");
     const [data, setData] = useState(null);
@@ -26,7 +24,7 @@ function Ranking() {
     const [error, setError] = useState(null);
     const [dataXd, setDataxd] = useState(null);
     let x = 1;
-    
+
 
     // funciones para las imagenes de medallas 
     function Oro(xd) {
@@ -53,7 +51,7 @@ function Ranking() {
             return medBron;
         }
     }
-    
+
 
     useEffect(() => {
         fetch(`http://localhost:3001/users/rankTWI`)
@@ -217,7 +215,7 @@ function Ranking() {
 
                                     </tr>
 
-                            ))}
+                                ))}
                         </table>
                     </div>
                 </div>

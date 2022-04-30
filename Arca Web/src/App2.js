@@ -12,43 +12,43 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 
 class App extends Component {
-  
+
   state = {
     sideDrawerOpen: false
   };
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
     });
   };
 
   backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false});
+    this.setState({ sideDrawerOpen: false });
 
   };
 
-  render(){
-    
+  render() {
+
     let backdrop;
 
     if (this.state.sideDrawerOpen) {
-      backdrop = <Backdrop click = {this.backdropClickHandler} />
+      backdrop = <Backdrop click={this.backdropClickHandler} />
     }
 
-    return(
-      <div style = {{height: '100%'}}>
+    return (
+      <div style={{ height: '100%' }}>
         <Router>
-          <Toolbar drawerClickHandler = {this.drawerToggleClickHandler} />
-          <SideDrawer show = {this.state.sideDrawerOpen} />
+          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
-          <main style={{marginTop: '5%'}}>
+          <main style={{ marginTop: '5%' }}>
           </main>
           <Routes>
-            <Route exact path = '/' element = {<Inicio />} /> 
-            <Route path = '/profile' element = {<PerfilEntregas />} />
-            <Route path = '/ranking' element = {<Ranking />} />
-            <Route path = '/about-us' element = {<AboutUs />} />
+            <Route exact path='/' element={<Inicio />} />
+            <Route path='/profile' element={<PerfilEntregas />} />
+            <Route path='/ranking' element={<Ranking />} />
+            <Route path='/about-us' element={<AboutUs />} />
           </Routes>
         </Router>
       </div>

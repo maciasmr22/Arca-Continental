@@ -17,13 +17,13 @@ function Inicio() {
             <div className="divplane-inicio">
                <h1 className="title-inicio">Job<br />Relations</h1>
                <p className="text-inicio">
-                  JR enfatiza el <br/> respeto por las personas, por lo que
-                  entrena <br/> supervisores a lidiar con problemas y a cómo
+                  JR enfatiza el <br /> respeto por las personas, por lo que
+                  entrena <br /> supervisores a lidiar con problemas y a cómo
                   prevenirlos.
                </p>
 
                <p className="img-inicio">
-                  <a href= {cardjr} target="_blank">
+                  <a href={cardjr} target="_blank" rel='noreferrer'>
                      <img className="jpic-inicio" src={jrPic} alt="Foto de JR" />
                   </a>
                </p>
@@ -39,7 +39,7 @@ function Inicio() {
                </p>
 
                <p className="img-inicio">
-                  <a href= {cardjm} target="_blank">
+                  <a href={cardjm} target="_blank" rel='noreferrer'>
                      <img className="jpic-inicio" src={jmPic} alt="Foto de JM" />
                   </a>
                </p>
@@ -55,7 +55,7 @@ function Inicio() {
                </p>
 
                <p className="img-inicio">
-                  <a href= {cardji} target="_blank">
+                  <a href={cardji} target="_blank" rel='noreferrer'>
                      <img className="jpic-inicio" src={jiPic} alt="Foto de JI" />
                   </a>
                </p>
