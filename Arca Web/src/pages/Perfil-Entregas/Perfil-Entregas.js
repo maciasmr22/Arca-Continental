@@ -9,16 +9,13 @@ function About() {
     <div class="list-groupentrepadre">
       <div className="perfilcontent">
         <div class="about-cont">
-          <img src={perfil} class="img" alt='Foto de perfil'></img>
+          <img src="https://drive.google.com/uc?export=view&id=1YGj0m29oen5uzHAcKEraYPRnAAf8tQhI" class="img" alt='Foto de perfil'></img>
         </div>
 
         <div class="about-tex">
 
           <p>Nombre: Leopoldo Maximo</p>
-          <p>Área: Seguridad </p>
-          <p>Linea: Producción</p>
           <p>Planta: Monterrey</p>
-          <p>CEDIS en la que se encuentra</p>
           <p>Correo: example@gmail.com</p>
 
         </div>
