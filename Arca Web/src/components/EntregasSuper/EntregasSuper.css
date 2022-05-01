@@ -1,0 +1,10 @@
+.pop-Up-Intrucciones > h1{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.nombre-entrega:hover{
+    color: red;
+    cursor: pointer;
+    background-color: rgb(250, 223, 223);
+}

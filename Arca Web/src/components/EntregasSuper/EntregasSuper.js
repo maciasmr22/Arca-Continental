@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react'
+
+import "./EntregasSuper.css"
+// para el popup que muestra las instrucciones del entregable 
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 import { ApiUrlXD } from '../../const/global';
+
+
+
+
 function EntregasSuper() {
     const [datSubNiv, setDatSubNiv] = useState();
 
+
     useEffect(() => {
 
-        fetch(ApiUrlXD +'getSubNiv')
+        fetch(ApiUrlXD + 'getSubNiv')
             .then((response) => {
                 return response.json();
             })
@@ -13,7 +24,7 @@ function EntregasSuper() {
                 setDatSubNiv(actualData);
             })
 
-    })
+    }, [datSubNiv])
 
 
     return (
@@ -38,11 +49,20 @@ function EntregasSuper() {
                         </thead>
                         <tbody className="cuerpotable">
                             {datSubNiv &&
-                                datSubNiv.subNivel.map(({ Sub_ID, Instruccion, Color, Elemento }) => (
+                                datSubNiv.subNivel.map(({ Sub_ID, Instruccion, Color, Elemento }) =>
+                                (
                                     <tr>
+
                                         <th scope="row">{Sub_ID}</th>
-                                        <td>{`${Elemento}  ${Color}`}</td>
-                                        <td><button type="button" class="btn btn-sm" >Ver Instrucciones</button></td>
+                                        <td>
+                                            <Popup trigger={<div className='nombre-entrega'>{Elemento}  {Color}</div>} position="right center">
+                                                <div className='pop-Up-Intrucciones'>
+                                                    <h1>Instrucciones</h1>
+                                                    <p>{Instruccion}</p>
+                                                </div>
+                                            </Popup>
+                                        </td>
+                                        <td>Guanajuato</td>
                                         <td>100</td>
                                         <td>80</td>
                                         <td>100</td>
