@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import App2 from './App2'
 import Login from "./components/Login/Login";
+window.llamadaApi = "llamadaApi"
 
 const App = () => {
 

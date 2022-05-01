@@ -14,6 +14,8 @@ import medBron from './img/medallabronce.png';
 
 import "./Ranking.css";
 
+import {ApiUrlXD} from '../../const/global';
+
 function Ranking() {
     const [que, setQue] = useState("rankTWI");
     const [data, setData] = useState(null);
@@ -54,7 +56,7 @@ function Ranking() {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3001/users/rankTWI`)
+        fetch(ApiUrlXD+`rankTWI`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
@@ -74,7 +76,7 @@ function Ranking() {
             .finally(() => {
                 setLoading(false);
             });
-        fetch(`http://localhost:3001/users/rankJI`)
+        fetch(ApiUrlXD+`rankJI`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
@@ -94,7 +96,7 @@ function Ranking() {
             .finally(() => {
                 setLoading(false);
             });
-        fetch(`http://localhost:3001/users/rankJM`)
+        fetch(ApiUrlXD+`rankJM`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
@@ -114,7 +116,7 @@ function Ranking() {
             .finally(() => {
                 setLoading(false);
             });
-        fetch(`http://localhost:3001/users/rankJR`)
+        fetch(ApiUrlXD+`rankJR`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(

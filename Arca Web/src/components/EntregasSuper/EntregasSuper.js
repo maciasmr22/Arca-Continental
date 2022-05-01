@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-
+import { ApiUrlXD } from '../../const/global';
 function EntregasSuper() {
     const [datSubNiv, setDatSubNiv] = useState();
 
     useEffect(() => {
 
-        fetch('http://localhost:3001/users/getSubNiv')
+        fetch(ApiUrlXD +'getSubNiv')
             .then((response) => {
                 return response.json();
             })

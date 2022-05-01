@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import EntregasSuper from '../../components/EntregasSuper/EntregasSuper';
+import { ApiUrlXD } from '../../const/global';
 
 import "./Perfil-Entregas.css"
 
@@ -14,7 +15,7 @@ function Perfil_Entregas() {
 
   useEffect(() => {
     
-    fetch(`http://localhost:3001/users/imgPerfil/${idU}`)
+    fetch(ApiUrlXD + `imgPerfil/${idU}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(
@@ -31,7 +32,7 @@ function Perfil_Entregas() {
 
   function cambiarImagen(credentials) {
     console.log(credentials)
-    const url = "http://localhost:3001/users/cambiarImg";
+    const url = ApiUrlXD + "cambiarImg";
     const options = {
       method: 'PUT',
       headers: {

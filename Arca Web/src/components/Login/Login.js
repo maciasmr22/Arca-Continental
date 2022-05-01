@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Login.css';
 
 import arcalogo from './img/arcalogo.png'
+import { ApiUrlXD } from '../../const/global';
 
 export default function Login({ setUser }) {
   //Declaramos los hooks para correo y constraseña
@@ -10,7 +11,7 @@ export default function Login({ setUser }) {
   const [contrasenia, setContrasenia] = useState();
 
   function loginUser(credentials) {
-    const url = "http://localhost:3001/users/login";
+    const url = ApiUrlXD + "login";
 
     const options = {
       method: 'POST',
