@@ -65,5 +65,13 @@ module.exports = {
         } catch(err) {
             res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
         }
-    }
+    },
+    getSubNiv : async (req, res, next) => {
+        try {
+            const subNivel = await UsersService.getSubNiv();
+            res.status(200).json({subNivel})
+        } catch(err) {
+            res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
+        }
+    }, 
 };

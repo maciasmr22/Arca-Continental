@@ -81,6 +81,11 @@ const setImg = (body) => {
     return dbService.querypromise(sql)
 }
 
+const getSubNiv = () => {
+    sql = 'select subnivel.Sub_ID, subnivel.Instruccion, medalla.Color, medalla.Elemento from subnivel, medalla where subnivel.Meda_ID = medalla.Meda_ID order by Sub_ID asc';
+    return dbService.querypromise(sql);
+}
+
 module.exports = {
     getAllUsers,
     getRankJI,
@@ -89,5 +94,6 @@ module.exports = {
     getRankTWI,
     getLogin,
     getImg,
-    setImg
+    setImg,
+    getSubNiv
 }

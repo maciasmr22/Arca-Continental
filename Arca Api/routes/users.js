@@ -12,6 +12,7 @@ router.get('/rankTWI', UsersControllers.getRankTWI)
 router.post('/login', UsersControllers.getLogin) 
 router.get('/imgPerfil/:identi', UsersControllers.getImg)
 router.put('/cambiarImg', UsersControllers.setImg)
+router.get('/getSubNiv', UsersControllers.getSubNiv)
 
 
 module.exports = router
