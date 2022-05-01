@@ -176,3 +176,12 @@ progress {
   top: 0;
   right: 0;
 }
+
+.botonCambiarImg{
+  margin-top: 5%;
+}
+
+.img-Perfil-e{
+  max-width: 350px;
+  min-width: 200px;
+}

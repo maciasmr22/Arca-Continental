@@ -51,6 +51,7 @@ export default function Login({ setUser }) {
             <img src={arcalogo} alt="Logo de Arca Continental" />
           </div>
           <p className="inici">Iniciar Sesión</p>
+          
           <form className="hijo" onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">Usuario: </label>
@@ -61,8 +62,8 @@ export default function Login({ setUser }) {
               <input type="password" className="form-control" id="exampleInputPassword1" onChange={e => setContrasenia(e.target.value)} />
             </div>
             <button type="submit" className="btn btn-primary">Ingresar</button>
-
           </form>
+
         </div>
       </div>
     </div>

@@ -75,6 +75,12 @@ const getImg = (identi) => {
     return dbService.querypromise(sql)
 }
 
+const setImg = (body) => {
+    const {idU, newImg} = body;
+    sql = `UPDATE supervisor SET Imagen = "${newImg}" WHERE Usuario_ID = "${idU}"`
+    return dbService.querypromise(sql)
+}
+
 module.exports = {
     getAllUsers,
     getRankJI,
@@ -82,5 +88,6 @@ module.exports = {
     getRankJR,
     getRankTWI,
     getLogin,
-    getImg
+    getImg,
+    setImg
 }

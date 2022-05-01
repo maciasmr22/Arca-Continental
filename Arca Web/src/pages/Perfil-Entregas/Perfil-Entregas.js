@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
 
-import perfil from "./entregasimg/empresario.png"
 import "./Perfil-Entregas.css"
+
+
 
 function Perfil_Entregas() {
   const idU = localStorage.getItem("usId");
+  const [newImg, setNewImg] = useState("");
   const [imagen, setImagen] = useState("");
-// "https://drive.google.com/uc?export=view&id=" + XD
+  const [show, setShow] = useState(false);
+  // "https://drive.google.com/uc?export=view&id=" + XD
 
   useEffect(() => {
-
+    
     fetch(`http://localhost:3001/users/imgPerfil/${idU}`)
       .then((response) => {
         if (!response.ok) {
@@ -20,14 +23,43 @@ function Perfil_Entregas() {
         return response.json();
       })
       .then((json) => {
-        //https://drive.google.com/file/d/12w6kXRVoFL_9H7PfGajiNJtGWT4V--zY/view?usp=sharing
-        //12w6kXRVoFL_9H7PfGajiNJtGWT4V--zY/view?usp=sharing
-        console.log(json.users[0].Imagen)
-        setImagen("https://drive.google.com/uc?export=view&id=" + json.users[0].Imagen.slice(32).slice(0,-17))
+        setImagen(json.users[0].Imagen)
       })
 
-  })
+  }, [])
 
+  function cambiarImagen(credentials) {
+    console.log(credentials)
+    const url = "http://localhost:3001/users/cambiarImg";
+    const options = {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    }
+    fetch(url, options)
+      .then((resp) => {
+        return resp.json()
+      })
+      .then((json) => {
+        console.log(json)
+      })
+    
+
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setImagen(newImg);
+    cambiarImagen({
+      idU,
+      newImg
+    });
+
+    setShow(!show);
+
+  }
 
 
   return (
@@ -35,11 +67,36 @@ function Perfil_Entregas() {
     <div class="list-groupentrepadre">
       <div className="perfilcontent">
         <div class="about-cont">
-          <img src={imagen}  class="img" alt='Foto de perfil'></img>
-          
+          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} class="img-Perfil-e" alt='Foto de perfil' onClick={() => {
+            setShow(!show);
+          }}></img>
+
         </div>
 
-        <h1 >Hola</h1>
+
+
+
+        {show ? (
+          <form onSubmit={handleSubmit}>
+            <p>
+              Sube tu foto de perfil a drive, dale click <br />
+              dereho a tu imagen y haz clic obtener enlace,<br />
+              copia el link, pegalo en el cuadro de texto.<br />
+              *IMPORTANTE* <br />
+              si aparece "restringido" cambiar a <br /> "cualquier persona
+              que tenga el vincu lo".
+              <br />
+              Por ultimo presiona "subir"
+            </p>
+
+            <label htmlFor='imgURL'>Url de tu imagen</label> <br />
+            <input type="url" id="imgURL" onChange={e => setNewImg(e.target.value)}></input>
+
+            <button type="submit">subir</button>
+          </form>
+
+        ) : <div></div>}
+
 
         <div class="about-tex">
 
