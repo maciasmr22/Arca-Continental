@@ -22,16 +22,13 @@ const App = () => {
   localStorage.setItem("tipoU", user.Tipo_Usuario);
   localStorage.setItem("usId", user.Usuario_ID);
 
-
-
-
-
   return (
     <div>
-
       <App2 />
     </div>
   );
-}
+  
+} 
+
 
 export default App;
