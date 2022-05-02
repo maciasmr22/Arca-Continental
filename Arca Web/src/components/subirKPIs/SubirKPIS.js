@@ -60,13 +60,13 @@ function SubirKPIS() {
                 <form className='form-op-certi' onSubmit={submitOper}>
 
                     <label htmlFor="operariosCertificados">Operarios Certificados</label><br />
-                    <input type="number" id="operariosCertificados" min="0" max="500"
+                    <input type="number" id="operariosCertificados" min={0} max={operTotal}
                         defaultValue={operCerti}
-                        onChange={e => setOperCerti(e.target.value)}></input>
+                        onChange={e => setOperCerti(e.target.value)} required></input>
                     <br /><label htmlFor="operariosTotales">Operarios Totales</label><br />
-                    <input type="number" id="operariosTotales" min="0" max="500"
+                    <input type="number" id="operariosTotales" min={0}
                         defaultValue={operTotal}
-                        onChange={e => setOperTotal(e.target.value)}></input>
+                        onChange={e => setOperTotal(e.target.value)} required></input>
                     <br /><button type="submit" 
                         onClick={()=>{setShowOperarios(!showOperarios)}}
                     >Subir</button>
