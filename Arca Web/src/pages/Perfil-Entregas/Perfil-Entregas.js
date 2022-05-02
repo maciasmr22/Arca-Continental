@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import EntregasSuper from '../../components/EntregasSuper/EntregasSuper';
+import SubirKPIS from '../../components/subirKPIs/SubirKPIS';
 import { ApiUrlXD } from '../../const/global';
 
 import "./Perfil-Entregas.css"
@@ -13,8 +14,11 @@ function Perfil_Entregas() {
   const [show, setShow] = useState(false);
   // "https://drive.google.com/uc?export=view&id=" + XD
 
+
+
+
   useEffect(() => {
-    
+
     fetch(ApiUrlXD + `imgPerfil/${idU}`)
       .then((response) => {
         if (!response.ok) {
@@ -31,7 +35,7 @@ function Perfil_Entregas() {
   }, [])
 
   function cambiarImagen(credentials) {
-    
+
     const url = ApiUrlXD + "cambiarImg";
     const options = {
       method: 'PUT',
@@ -47,7 +51,7 @@ function Perfil_Entregas() {
       .then((json) => {
         console.log(json)
       })
-    
+
 
   }
 
@@ -69,11 +73,11 @@ function Perfil_Entregas() {
     <div className="list-groupentrepadre">
       <div className="perfilcontent">
         <div className="about-cont">
-          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e" 
-          alt='Foto de perfil' 
-          onClick={() => {
-            setShow(!show);
-          }}></img>
+          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e"
+            alt='Foto de perfil'
+            onClick={() => {
+              setShow(!show);
+            }}></img>
 
         </div>
 
@@ -94,7 +98,7 @@ function Perfil_Entregas() {
             </p>
 
             <label htmlFor='imgURL'>Url de tu imagen</label> <br />
-            <input type="url" id="imgURL" onChange={e => setNewImg(e.target.value)}></input>
+            <input type="url" id="imgURL" onChange={e => setNewImg(e.target.value)} required></input>
 
             <button type="submit">subir</button>
           </form>
@@ -109,12 +113,14 @@ function Perfil_Entregas() {
           <p>Correo: {localStorage.getItem("correo")}</p>
 
         </div>
-        
+
+
+        <SubirKPIS />
 
       </div>
-      
+
       <EntregasSuper />
-      
+
     </div>
   )
 }
