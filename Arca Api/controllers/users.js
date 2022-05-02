@@ -81,5 +81,13 @@ module.exports = {
         } catch(err) {
             res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
         } 
+    },
+    getSuper : async (req,res,next) => {
+        try{
+            const sup = await UsersService.getSuper(req.params.identi);
+            res.status(200).json({sup})
+        } catch(err) {
+            res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
+        } 
     }
 };

@@ -114,7 +114,10 @@ const upEntrega = (body) =>{
     return dbService.querypromise(sql);
 }
 
-
+const getSuper = (identi) =>{
+    sql = `SELECT * FROM supervisor WHERE Usuario_ID = "${identi}"`
+    return dbService.querypromise(sql)
+}
 
 
 module.exports = {
@@ -127,5 +130,6 @@ module.exports = {
     getImg,
     setImg,
     getSubNiv,
-    upEntrega
+    upEntrega,
+    getSuper
 }
