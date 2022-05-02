@@ -69,7 +69,9 @@ function Perfil_Entregas() {
     <div className="list-groupentrepadre">
       <div className="perfilcontent">
         <div className="about-cont">
-          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e" alt='Foto de perfil' onClick={() => {
+          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e" 
+          alt='Foto de perfil' 
+          onClick={() => {
             setShow(!show);
           }}></img>
 
@@ -107,20 +109,7 @@ function Perfil_Entregas() {
           <p>Correo: {localStorage.getItem("correo")}</p>
 
         </div>
-        <div className="progress-element">
-          <p className="progress-label">JI</p>
-          <div className="progress-container-1">
-            <progress max="100" value="75">75%</progress>
-          </div>
-          <p className="progress-label-2">JM</p>
-          <div className="progress-container-2">
-            <progress max="100" value="25">25%</progress>
-          </div>
-          <p className="progress-label-3">JR</p>
-          <div className="progress-container-3">
-            <progress max="100" value="50">50%</progress>
-          </div>
-        </div>
+        
 
       </div>
       
