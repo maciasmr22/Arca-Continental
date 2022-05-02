@@ -9,12 +9,14 @@ import cardjr from './Cards/tarjetajr.pdf';
 import cardjm from './Cards/tarjetajm.pdf';
 import cardji from './Cards/tarjetaji.pdf';
 
+
 function Inicio() {
    return (
 
       <div className="container">
          <div className='containerchild'>
             <div className="divplane-inicio">
+               
                <h1 className="title-inicio">Job<br />Relations</h1>
                <p className="text-inicio">
                   JR enfatiza el <br /> respeto por las personas, por lo que
