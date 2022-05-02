@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import EntregasSuper from '../../components/EntregasSuper/EntregasSuper';
 import SubirKPIS from '../../components/subirKPIs/SubirKPIS';
 import { ApiUrlXD } from '../../const/global';
+import imgPred from './entregasimg/empresario.png'
 
 import "./Perfil-Entregas.css"
 
@@ -77,7 +78,11 @@ function Perfil_Entregas() {
             alt='Foto de perfil'
             onClick={() => {
               setShow(!show);
-            }}></img>
+            }}
+            onError={(e) => (
+              e.target.onError = null, e.target.src = imgPred
+            )}
+            ></img>
 
         </div>
 
