@@ -31,7 +31,7 @@ function Perfil_Entregas() {
   }, [])
 
   function cambiarImagen(credentials) {
-    console.log(credentials)
+    
     const url = ApiUrlXD + "cambiarImg";
     const options = {
       method: 'PUT',
@@ -66,10 +66,10 @@ function Perfil_Entregas() {
 
   return (
 
-    <div class="list-groupentrepadre">
+    <div className="list-groupentrepadre">
       <div className="perfilcontent">
-        <div class="about-cont">
-          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} class="img-Perfil-e" alt='Foto de perfil' onClick={() => {
+        <div className="about-cont">
+          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e" alt='Foto de perfil' onClick={() => {
             setShow(!show);
           }}></img>
 
@@ -100,24 +100,24 @@ function Perfil_Entregas() {
         ) : <div></div>}
 
 
-        <div class="about-tex">
+        <div className="about-tex">
 
           <p>Nombre: {localStorage.getItem("nombre")}</p>
           <p>Planta: {localStorage.getItem("planta")}</p>
           <p>Correo: {localStorage.getItem("correo")}</p>
 
         </div>
-        <div class="progress-element">
-          <p class="progress-label">JI</p>
-          <div class="progress-container-1">
+        <div className="progress-element">
+          <p className="progress-label">JI</p>
+          <div className="progress-container-1">
             <progress max="100" value="75">75%</progress>
           </div>
-          <p class="progress-label-2">JM</p>
-          <div class="progress-container-2">
+          <p className="progress-label-2">JM</p>
+          <div className="progress-container-2">
             <progress max="100" value="25">25%</progress>
           </div>
-          <p class="progress-label-3">JR</p>
-          <div class="progress-container-3">
+          <p className="progress-label-3">JR</p>
+          <div className="progress-container-3">
             <progress max="100" value="50">50%</progress>
           </div>
         </div>
