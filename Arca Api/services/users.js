@@ -119,6 +119,12 @@ const getSuper = (identi) =>{
     return dbService.querypromise(sql)
 }
 
+const setOper = (body) =>{
+    const {operCerti, operTotal, idU} = body;
+    const sql = `UPDATE supervisor SET NumOperadores = ${operCerti}, 
+        Operarios_Totales = ${operTotal} WHERE Usuario_ID = "${idU}"`
+    return dbService.querypromise(sql);
+}
 
 module.exports = {
     getAllUsers,
@@ -131,5 +137,6 @@ module.exports = {
     setImg,
     getSubNiv,
     upEntrega,
-    getSuper
+    getSuper,
+    setOper
 }

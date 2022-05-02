@@ -15,5 +15,6 @@ router.put('/cambiarImg', UsersControllers.setImg)
 router.post('/getSubNiv', UsersControllers.getSubNiv)
 router.put('/subirArch', UsersControllers.upEntrega)
 router.get('/getSupervisor/:identi', UsersControllers.getSuper)
+router.put('/setOper', UsersControllers.setOper)
 
 module.exports = router

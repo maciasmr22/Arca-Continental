@@ -30,6 +30,20 @@ function SubirKPIS() {
 
     const submitOper = async e => {
         e.preventDefault();
+        const credentials = {
+            operCerti,
+            operTotal,
+            idU
+        }
+        const options = {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json" 
+            },
+            body: JSON.stringify(credentials)
+        }
+
+        fetch(ApiUrlXD + '/setOper', options)
 
     }
 
@@ -53,7 +67,9 @@ function SubirKPIS() {
                     <input type="number" id="operariosTotales" min="0" max="500"
                         defaultValue={operTotal}
                         onChange={e => setOperTotal(e.target.value)}></input>
-                    <br /><button type="submit">Subir</button>
+                    <br /><button type="submit" 
+                        onClick={()=>{setShowOperarios(!showOperarios)}}
+                    >Subir</button>
 
                 </form>
             ) : <div></div>}
