@@ -192,7 +192,7 @@ function SubirKPIS() {
                 </form>
             ) : <div></div>}
 
-            {console.log("cd: " + revisadoA)}
+            
             {(revisadoA == 0) ? (<p style = {{color: "red"}}>No Revisado</p>) : (<p style = {{color:"green"}}>Revisado</p>)}
             
 

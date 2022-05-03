@@ -5,6 +5,12 @@ import "./EntregasSuper.css"
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
+//importamos las imagenes de medallas
+import medBron from './img/medallabronce.png'
+import medPla from './img/medallaplata.png'
+import medOro from './img/medallaoro.png'
+import medNada from './img/candado.png'
+
 import { ApiUrlXD } from '../../const/global';
 
 
@@ -16,6 +22,9 @@ function EntregasSuper() {
     const [linkEntrega, setLinkEntrega] = useState("");
     const [supervisorID, setSupervisorID] = useState();
 
+    const [certiBron, setCertiBron] = useState();
+    const [certiPla, setCertiPla] = useState();
+    const [certiOr, setCertiOr] = useState();
 
 
     function subirEntrega(e, idSub) {
@@ -114,7 +123,15 @@ function EntregasSuper() {
 
     useEffect(() => {
 
-
+        fetch(ApiUrlXD + `getSupervisor/${idU}`)
+        .then((response) => {
+            return response.json();
+        })
+        .then((json) => {
+            setCertiBron(json.sup[0].CertiBronce);
+            setCertiPla(json.sup[0].CertiPlata);
+            setCertiOr(json.sup[0].CertiOro);
+        })
 
         let credentials = {
             idU
@@ -127,6 +144,7 @@ function EntregasSuper() {
             },
             body: JSON.stringify(credentials)
         }
+        console.log("jasid " + certiBron)
 
         fetch(ApiUrlXD + 'getSubNiv', options)
             .then((response) => {
@@ -136,7 +154,7 @@ function EntregasSuper() {
                 setDatSubNiv(actualData);
             })
 
-    })
+    },[])
 
 
     return (
@@ -194,15 +212,15 @@ function EntregasSuper() {
                                 ))}
                         </tbody>
                     </table>
-
-
-
                 </div>
-
-
-
-
             </div>
+
+            <h1>Medallas</h1>
+
+            {certiBron ?  <img className='medalla' src = {medBron}/> :  <img className='medalla' src = {medNada}/>}
+            {certiPla ?  <img className='medalla' src = {medPla}/> :  <img className='medalla' src = {medNada}/>}
+            {certiOr ?  <img className='medalla' src = {medOro}/> :  <img className='medalla' src = {medNada}/>}
+
 
         </div>
 
