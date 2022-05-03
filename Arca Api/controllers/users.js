@@ -105,5 +105,14 @@ module.exports = {
         } catch(err) {
             res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
         }
+    },
+    getSumMedKPI : async (req,res,next) => {
+        try {
+            const cont = await UsersService.getSumMedKPI();
+            res.status(200).json({cont})
+        } catch(err) {
+            res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
+        }
     }
+    
 };

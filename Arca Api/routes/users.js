@@ -18,6 +18,6 @@ router.put('/subirArch', UsersControllers.upEntrega)
 router.get('/getSupervisor/:identi', UsersControllers.getSuper)
 router.put('/setOper', UsersControllers.setOper)
 router.put('/setMejoras', UsersControllers.setMejoras)
-
+router.get('/getSumMedKPI',UsersControllers.getSumMedKPI)
 
 module.exports = router
