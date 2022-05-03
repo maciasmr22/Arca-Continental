@@ -1,3 +1,4 @@
+const { header } = require('express/lib/request');
 const dbService = require('../config/db.js');
 
 const getAllUsers = () => {
@@ -126,6 +127,19 @@ const setOper = (body) =>{
     return dbService.querypromise(sql);
 }
 
+const setMejoras = (body) =>{
+    const {mejorasImp,porMinParco, porMiEnvDes, porMjMinCamFor, idU} = body;
+    const sql = `UPDATE supervisor 
+                SET Mejoras_Implementadas = ${mejorasImp}, 
+                    Mjrs_Mins_Paro_Porcentaje = ${porMinParco}, 
+                    Mjrs_Envs_Dsechds_Porcentaje = ${porMiEnvDes}, 
+                    Mjrs_Mins_CambioFormato_Porcentaje = ${porMjMinCamFor}
+                WHERE Usuario_ID = "${idU}"`;
+
+    return dbService.querypromise(sql);
+
+}
+
 module.exports = {
     getAllUsers,
     getRankJI,
@@ -138,5 +152,6 @@ module.exports = {
     getSubNiv,
     upEntrega,
     getSuper,
-    setOper
+    setOper,
+    setMejoras
 }

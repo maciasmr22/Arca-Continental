@@ -1,4 +1,5 @@
 const express = require('express')
+const { route } = require('express/lib/application')
 const router = express.Router()
 
 const UsersControllers = require('../controllers/users.js')
@@ -16,5 +17,6 @@ router.post('/getSubNiv', UsersControllers.getSubNiv)
 router.put('/subirArch', UsersControllers.upEntrega)
 router.get('/getSupervisor/:identi', UsersControllers.getSuper)
 router.put('/setOper', UsersControllers.setOper)
+router.put('/setMejoras', UsersControllers.setMejoras)
 
 module.exports = router
