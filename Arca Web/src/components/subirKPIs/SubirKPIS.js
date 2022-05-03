@@ -7,6 +7,7 @@ function SubirKPIS() {
     const [operTotal, setOperTotal] = useState();
     const [showOperarios, setShowOperarios] = useState(false);
     const [showKPIS, setShowKPIS] = useState(false);
+    const [revisadoA, setRevisadoA] = useState();
 
     const idU = localStorage.getItem("usId");
 
@@ -46,6 +47,7 @@ function SubirKPIS() {
                 setPorMiEnvDes(json.sup[0].Mjrs_Envs_Dsechds_Porcentaje);
                 setPorMjMinCamFor(json.sup[0].Mjrs_Mins_CambioFormato_Porcentaje);
                 setMejorasImp(json.sup[0].Mejoras_Implementadas);
+                setRevisadoA(json.sup[0].Revisado);
             })
 
     }, [])
@@ -190,6 +192,9 @@ function SubirKPIS() {
                 </form>
             ) : <div></div>}
 
+            {console.log("cd: " + revisadoA)}
+            {(revisadoA == 0) ? (<p style = {{color: "red"}}>No Revisado</p>) : (<p style = {{color:"green"}}>Revisado</p>)}
+            
 
         </div>
     )

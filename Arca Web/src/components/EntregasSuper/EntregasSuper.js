@@ -49,7 +49,7 @@ function EntregasSuper() {
             body: JSON.stringify(credentials)
         }
 
-        fetch(url, options) //error en este fetch
+        fetch(url, options)
             .then((resp) => {
                 return resp.json()
 

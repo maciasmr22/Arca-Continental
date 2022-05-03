@@ -116,7 +116,7 @@ const getSubNiv = (body) => {
 
 const upEntrega = (body) =>{
     const {supervisorID, idSub, urlE} = body;
-    const sql = `UPDATE entrega set Archivo = "${urlE}", Fecha = current_date 
+    const sql = `UPDATE entrega set Archivo = "${urlE}", set Revisado = 0, Fecha = current_date 
                 WHERE Sub_ID = ${idSub} AND Super_ID = ${supervisorID}`;
     return dbService.querypromise(sql);
 }
