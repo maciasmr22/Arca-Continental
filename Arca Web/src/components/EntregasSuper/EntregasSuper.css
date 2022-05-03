@@ -10,6 +10,69 @@
     background-color: rgb(250, 223, 223);
 }
 
-.medalla{
-    width: 130px;
+.medalla {
+  width: 70px;
+}
+.container {
+  text-align: center;
+}
+.progress-container {
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 700px;
+}
+
+.progress-container::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 14.3%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+.progress.dos {
+  width: 42.5%;
+}
+.progress.tres {
+  width: 71.5%;
+}
+
+.progress.cuatro {
+  width: 100%;
+}
+
+.circle {
+  background-color: none;
+  color: #999;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border: 3px solid #b2bec3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+}
+.circle.active {
+  border-color: var(--line-border-fill);
 }

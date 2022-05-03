@@ -10,6 +10,7 @@ import medBron from './img/medallabronce.png'
 import medPla from './img/medallaplata.png'
 import medOro from './img/medallaoro.png'
 import medNada from './img/candado.png'
+import ini from './img/inicio.png'
 
 import { ApiUrlXD } from '../../const/global';
 
@@ -217,9 +218,15 @@ function EntregasSuper() {
 
             <h1>Medallas</h1>
 
-            {certiBron ?  <img className='medalla' src = {medBron}/> :  <img className='medalla' src = {medNada}/>}
-            {certiPla ?  <img className='medalla' src = {medPla}/> :  <img className='medalla' src = {medNada}/>}
-            {certiOr ?  <img className='medalla' src = {medOro}/> :  <img className='medalla' src = {medNada}/>}
+            <div class="container"> 
+            <div className="progress-container ">
+            
+            {certiBron ?  <div className="circle active"><img  className='medalla'  src = {ini}/> <div className="progress" id="uno"></div></div>:  <div className="circle active"><img  className='medalla'  src = {ini}/> </div>}
+            {certiBron ?  <div className="circle active"><img  className='medalla'  src = {medBron}/> <div className="progress dos" ></div></div>:  <div className="circle"><img  className='medalla'  src = {medNada}/> </div>}
+            {certiPla ? <div className="circle active"><img  className='medalla'  src = {medPla}/> <div className="progress tres" ></div></div> :  <div className="circle"><img  className='medalla'  src = {medNada}/> </div>}
+            {certiOr ?  <div className="circle active"><img  className='medalla'  src = {medOro}/> <div className="progress cuatro" ></div></div> :  <div className="circle"><img  className='medalla'  src = {medNada}/> </div>}
+        </div>
+        </div>
 
 
         </div>
