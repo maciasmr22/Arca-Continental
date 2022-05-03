@@ -19,4 +19,5 @@ router.get('/getSupervisor/:identi', UsersControllers.getSuper)
 router.put('/setOper', UsersControllers.setOper)
 router.put('/setMejoras', UsersControllers.setMejoras)
 
+
 module.exports = router

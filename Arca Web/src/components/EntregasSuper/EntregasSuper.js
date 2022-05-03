@@ -14,37 +14,56 @@ function EntregasSuper() {
     const [datSubNiv, setDatSubNiv] = useState();
     const idU = localStorage.getItem("usId")
     const [linkEntrega, setLinkEntrega] = useState("");
-    
-      
-   
+    const [supervisorID, setSupervisorID] = useState();
 
-    function subirEntrega (e, idSub){
-        const url =ApiUrlXD + "subirArch" ;
+
+
+    function subirEntrega(e, idSub) {
+
+        fetch(ApiUrlXD + `getSupervisor/${idU}`)
+            .then((resp) => {
+                return resp.json()
+
+            })
+            .then((json) => {
+                console.log(json.sup[0])
+                setSupervisorID(json.sup[0].Super_ID)
+            })
+
+        // supervisorID ya es 13
+
+
+        const url = ApiUrlXD + "subirArch";
         const urlE = linkEntrega;
         const credentials = {
-            idU,
+            supervisorID,
             idSub,
             urlE
         }
+
         const options = {
             method: 'PUT',
             headers: {
-              "Content-Type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(credentials)
         }
-        fetch(url,options)
-        .then((resp) => {
-            return resp.json()
-          })
-          .then((json) => {
-            console.log(json)
-        })
-        
+
+        fetch(url, options) //error en este fetch
+            .then((resp) => {
+                return resp.json()
+
+            })
+            .then((json) => {
+                console.log(json)
+
+            })
+
+
         e.preventDefault();
     }
 
-    
+
 
     function botonEntrega(xd, Sub_id) {
         // xd es el puntaje del videojuego
@@ -56,7 +75,7 @@ function EntregasSuper() {
                         Entregar
                     </button>} >
 
-                    <form  onSubmit={e => subirEntrega(e,Sub_id)} >
+                    <form onSubmit={e => subirEntrega(e, Sub_id)} >
                         <label htmlFor='entregaUrl'> Sube el link de drive de tu entrega: </label>
                         <input type="url" id="entregaUrl" onChange={e => setLinkEntrega(e.target.value)}></input>
                         <button type="submit">subir</button>
@@ -83,8 +102,19 @@ function EntregasSuper() {
 
     }
 
+    function verifFecha(xd) {
+
+        if (xd == null) {
+            return "---"
+        }
+        return xd.slice(0, -14)
+
+    }
+
 
     useEffect(() => {
+
+
 
         let credentials = {
             idU
@@ -127,13 +157,14 @@ function EntregasSuper() {
                                 <th scope="col">P. entrega</th>
                                 <th scope="col">P. juego</th>
                                 <th scope="col">Sobre</th>
+                                <th scope="col">Fecha</th>
                             </tr>
                         </thead>
                         <tbody className="cuerpotable">
                             {datSubNiv &&
-                                datSubNiv.subNivel.map(({ Sub_ID, Instruccion, Color, Elemento, PuntajeEntrega, PuntajeVideojuego }) =>
+                                datSubNiv.subNivel.map(({ Sub_ID, Instruccion, Color, Elemento, PuntajeEntrega, PuntajeVideojuego, Fecha, Comentario, Revisado }) =>
                                 (
-                                    <tr>
+                                    <tr key={Sub_ID}>
 
                                         <th scope="row">{Sub_ID}</th>
                                         <td>
@@ -147,16 +178,25 @@ function EntregasSuper() {
 
                                         <td>{botonEntrega(PuntajeVideojuego, Sub_ID)}</td>
 
-                                        <td>{verifEntrega(PuntajeEntrega)}</td>
+                                        <td>
+                                            <Popup trigger={<div className='nombre-entrega'>{verifEntrega(PuntajeEntrega)}</div>}>
+                                                <div className='pop-Up-Intrucciones'>
+                                                    <h1>Comentario</h1>
+                                                    {Revisado ? (<p style={{ color: "green" }}>Revisado</p>) : (<p style={{ color: "red" }}>Falta revisar</p>)}
+                                                    <p>{verifEntrega(Comentario)}</p>
+                                                </div>
+                                            </Popup>
+                                        </td>
                                         <td>{verifEntrega(PuntajeVideojuego)}</td>
                                         <td>100</td>
+                                        <td>{verifFecha(Fecha)}</td>
                                     </tr>
                                 ))}
                         </tbody>
                     </table>
 
-                                    
-                    
+
+
                 </div>
 
 
@@ -166,7 +206,7 @@ function EntregasSuper() {
 
         </div>
 
-        
+
     )
 }
 
