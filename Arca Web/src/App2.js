@@ -10,6 +10,7 @@ import PerfilEntregas from './pages/Perfil-Entregas/Perfil-Entregas';
 import Ranking from './pages/Ranking/Ranking';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
+import PerfilAdmin from './pages Admin/PerfilAdmin/PerfilAdmin'
 
 class App extends Component {
 
@@ -41,7 +42,7 @@ class App extends Component {
 
 
     
-    if(localStorage.getItem("tipoU") == "Administrador"){
+    if(localStorage.getItem("tipoU") === "Administrador"){
       return (
         <div style={{ height: '100%' }}>
           <Router>
@@ -53,7 +54,7 @@ class App extends Component {
             </main>
             <Routes>
               <Route exact path='/' element={<Inicio />} />
-              <Route path='/profile' element={<PerfilEntregas />} />
+              <Route path='/profile' element={<PerfilAdmin />} />
               <Route path='/ranking' element={<Ranking />} />
               <Route path='/about-us' element={<AboutUs />} />
             </Routes>
@@ -61,7 +62,7 @@ class App extends Component {
         </div>
       );
     }
-    else if(localStorage.getItem("tipoU") == "Supervisor"){
+    else if(localStorage.getItem("tipoU") === "Supervisor"){
       return (
         <div style={{ height: '100%' }}>
           <Router>

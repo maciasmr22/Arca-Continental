@@ -84,12 +84,15 @@ const setImg = (body) => {
 
 const getSubNiv = (body) => {
     const { idU } = body;
-    sql = `select sub.Sub_ID,
+    sql = `select distinct sub.Sub_ID,
             sub.Instruccion,
             sub.Color,
             sub.Elemento,
             puntajes.PuntajeEntrega,
-            puntajes.PuntajeVideojuego
+            puntajes.PuntajeVideojuego,
+            puntajes.Comentario,
+            puntajes.Fecha,
+            puntajes.Revisado
         from (select subnivel.Sub_ID, 
                     subnivel.Instruccion, 
                     medalla.Color, 
@@ -97,23 +100,28 @@ const getSubNiv = (body) => {
                 from subnivel, medalla 
             where subnivel.Meda_ID = medalla.Meda_ID) as sub
                 left join (select entrega.Sub_ID,
-                entrega.Super_ID,
-                entrega.PuntajeEntrega,
-                entrega.PuntajeVideojuego,
-                entrega.Comentario
-            from entrega, supervisor, usuario
-            where entrega.Super_ID = supervisor.Super_ID
-            AND supervisor.Usuario_ID = "${idU}") as puntajes
+                    entrega.Super_ID,
+                    entrega.PuntajeEntrega,
+                    entrega.PuntajeVideojuego,
+                    entrega.Comentario,
+                    entrega.Fecha,
+                    entrega.Revisado
+                        from entrega, supervisor, usuario
+                            where entrega.Super_ID = supervisor.Super_ID
+                        AND supervisor.Usuario_ID = "${idU}") as puntajes
             ON sub.Sub_ID = puntajes.Sub_ID
             ORDER BY sub.Sub_ID asc`;
     return dbService.querypromise(sql);
 }
 
 const upEntrega = (body) =>{
-    const {idU, idSub, urlE} = body;
-    const sql = `UPDATE entrega SET Archivo = "${urlE}", Fecha = CURRENT_DATE WHERE Sub_ID = ${idSub} AND Super_ID = ${idU}`;
+    const {supervisorID, idSub, urlE} = body;
+    const sql = `UPDATE entrega set Archivo = "${urlE}", set Revisado = 0, Fecha = current_date 
+                WHERE Sub_ID = ${idSub} AND Super_ID = ${supervisorID}`;
     return dbService.querypromise(sql);
 }
+
+
 
 const getSuper = (identi) =>{
     sql = `SELECT * FROM supervisor WHERE Usuario_ID = "${identi}"`
@@ -123,7 +131,8 @@ const getSuper = (identi) =>{
 const setOper = (body) =>{
     const {operCerti, operTotal, idU} = body;
     const sql = `UPDATE supervisor SET NumOperadores = ${operCerti}, 
-        Operarios_Totales = ${operTotal} WHERE Usuario_ID = "${idU}"`
+        Operarios_Totales = ${operTotal}, Revisado = 0
+         WHERE Usuario_ID = "${idU}"`
     return dbService.querypromise(sql);
 }
 
@@ -133,7 +142,7 @@ const setMejoras = (body) =>{
                 SET Mejoras_Implementadas = ${mejorasImp}, 
                     Mjrs_Mins_Paro_Porcentaje = ${porMinParco}, 
                     Mjrs_Envs_Dsechds_Porcentaje = ${porMiEnvDes}, 
-                    Mjrs_Mins_CambioFormato_Porcentaje = ${porMjMinCamFor}
+                    Mjrs_Mins_CambioFormato_Porcentaje = ${porMjMinCamFor}, Revisado = 0
                 WHERE Usuario_ID = "${idU}"`;
 
     return dbService.querypromise(sql);
@@ -153,5 +162,5 @@ module.exports = {
     upEntrega,
     getSuper,
     setOper,
-    setMejoras
+    setMejoras,
 }
