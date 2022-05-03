@@ -24,7 +24,7 @@ function SubirKPIS() {
     const [mjEnvDesCT, setMjEnvDesCT] = useState();
     const [porMiEnvDes, setPorMiEnvDes] = useState();
 
-    
+
     const [mjMinCamForST, setMjMinCamForST] = useState();
     const [mjMinCamForCT, setMjMinCamForCT] = useState();
     const [porMjMinCamFor, setPorMjMinCamFor] = useState();
@@ -74,9 +74,9 @@ function SubirKPIS() {
     const submitKPIS = async e => {
         e.preventDefault();
 
-        setPorMinParco(((mjMinParoST - mjMinParoCT)/mjMinParoST) * 100);
-        setPorMiEnvDes(((mjEnvDesST - mjEnvDesCT)/mjEnvDesST) * 100);
-        setPorMjMinCamFor(((mjMinCamForST - mjMinCamForCT)/mjMinCamForST) * 100);
+        setPorMinParco(((mjMinParoST - mjMinParoCT) / mjMinParoST) * 100);
+        setPorMiEnvDes(((mjEnvDesST - mjEnvDesCT) / mjEnvDesST) * 100);
+        setPorMjMinCamFor(((mjMinCamForST - mjMinCamForCT) / mjMinCamForST) * 100);
 
         const credentials = {
             mejorasImp,
@@ -99,28 +99,28 @@ function SubirKPIS() {
 
 
     return (
-        <div className = "Op-general">
-            <div className = "Op-certi">
-                <button className= "button-certi" onClick={() => {
+        <div className="Op-general">
+            <div className="Op-certi">
+                <button className="button-certi" onClick={() => {
                     setShowOperarios(!showOperarios)
                 }}>
-                    <h5 className = "title-op-certi">Captura de operarios certificados</h5>
+                    <h5 className="title-op-certi">Captura de operarios certificados</h5>
                 </button>
 
                 {showOperarios ? (
                     <form className='form-op-certi' onSubmit={submitOper}>
 
-                        <label className= "textform-op-certi" htmlFor='iOperCerti'> Operarios Certificados</label>
+                        <label className="textform-op-certi" htmlFor='iOperCerti'> Operarios Certificados</label>
                         <br />
-                        <div className = "esp-op-certi">
-                            <input  id="iOperCerti" type="number" defaultValue={operCerti}
+                        <div className="esp-op-certi">
+                            <input id="iOperCerti" type="number" defaultValue={operCerti}
                                 min="0" max={operTotal}
                                 onChange={e => setOperCerti(e.target.value)}
                             ></input>
                         </div>
                         <br />
-                        <div className = "inform-op-certi">
-                            <label className= "textform-op-certi" htmlfor='iOperTotal'> Operarios Totales </label>
+                        <div className="inform-op-certi">
+                            <label className="textform-op-certi" htmlfor='iOperTotal'> Operarios Totales </label>
                             <br />
                             <input id="ioperTotal" type="number" defaultValue={operTotal}
                                 min="0"
@@ -128,99 +128,96 @@ function SubirKPIS() {
                             ></input>
                         </div>
                         <br />
-                        <button className = "submit-op-certi" type="submit"> Subir </button>
+                        <button className="submit-op-certi" type="submit"> Subir </button>
 
                     </form>
                 ) : <div></div>}
             </div>
-            <div className = "Op-mejoras">
-                <button className = "button-certi" onClick={() => {
+
+            <div className="Op-mejoras">
+                <button className="button-certi" onClick={() => {
                     setShowKPIS(!showKPIS)
                 }}>
-                    <h5 className = "title-op-certi">Captura de mejoras en indicadores de procesos</h5>
+                    <h5 className="title-op-certi">Captura de mejoras en indicadores de procesos</h5>
                 </button>
 
                 {showKPIS ? (
                     <form onSubmit={submitKPIS}>
                         <div>
-                            <br/>
-                            <label className= "textform-op-certi2" htmlFor='mejoras'>Mejoras implementadas </label>
-                                <input id="mejoras" type="number" min = "0" required
-                                    onChange={e=> setMejorasImp(e.target.value)}
-                                    defaultValue={mejorasImp}
-                                ></input>
                             <br />
-                            
+                            <label className="textform-op-certi2" htmlFor='mejoras'>Mejoras implementadas </label>
+                            <input id="mejoras" type="number" min="0" required
+                                onChange={e => setMejorasImp(e.target.value)}
+                                defaultValue={mejorasImp}
+                            ></input>
+                            <br />
+
                         </div>
-                        <br/>
+                        <br />
                         <div>
-                            <p className= "textform-op-certi2">Minutos de paro (mins/mes)</p>
-                            <div className = "form-op-mejoras">
-                                <label className ="textlabel-op-certi" htmlFor='mdpST'>Medicion sin TWI  </label>
+                            <p className="textform-op-certi2">Minutos de paro (mins/mes)</p>
+                            <div className="form-op-mejoras">
+                                <label className="textlabel-op-certi" htmlFor='mdpST'>Medicion sin TWI  </label>
                             </div>
-                                <input id="mdpST" type="number" min = "0" required
-                                    onChange={e=> setMjMinParoST(e.target.value)}
-                                ></input>
-                            
+                            <input id="mdpST" type="number" min="0" required
+                                onChange={e => setMjMinParoST(e.target.value)}
+                            ></input>
+
                             <br />
-                            <div className = "form-op-mejoras">
-                                <label className ="textlabel-op-certi" htmlFor='mdpCT'>Medicion con TWI</label>
+                            <div className="form-op-mejoras">
+                                <label className="textlabel-op-certi" htmlFor='mdpCT'>Medicion con TWI</label>
                             </div>
-                            <input id="mdpCT" type="number" min = "0" required
-                                onChange={e=>setMjMinParoCT(e.target.value)}
+                            <input id="mdpCT" type="number" min="0" required
+                                onChange={e => setMjMinParoCT(e.target.value)}
                             ></input>
                         </div>
                         <br />
                         <div>
-                            <p className= "textform-op-certi2">Envases desechados (tarimas/mes)​</p>
-                            <div className = "form-op-mejoras">
-                                <label className ="textlabel-op-certi" htmlFor='edST'>Medicion sin TWI  </label>
+                            <p className="textform-op-certi2">Envases desechados (tarimas/mes)​</p>
+                            <div className="form-op-mejoras">
+                                <label className="textlabel-op-certi" htmlFor='edST'>Medicion sin TWI  </label>
                             </div>
-                            <input id="edST" type="number" min = "0" required
-                                onChange={e=>setMjEnvDesST(e.target.value)}
+                            <input id="edST" type="number" min="0" required
+                                onChange={e => setMjEnvDesST(e.target.value)}
                             ></input>
                             <br />
-                            <div className = "form-op-mejoras">
-                                <label className ="textlabel-op-certi" htmlFor='edCT'>Medicion con TWI</label>
+                            <div className="form-op-mejoras">
+                                <label className="textlabel-op-certi" htmlFor='edCT'>Medicion con TWI</label>
                             </div>
-                            <input id="edCT" type="number" min = "0"required
-                                onChange={e=>setMjEnvDesCT(e.target.value)}
+                            <input id="edCT" type="number" min="0" required
+                                onChange={e => setMjEnvDesCT(e.target.value)}
                             ></input>
                         </div>
                         <br />
                         <div>
-                            <p className= "textform-op-certi2">Minutos por cambio de formato (mins/mes)​</p>
-                            <div className = "form-op-mejoras">
-                                <label className ="textlabel-op-certi" htmlFor='mpcfST'>Medicion sin TWI  </label>
+                            <p className="textform-op-certi2">Minutos por cambio de formato (mins/mes)​</p>
+                            <div className="form-op-mejoras">
+                                <label className="textlabel-op-certi" htmlFor='mpcfST'>Medicion sin TWI  </label>
                             </div>
-                            <input id="mpcfST" type="number" min = "0" required
+                            <input id="mpcfST" type="number" min="0" required
                                 onChange={e => setMjMinCamForST(e.target.value)}
                             ></input>
                             <br />
-                            <div className = "form-op-mejoras">
-                                <label className ="textlabel-op-certi" htmlFor='mpcfCT'>Medicion con TWI</label>
+                            <div className="form-op-mejoras">
+                                <label className="textlabel-op-certi" htmlFor='mpcfCT'>Medicion con TWI</label>
                             </div>
-                            <input id="mpcfCT" type="number" min = "0" required
+                            <input id="mpcfCT" type="number" min="0" required
                                 onChange={e => setMjMinCamForCT(e.target.value)}
                             ></input>
                         </div>
-                        <div className ="Esp-button">
-                            <button className = "submit-op-certi" type="submit"> Subir</button>
+
+                        <div className="Esp-button">
+                            <button className="submit-op-certi" type="submit"> Subir</button>
                         </div>
 
 
-<<<<<<< HEAD
-                    </form>
-                ) : <div></div>}
-            </div>
-=======
-                </form>
-            ) : <div></div>}
+                    </form >
+                ) : (<div></div>)}
 
+            </div >
             
-            {(revisadoA == 0) ? (<p style = {{color: "red"}}>No Revisado</p>) : (<p style = {{color:"green"}}>Revisado</p>)}
-            
->>>>>>> 4fc2d334c4c0a123b82430ce78dd92952531b6dd
+            <br />
+            {(revisadoA == 0) ? (<p style={{ color: "red" }}>No Revisado</p>) : (<p style={{ color: "green" }}>Revisado</p>)}
 
         </div>
     )
