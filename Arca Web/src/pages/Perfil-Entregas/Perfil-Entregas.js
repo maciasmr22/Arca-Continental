@@ -71,61 +71,69 @@ function Perfil_Entregas() {
 
   return (
 
-    <div className="list-groupentrepadre">
-      <div className="perfilcontent">
-        <div className="about-cont">
-          <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e"
-            alt='Foto de perfil'
-            onClick={() => {
-              setShow(!show);
-            }}
-            onError={(e) => (
-              e.target.onError = null, e.target.src = imgPred
-            )}
-            ></img>
+    <div className = "container-general">
+      <div className="list-groupentrepadre">
+        <div className="perfilcontent">
+          <div className="about-cont">
+            <img  src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e"
+              alt='Foto de perfil'
+              onClick={() => {
+                setShow(!show);
+              }}
+              onError={(e) => (
+                e.target.onError = null, e.target.src = imgPred
+              )}
+              ></img>
 
-        </div>
-
-
-
-
-        {show ? (
-          <form onSubmit={handleSubmit}>
-            <p>
-              Sube tu foto de perfil a drive, dale click <br />
-              dereho a tu imagen y haz clic obtener enlace,<br />
-              copia el link, pegalo en el cuadro de texto.<br />
-              *IMPORTANTE* <br />
-              si aparece "restringido" cambiar a <br /> "cualquier persona
-              que tenga el vincu lo".
-              <br />
-              Por ultimo presiona "subir"
-            </p>
-
-            <label htmlFor='imgURL'>Url de tu imagen</label> <br />
-            <input type="url" id="imgURL" onChange={e => setNewImg(e.target.value)} required></input>
-
-            <button type="submit">subir</button>
-          </form>
-
-        ) : <div></div>}
-
-
-        <div className="about-tex">
-
-          <p>Nombre: {localStorage.getItem("nombre")}</p>
-          <p>Planta: {localStorage.getItem("planta")}</p>
-          <p>Correo: {localStorage.getItem("correo")}</p>
-
-        </div>
-          <div className = "centrar-kpis">
-            <SubirKPIS />
           </div>
 
-        </div>
-        <div className = "entregas-perfil">
-          <EntregasSuper />
-        </div>
+
+
+
+          {show ? (
+            <div className = "container-form-perfil">
+              <form onSubmit={handleSubmit}>
+                <p className = "texto-foto-per">
+                  Sube tu foto de perfil a drive, dale click <br />
+                  dereho a tu imagen y haz clic obtener enlace,<br />
+                  copia el link, pegalo en el cuadro de texto.<br />
+                  <div className ="texto-b-foto-per">*IMPORTANTE* </div>
+                  Si aparece "restringido" cambiar a <br /> "cualquier persona
+                  que tenga el vinculo".
+                  <br />
+                  Por ultimo presiona "subir"
+                </p>
+
+                <label className = "label-foto-per" htmlFor='imgURL'>Url de tu imagen</label> <br />
+                <input type="url" id="imgURL" onChange={e => setNewImg(e.target.value)} required></input>
+                <br />
+
+                <div className = "container-button-foto-per">
+                  <button className = "button-foto-per" type="submit">subir</button>
+                </div>
+                
+              </form>
+            </div>
+
+          ) : <div></div>}
+
+
+          <div className="about-tex">
+
+            <p>Nombre: {localStorage.getItem("nombre")}</p>
+            <p>Planta: {localStorage.getItem("planta")}</p>
+            <p>Correo: {localStorage.getItem("correo")}</p>
+
+          </div>
+            <div className = "centrar-kpis">
+              <SubirKPIS />
+            </div>
+
+          </div>
+          <div className = "entregas-perfil">
+            <EntregasSuper />
+          </div>
+      </div>
     </div>
   )
 }

@@ -159,8 +159,8 @@ function EntregasSuper() {
 
 
     return (
-        <div className="entregacontent">
-            <div className="tittleentre">
+        <div className="container-entregas">
+            <div className="title-entre">
                 <center><h1>Entregas</h1></center>
             </div>
             <div className="contentre justify-content-center">
@@ -216,10 +216,10 @@ function EntregasSuper() {
                 </div>
             </div>
 
-            <h1>Medallas</h1>
+            <h1 className = "title-med-ent">Medallas</h1>
 
-            <div class="container"> 
-            <div className="progress-container ">
+            <div class="container-med-ent"> 
+            <div className="progress-container-med ">
             
             {certiBron ?  <div className="circle active"><img  className='medalla'  src = {ini}/> <div className="progress" id="uno"></div></div>:  <div className="circle active"><img  className='medalla'  src = {ini}/> </div>}
             {certiBron ?  <div className="circle active"><img  className='medalla'  src = {medBron}/> <div className="progress dos" ></div></div>:  <div className="circle"><img  className='medalla'  src = {medNada}/> </div>}

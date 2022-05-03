@@ -217,8 +217,9 @@ function SubirKPIS() {
             </div >
             
             <br />
-            {(revisadoA == 0) ? (<p style={{ color: "red" }}>No Revisado</p>) : (<p style={{ color: "green" }}>Revisado</p>)}
-
+            <div className = "rev-op-certi">
+                {(revisadoA == 0) ? (<p style={{ color: "red" }}>No Revisado</p>) : (<p style={{ color: "green" }}>Revisado</p>)}
+            </div>
         </div>
     )
 }

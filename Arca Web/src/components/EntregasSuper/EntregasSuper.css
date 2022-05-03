@@ -1,22 +1,37 @@
+
+
 .pop-Up-Intrucciones > h1{
     font-size: x-large;
     font-weight: bold;
 }
 
+.container-entregas {
+  float: right;
+  left: 200px;
+  width: 70%;
+}
 
+.title-entre {
+  color: darkred;
+}
 .nombre-entrega:hover{
     color: red;
     cursor: pointer;
     background-color: rgb(250, 223, 223);
 }
 
+.title-med-ent{
+  color:  darkred;
+  padding-top: 2%;
+}
+
 .medalla {
   width: 70px;
 }
-.container {
-  text-align: center;
+.container-med-ent {
+  padding-left: 10%;
 }
-.progress-container {
+.progress-container-med {
   margin-left: 10%;
   display: flex;
   justify-content: space-between;
@@ -26,11 +41,11 @@
   width: 700px;
 }
 
-.progress-container::before {
+.progress-container-med::before {
   content: "";
   background-color: var(--line-border-empty);
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 0;
   transform: translateY(-50%);
   height: 4px;

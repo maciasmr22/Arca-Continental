@@ -4,6 +4,16 @@
   margin-top: 20px;
 }
 
+@font-face {
+  font-family: letrapalpancho;
+  src: url("../../../gothamlight.otf");
+}
+
+* {
+  font-family: letrapalpancho;
+}
+
+
 .tittleentre h1 {
   font-size: 50px;
   color: darkred;
@@ -14,11 +24,14 @@ td > .btn {
   color: #fff;
 }
 
+
+
 .list-groupentrepadre {
-  width: 90%;
-  margin: auto;
+  text-align: center;
   margin-top: 8%;
+
   overflow: hidden;
+  margin-left: 5%;
 }
 
 .perfilcontent {
@@ -33,6 +46,42 @@ td > .btn {
   float: left;
   left: 200px;
   width: 70%;
+}
+
+.container-form-perfil {
+  padding-top: 3%;
+  margin-right: 20%;
+  
+}
+
+.texto-foto-per {
+  color: darkred;
+  font-size: 105%;
+}
+
+.texto-b-foto-per {
+  font-weight: bold;
+  padding-top: .5%;
+  padding-bottom: .5%;
+}
+
+.label-foto-per {
+  color: darkred;
+  font-size: 105%;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: darkred;
+}
+
+.container-button-foto-per {
+ padding-top: 2%;
+ padding-bottom: 2%;
+}
+
+.button-foto-per {
+  border-radius: 10px;
+  background-color: darkred;
+  color: bisque;
 }
 
 .contentre {
@@ -61,14 +110,16 @@ td > .btn {
   overflow-y: auto;
 }
 
-.about-cont img {
+.about-cont {
   height: 230px;
   border-radius: 20px;
   text-align: center;
+  padding-right: 15%;
 }
 
 .about-tex {
-  padding-top: 20px;
+
+  margin-top: 30%;
   color: darkred;
   font-size: 18px;
   line-height: 15px;
@@ -85,9 +136,10 @@ td > .btn {
 .entregas-perfil {
   position: fixed;
   right: 0;
-  left: 33%;
-  width: 90%;
+  left: 18%;
+  width: 78%;
   text-align: center;
+  
 
 }
 
@@ -196,8 +248,7 @@ progress {
 }
 
 .img-Perfil-e{
-  max-width: 350px;
-  min-width: 200px;
+  margin-top: 5%;
+  max-width: 70%;
+  min-width: 70%;
 }
-
-

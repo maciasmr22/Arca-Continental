@@ -5,6 +5,7 @@
 
 * {
     font-family: letrapalpancho;
+    
 }
 
 .Op-general {
@@ -27,6 +28,7 @@
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
+    color: bisque;
 }
 
 .esp-op-certi {
@@ -37,10 +39,18 @@
     padding-top: 5%;
 }
 
+.textform-op-certi {
+    font-weight: bold;
+    font-size: 100%;
+    padding-top: 1.5%;
+    color: darkred;
+}
+
 .textform-op-certi2 {
     font-weight: bold;
     font-size: 115%;
     padding-top: 1.5%;
+    color: darkred;
 }
 
 .inform-op-certi {
@@ -56,6 +66,7 @@
 
 .textlabel-op-certi {
     padding-right: 5%;
+    color: darkred;
 }
 
 .form-op-mejoras {
@@ -66,4 +77,9 @@
 .Esp-button {
     padding-top: 3%;
     padding-bottom: 4%;
+}
+
+.rev-op-certi {
+    font-weight: bold;
+    font-size: 110%;
 }
