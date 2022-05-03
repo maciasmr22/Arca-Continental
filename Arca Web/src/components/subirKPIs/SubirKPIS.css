@@ -1,0 +1,69 @@
+@font-face {
+    font-family: letrapalpancho;
+    src: url("../../../gothamlight.otf");
+}
+
+* {
+    font-family: letrapalpancho;
+}
+
+.Op-general {
+    max-width: 70%;
+}
+
+.Op-certi {
+    padding-top: 5%;
+    align-self: center;
+    padding-bottom: 10%;
+}
+
+.button-certi {
+    border-radius: 10px;
+    background-color: darkred;
+    color: bisque;
+}
+
+.title-op-certi {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.esp-op-certi {
+    padding-bottom: .5%;
+}
+
+.form-op-certi {
+    padding-top: 5%;
+}
+
+.textform-op-certi2 {
+    font-weight: bold;
+    font-size: 115%;
+    padding-top: 1.5%;
+}
+
+.inform-op-certi {
+    padding-bottom: .5%;
+
+}
+
+.submit-op-certi {
+    border-radius: 10px;
+    background-color: darkred;
+    color: bisque;
+}
+
+.textlabel-op-certi {
+    padding-right: 5%;
+}
+
+.form-op-mejoras {
+    padding-bottom: 1%;
+    padding-top: 3%;
+}
+
+.Esp-button {
+    padding-top: 3%;
+    padding-bottom: 4%;
+}

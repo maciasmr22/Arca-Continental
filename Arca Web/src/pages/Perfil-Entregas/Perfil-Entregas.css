@@ -81,6 +81,20 @@ td > .btn {
   text-align: left;
 }
 
+
+.entregas-perfil {
+  position: fixed;
+  right: 0;
+  left: 33%;
+  width: 90%;
+  text-align: center;
+
+}
+
+.centrar-kpis {
+  padding-left: 10%;
+}
+
 .progress-element {
   margin: auto;
   text-align: left;
@@ -185,3 +199,5 @@ progress {
   max-width: 350px;
   min-width: 200px;
 }
+
+

@@ -97,99 +97,119 @@ function SubirKPIS() {
 
 
     return (
-        <div>
-            <button onClick={() => {
-                setShowOperarios(!showOperarios)
-            }}>
-                <h5>Captura de operarios certificados</h5>
-            </button>
+        <div className = "Op-general">
+            <div className = "Op-certi">
+                <button className= "button-certi" onClick={() => {
+                    setShowOperarios(!showOperarios)
+                }}>
+                    <h5 className = "title-op-certi">Captura de operarios certificados</h5>
+                </button>
 
-            {showOperarios ? (
-                <form className='form-op-certi' onSubmit={submitOper}>
+                {showOperarios ? (
+                    <form className='form-op-certi' onSubmit={submitOper}>
 
-                    <label htmlFor='iOperCerti'> operarios certificados</label>
-                    <br />
-                    <input id="iOperCerti" type="number" defaultValue={operCerti}
-                        min="0" max={operTotal}
-                        onChange={e => setOperCerti(e.target.value)}
-                    ></input>
-                    <br />
-                    <label htmlfor='iOperTotal'> operarios totales </label>
-                    <br />
-                    <input id="ioperTotal" type="number" defaultValue={operTotal}
-                        min="0"
-                        onChange={e => setOperTotal(e.target.value)}
-                    ></input>
-                    <br />
-                    <button type="submit"> Subir </button>
+                        <label className= "textform-op-certi" htmlFor='iOperCerti'> Operarios Certificados</label>
+                        <br />
+                        <div className = "esp-op-certi">
+                            <input  id="iOperCerti" type="number" defaultValue={operCerti}
+                                min="0" max={operTotal}
+                                onChange={e => setOperCerti(e.target.value)}
+                            ></input>
+                        </div>
+                        <br />
+                        <div className = "inform-op-certi">
+                            <label className= "textform-op-certi" htmlfor='iOperTotal'> Operarios Totales </label>
+                            <br />
+                            <input id="ioperTotal" type="number" defaultValue={operTotal}
+                                min="0"
+                                onChange={e => setOperTotal(e.target.value)}
+                            ></input>
+                        </div>
+                        <br />
+                        <button className = "submit-op-certi" type="submit"> Subir </button>
 
-                </form>
-            ) : <div></div>}
+                    </form>
+                ) : <div></div>}
+            </div>
+            <div className = "Op-mejoras">
+                <button className = "button-certi" onClick={() => {
+                    setShowKPIS(!showKPIS)
+                }}>
+                    <h5 className = "title-op-certi">Captura de mejoras en indicadores de procesos</h5>
+                </button>
 
-            <button onClick={() => {
-                setShowKPIS(!showKPIS)
-            }}>
-                <h5>Captura de mejoras en indicadores de procesos</h5>
-            </button>
-
-            {showKPIS ? (
-                <form onSubmit={submitKPIS}>
-                    <div>
+                {showKPIS ? (
+                    <form onSubmit={submitKPIS}>
+                        <div>
+                            <br/>
+                            <label className= "textform-op-certi2" htmlFor='mejoras'>Mejoras implementadas </label>
+                                <input id="mejoras" type="number" min = "0" required
+                                    onChange={e=> setMejorasImp(e.target.value)}
+                                    defaultValue={mejorasImp}
+                                ></input>
+                            <br />
+                            
+                        </div>
                         <br/>
-                        <label htmlFor='mejoras'>Mejoras implementadas </label>
-                        <input id="mejoras" type="number" min = "0" required
-                            onChange={e=> setMejorasImp(e.target.value)}
-                            defaultValue={mejorasImp}
-                        ></input>
+                        <div>
+                            <p className= "textform-op-certi2">Minutos de paro (mins/mes)</p>
+                            <div className = "form-op-mejoras">
+                                <label className ="textlabel-op-certi" htmlFor='mdpST'>Medicion sin TWI  </label>
+                            </div>
+                                <input id="mdpST" type="number" min = "0" required
+                                    onChange={e=> setMjMinParoST(e.target.value)}
+                                ></input>
+                            
+                            <br />
+                            <div className = "form-op-mejoras">
+                                <label className ="textlabel-op-certi" htmlFor='mdpCT'>Medicion con TWI</label>
+                            </div>
+                            <input id="mdpCT" type="number" min = "0" required
+                                onChange={e=>setMjMinParoCT(e.target.value)}
+                            ></input>
+                        </div>
                         <br />
-                        
-                    </div>
-                    <br/>
-                    <div>
-                        <p>Minutos de paro (mins/mes)</p>
-                        <label htmlFor='mdpST'>Medicion sin TWI  </label>
-                        <input id="mdpST" type="number" min = "0" required
-                            onChange={e=> setMjMinParoST(e.target.value)}
-                        ></input>
+                        <div>
+                            <p className= "textform-op-certi2">Envases desechados (tarimas/mes)​</p>
+                            <div className = "form-op-mejoras">
+                                <label className ="textlabel-op-certi" htmlFor='edST'>Medicion sin TWI  </label>
+                            </div>
+                            <input id="edST" type="number" min = "0" required
+                                onChange={e=>setMjEnvDesST(e.target.value)}
+                            ></input>
+                            <br />
+                            <div className = "form-op-mejoras">
+                                <label className ="textlabel-op-certi" htmlFor='edCT'>Medicion con TWI</label>
+                            </div>
+                            <input id="edCT" type="number" min = "0"required
+                                onChange={e=>setMjEnvDesCT(e.target.value)}
+                            ></input>
+                        </div>
                         <br />
-                        <label htmlFor='mdpCT'>Medicion con TWI</label>
-                        <input id="mdpCT" type="number" min = "0" required
-                            onChange={e=>setMjMinParoCT(e.target.value)}
-                        ></input>
-                    </div>
-                    <br />
-                    <div>
-                        <p>Envases desechados (tarimas/mes)​</p>
-                        <label htmlFor='edST'>Medicion sin TWI  </label>
-                        <input id="edST" type="number" min = "0" required
-                            onChange={e=>setMjEnvDesST(e.target.value)}
-                        ></input>
-                        <br />
-                        <label htmlFor='edCT'>Medicion con TWI</label>
-                        <input id="edCT" type="number" min = "0"required
-                            onChange={e=>setMjEnvDesCT(e.target.value)}
-                        ></input>
-                    </div>
-                    <br />
-                    <div>
-                        <p>Minutos por cambio de formato (mins/mes)​</p>
-                        <label htmlFor='mpcfST'>Medicion sin TWI  </label>
-                        <input id="mpcfST" type="number" min = "0" required
-                            onChange={e => setMjMinCamForST(e.target.value)}
-                        ></input>
-                        <br />
-                        <label htmlFor='mpcfCT'>Medicion con TWI</label>
-                        <input id="mpcfCT" type="number" min = "0" required
-                            onChange={e => setMjMinCamForCT(e.target.value)}
-                        ></input>
-                    </div>
-                    
-                    <button type="submit"> Subir</button>
+                        <div>
+                            <p className= "textform-op-certi2">Minutos por cambio de formato (mins/mes)​</p>
+                            <div className = "form-op-mejoras">
+                                <label className ="textlabel-op-certi" htmlFor='mpcfST'>Medicion sin TWI  </label>
+                            </div>
+                            <input id="mpcfST" type="number" min = "0" required
+                                onChange={e => setMjMinCamForST(e.target.value)}
+                            ></input>
+                            <br />
+                            <div className = "form-op-mejoras">
+                                <label className ="textlabel-op-certi" htmlFor='mpcfCT'>Medicion con TWI</label>
+                            </div>
+                            <input id="mpcfCT" type="number" min = "0" required
+                                onChange={e => setMjMinCamForCT(e.target.value)}
+                            ></input>
+                        </div>
+                        <div className ="Esp-button">
+                            <button className = "submit-op-certi" type="submit"> Subir</button>
+                        </div>
 
 
-                </form>
-            ) : <div></div>}
-
+                    </form>
+                ) : <div></div>}
+            </div>
 
         </div>
     )

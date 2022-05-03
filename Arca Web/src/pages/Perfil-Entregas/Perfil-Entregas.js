@@ -118,14 +118,14 @@ function Perfil_Entregas() {
           <p>Correo: {localStorage.getItem("correo")}</p>
 
         </div>
+          <div className = "centrar-kpis">
+            <SubirKPIS />
+          </div>
 
-
-        <SubirKPIS />
-
-      </div>
-
-      <EntregasSuper />
-
+        </div>
+        <div className = "entregas-perfil">
+          <EntregasSuper />
+        </div>
     </div>
   )
 }

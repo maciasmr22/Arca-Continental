@@ -71,13 +71,13 @@
 
 .pos1{
     background: rgb(2,0,36);
-    background: linear-gradient(210deg, rgba(2,0,36,1) 0%, rgba(253,255,160,1) 0%, rgba(255,243,84,1) 33%, rgba(104,110,44,1) 100%);
+    background: linear-gradient(210deg,  rgba(253,255,160,1) 0%, rgba(255,243,84,1) 33%, rgb(200, 194, 18) 100%);
 }
 .pos2{
     background: rgb(2,0,36);
-    background: linear-gradient(210deg, rgba(2,0,36,1) 0%, rgba(251,251,251,1) 0%, rgba(190,189,170,1) 33%, rgba(91,93,65,1) 100%);
+    background: linear-gradient(210deg, rgba(251,251,251,1) 0%, rgb(170, 189, 190) 33%, rgb(145, 156, 156) 100%);
 }
 .pos3{
     background: rgb(2,0,36);
-    background: linear-gradient(210deg, rgba(2,0,36,1) 0%, rgba(255,232,214,1) 0%, rgba(230,182,127,1) 33%, rgba(112,46,6,1) 100%);
+    background: linear-gradient(210deg, rgba(255,232,214,1) 0%, rgb(185, 128, 62) 33%, rgb(161, 73, 18) 100%);
 }
