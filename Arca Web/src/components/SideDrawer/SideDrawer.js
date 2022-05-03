@@ -11,7 +11,7 @@ const sideDrawer = props => {
     }
 
 
-    if (localStorage.getItem("tipoU") == "Supervisor") {
+    if (localStorage.getItem("tipoU") === "Supervisor") {
         return (
             <nav className={drawerClasses}>
                 <ul>
@@ -38,7 +38,7 @@ const sideDrawer = props => {
             </nav>
         );
     }
-    else if(localStorage.getItem("tipoU") == "Administrador"){
+    else if(localStorage.getItem("tipoU") === "Administrador"){
         return (
             <nav className={drawerClasses}>
                 <ul>
