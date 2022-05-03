@@ -149,6 +149,11 @@ const setMejoras = (body) =>{
 
 }
 
+const getSumMedKPI = () =>{
+    const sql = '';
+    return dbService.querypromise(sql);
+}
+
 module.exports = {
     getAllUsers,
     getRankJI,
