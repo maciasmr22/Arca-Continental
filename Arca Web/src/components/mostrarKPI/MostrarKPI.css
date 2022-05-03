@@ -1,6 +1,20 @@
+.MostrarKPIPAPA{
+    margin:auto;
+    width: 80%;
+    
+     
+}
+
+
+
 .imgMedKPI{
     width: 100px;
 }
-.listMedKPI{
-    list-style: none;
+
+.tableNumCerti{
+    font-size: xx-large;
+    font-weight: 800;
+    margin: auto;
+    text-align: center;
+
 }

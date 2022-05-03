@@ -8,6 +8,8 @@ function PerfilAdmin() {
                 
                 <MostrarKPI />
 
+                
+
             </div>
 
 

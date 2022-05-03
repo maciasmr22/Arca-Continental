@@ -114,31 +114,31 @@ const getSubNiv = (body) => {
     return dbService.querypromise(sql);
 }
 
-const upEntrega = (body) =>{
-    const {supervisorID, idSub, urlE} = body;
-    const sql = `UPDATE entrega set Archivo = "${urlE}", set Revisado = 0, Fecha = current_date 
+const upEntrega = (body) => {
+    const { supervisorID, idSub, urlE } = body;
+    sql = `UPDATE entrega set Archivo = "${urlE}", set Revisado = 0, Fecha = current_date 
                 WHERE Sub_ID = ${idSub} AND Super_ID = ${supervisorID}`;
     return dbService.querypromise(sql);
 }
 
 
 
-const getSuper = (identi) =>{
+const getSuper = (identi) => {
     sql = `SELECT * FROM supervisor WHERE Usuario_ID = "${identi}"`
     return dbService.querypromise(sql)
 }
 
-const setOper = (body) =>{
-    const {operCerti, operTotal, idU} = body;
-    const sql = `UPDATE supervisor SET NumOperadores = ${operCerti}, 
+const setOper = (body) => {
+    const { operCerti, operTotal, idU } = body;
+    sql = `UPDATE supervisor SET NumOperadores = ${operCerti}, 
         Operarios_Totales = ${operTotal}, Revisado = 0
          WHERE Usuario_ID = "${idU}"`
     return dbService.querypromise(sql);
 }
 
-const setMejoras = (body) =>{
-    const {mejorasImp,porMinParco, porMiEnvDes, porMjMinCamFor, idU} = body;
-    const sql = `UPDATE supervisor 
+const setMejoras = (body) => {
+    const { mejorasImp, porMinParco, porMiEnvDes, porMjMinCamFor, idU } = body;
+    sql = `UPDATE supervisor 
                 SET Mejoras_Implementadas = ${mejorasImp}, 
                     Mjrs_Mins_Paro_Porcentaje = ${porMinParco}, 
                     Mjrs_Envs_Dsechds_Porcentaje = ${porMiEnvDes}, 
@@ -149,8 +149,21 @@ const setMejoras = (body) =>{
 
 }
 
-const getSumMedKPI = () =>{
-    const sql = '';
+const getSumMedKPI = () => {
+    sql = `SELECT t1.ctCertiBronce, t2.ctCertiPlata, t3.ctCertiOro, t4.ctSuperTotales 
+    FROM ( SELECT COUNT(supervisor.CertiBronce) as ctCertiBronce 
+            from supervisor 
+            WHERE supervisor.CertiBronce = 1 ) AS t1, 
+            (SELECT COUNT(supervisor.CertiPlata)  as ctCertiPlata
+            from supervisor 
+            WHERE supervisor.CertiPlata = 1 ) AS t2,
+            (SELECT COUNT(supervisor.CertiOro)  as ctCertiOro
+            from supervisor 
+            WHERE supervisor.CertiOro = 1 ) as t3,
+            (SELECT COUNT(Super_ID) as ctSuperTotales  
+            FROM supervisor) as t4
+            `;
+
     return dbService.querypromise(sql);
 }
 
@@ -168,4 +181,5 @@ module.exports = {
     getSuper,
     setOper,
     setMejoras,
+    getSumMedKPI
 }
