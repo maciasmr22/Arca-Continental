@@ -1,8 +1,7 @@
 .MostrarKPIPAPA{
     margin:auto;
     width: 80%;
-    
-     
+        
 }
 
 
@@ -11,10 +10,19 @@
     width: 100px;
 }
 
+.imgMedKPI:hover{
+
+    filter: brightness(0.7);
+}
+
 .tableNumCerti{
     font-size: xx-large;
     font-weight: 800;
     margin: auto;
     text-align: center;
 
+}
+
+.pieChart{
+    width: min-content;
 }

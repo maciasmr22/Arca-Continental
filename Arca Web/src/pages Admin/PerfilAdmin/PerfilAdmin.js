@@ -1,5 +1,6 @@
 import React from 'react';
 import MostrarKPI from '../../components/mostrarKPI/MostrarKPI';
+import pieChartCerti from '../../components/Graficas/PieChartCerti'
 
 function PerfilAdmin() {
     return (

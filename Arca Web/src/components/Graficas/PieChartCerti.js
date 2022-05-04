@@ -1,0 +1,24 @@
+import React, { Component, useState } from 'react';
+import Chart from 'react-apexcharts'
+
+
+
+function PieChartCerti(props) {
+  const no = props.total - props.certi;
+
+  const series = [no, props.certi];
+  const labels = ['No certificados', 'Certificados'];
+  
+ 
+  const options = {labels};
+
+  return (
+    <div className='pie'>
+      <Chart options={options} series={series}  type="pie" width="380" />
+
+      <h1></h1>
+    </div>
+  )
+}
+
+export default PieChartCerti;

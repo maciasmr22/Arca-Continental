@@ -1,15 +1,29 @@
 import React, { useEffect, useState } from 'react'
+
+import PieChartCerti from '../Graficas/PieChartCerti'
+
 import './MostrarKPI.css'
 import bronc from './img/medallabronce.png'
 import plat from './img/medallaplata.png'
 import oro from './img/medallaoro.png'
+
+
 import { ApiUrlXD } from '../../const/global'
+
+
+
 
 function MostrarKPI() {
     const [ctCertiBronce, setCtCertiBronce] = useState();
     const [ctCertiPlata, setCtCertiPlata] = useState();
     const [ctCertiOro, setCtCertiOro] = useState();
     const [ctSuperTotales, setCtSuperTot] = useState();
+
+    //hooks para los pies
+    const [pieBronc, setPieBronc] = useState(false);
+    const [piePlat, setPiePlat] = useState(false);
+    const [pieOro, setPieOro] = useState(false);
+
 
     useEffect(() => {
         fetch(ApiUrlXD + 'getSumMedKPI')
@@ -39,9 +53,28 @@ function MostrarKPI() {
                 <table className='tableNumCerti'>
 
                     <tr>
-                        <td><img src={bronc} className='imgMedKPI' /></td>
-                        <td><img src={plat} className='imgMedKPI' /> </td>
-                        <td><img src={oro} className='imgMedKPI' /> </td>
+                        <td><img src={bronc} className='imgMedKPI'
+                            onClick={() => {
+                                setPieBronc(true)
+                                setPiePlat(false)
+                                setPieOro(false)
+                            }}
+
+                        /></td>
+                        <td><img src={plat} className='imgMedKPI'
+                            onClick={() => {
+                                setPieBronc(false)
+                                setPiePlat(true)
+                                setPieOro(false)
+                            }}
+                        /> </td>
+                        <td><img src={oro} className='imgMedKPI'
+                            onClick={() => {
+                                setPieBronc(false)
+                                setPiePlat(false)
+                                setPieOro(true)
+                            }}
+                        /> </td>
                     </tr>
                     <tr>
                         <td>{ctCertiBronce}</td>
@@ -50,9 +83,28 @@ function MostrarKPI() {
 
                     </tr>
 
+
                 </table>
 
-               
+                {pieBronc ? <div>
+                    <h2>% certificados bronce</h2>
+                    <PieChartCerti total = {ctSuperTotales} nombre = "bronce" certi = {ctCertiBronce}/>
+                </div> : <div></div>}
+
+                {piePlat ? <div>
+                    <h2>% certificados plata</h2>
+                    <PieChartCerti total = {ctSuperTotales} nombre = "plata" certi = {ctCertiPlata} />
+                </div> : <div></div>}
+
+                {pieOro ? <div>
+                    <h2>% certificados oro</h2>
+                    <PieChartCerti total = {ctSuperTotales} nombre = "oro" certi = {ctCertiOro}/>
+                </div> : <div></div>}
+
+                
+
+
+
 
 
 
