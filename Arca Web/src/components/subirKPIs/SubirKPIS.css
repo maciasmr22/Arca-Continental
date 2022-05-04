@@ -1,85 +1,81 @@
 @font-face {
-    font-family: letrapalpancho;
-    src: url("../../../gothamlight.otf");
+  font-family: letrapalpancho;
+  src: url("../../../gothamlight.otf");
 }
 
 * {
-    font-family: letrapalpancho;
-    
+  font-family: letrapalpancho;
 }
 
 .Op-general {
-    max-width: 70%;
+  max-width: 70%;
 }
 
 .Op-certi {
-    padding-top: 5%;
-    align-self: center;
-    padding-bottom: 10%;
+  padding-top: 5%;
+  align-self: center;
+  padding-bottom: 10%;
 }
 
 .button-certi {
-    border-radius: 10px;
-    background-color: darkred;
-    color: bisque;
+  background-color: darkred;
+  color: #fff;
 }
 
 .title-op-certi {
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-    color: bisque;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  color: bisque;
 }
 
 .esp-op-certi {
-    padding-bottom: .5%;
+  padding-bottom: 0.5%;
 }
 
 .form-op-certi {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 
 .textform-op-certi {
-    font-weight: bold;
-    font-size: 100%;
-    padding-top: 1.5%;
-    color: darkred;
+  font-weight: bold;
+  font-size: 100%;
+  padding-top: 1.5%;
+  color: darkred;
 }
 
 .textform-op-certi2 {
-    font-weight: bold;
-    font-size: 115%;
-    padding-top: 1.5%;
-    color: darkred;
+  font-weight: bold;
+  font-size: 115%;
+  padding-top: 1.5%;
+  color: darkred;
 }
 
 .inform-op-certi {
-    padding-bottom: .5%;
-
+  padding-bottom: 0.5%;
 }
 
 .submit-op-certi {
-    border-radius: 10px;
-    background-color: darkred;
-    color: bisque;
+  background-color: darkred;
+  color: #fff;
 }
 
 .textlabel-op-certi {
-    padding-right: 5%;
-    color: darkred;
+  padding-right: 5%;
+  color: darkred;
 }
 
 .form-op-mejoras {
-    padding-bottom: 1%;
-    padding-top: 3%;
+  padding-bottom: 1%;
+  padding-top: 3%;
 }
 
 .Esp-button {
-    padding-top: 3%;
-    padding-bottom: 4%;
+  padding-top: 3%;
+  padding-bottom: 4%;
 }
 
 .rev-op-certi {
-    font-weight: bold;
-    font-size: 110%;
+  font-weight: bold;
+  font-size: 110%;
 }
