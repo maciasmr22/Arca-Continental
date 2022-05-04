@@ -36,7 +36,7 @@ function EntregasSuper() {
 
             })
             .then((json) => {
-                console.log(json.sup[0])
+                console.log("hola: " + json.sup[0])
                 setSupervisorID(json.sup[0].Super_ID)
             })
 

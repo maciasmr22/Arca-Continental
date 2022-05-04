@@ -92,7 +92,8 @@ const getSubNiv = (body) => {
             puntajes.PuntajeVideojuego,
             puntajes.Comentario,
             puntajes.Fecha,
-            puntajes.Revisado
+            puntajes.Revisado,
+            puntajes.Archivo
         from (select subnivel.Sub_ID, 
                     subnivel.Instruccion, 
                     medalla.Color, 
@@ -105,6 +106,7 @@ const getSubNiv = (body) => {
                     entrega.PuntajeVideojuego,
                     entrega.Comentario,
                     entrega.Fecha,
+                    entrega.Archivo,
                     entrega.Revisado
                         from entrega, supervisor, usuario
                             where entrega.Super_ID = supervisor.Super_ID
@@ -116,7 +118,7 @@ const getSubNiv = (body) => {
 
 const upEntrega = (body) => {
     const { supervisorID, idSub, urlE } = body;
-    sql = `UPDATE entrega set Archivo = "${urlE}", set Revisado = 0, Fecha = current_date 
+    sql = `UPDATE entrega set Archivo = "${urlE}", Revisado = 0, Fecha = current_date, PuntajeEntrega = 0 
                 WHERE Sub_ID = ${idSub} AND Super_ID = ${supervisorID}`;
     return dbService.querypromise(sql);
 }

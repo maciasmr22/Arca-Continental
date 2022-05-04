@@ -23,6 +23,73 @@ function RevEntregas(props) {
     const [certiPla, setCertiPla] = useState();
     const [certiOr, setCertiOr] = useState();
 
+    function verifFecha(xd) {
+
+        if (xd === null) {
+            return "---"
+        }
+        return xd.slice(0, -14)
+
+    }
+
+    function veriBotonEntrega(rev, pVid) {
+        let c;
+        if(rev == 1){
+             c="green"
+        }
+        else{
+             c="red"
+        }
+
+
+        if (pVid < 70) {
+            return (
+               <button disabled>Calificar</button>
+            );
+        }
+        
+        
+        return(
+            <button style={{color: c}} >
+                Calificar
+            </button>
+        )
+        
+
+
+    }
+
+
+    function verEntrega(rev, pVid, color, elemento, arch) {
+
+        if (pVid < 70) {
+            return (
+                <p style={{ color: "grey" }}>{color}  {elemento} </p>
+            );
+        }
+
+        if (rev == 1) {
+            return (
+                <a href={arch} target="_blank" style={{ color: "green" }}>{color}  {elemento} </a>
+            );
+        }
+        else {
+            return (
+                <a href={arch} target="_blank" style={{ color: "red" }}>{color}  {elemento} </a>
+            );
+        }
+
+    }
+
+    function verifEntrega(xd) {
+
+        if (xd === null) {
+            return "---"
+        }
+        return xd
+
+    }
+
     useEffect(() => {
 
         fetch(ApiUrlXD + `getSupervisor/${idU}`)
@@ -35,6 +102,8 @@ function RevEntregas(props) {
                 setCertiOr(json.sup[0].CertiOro);
             })
 
+
+
         let credentials = {
             idU
         }
@@ -46,7 +115,6 @@ function RevEntregas(props) {
             },
             body: JSON.stringify(credentials)
         }
-        console.log("jasid " + certiBron)
 
         fetch(ApiUrlXD + 'getSubNiv', options)
             .then((response) => {
@@ -70,9 +138,10 @@ function RevEntregas(props) {
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Comentario</th>
-                                <th scope="col">Calificar</th>
+
+                                <th scope="col">Calificacion</th>
                                 <th scope="col">P. Juego</th>
+                                <th scope="col">Fecha</th>
                                 <th scope="col">______</th>
 
 
@@ -80,7 +149,33 @@ function RevEntregas(props) {
 
                         </thead>
                         <tbody className="cuerpotable">
+                            {datSubNiv &&
+                                datSubNiv.subNivel.map(({ Sub_ID, Color, Elemento, PuntajeEntrega, PuntajeVideojuego, Fecha, Comentario, Revisado, Archivo }) => (
 
+
+                                    <tr key={Sub_ID}>
+
+                                        <th scope="row">{Sub_ID}</th>
+
+                                        <td>{verEntrega(Revisado, PuntajeVideojuego, Color, Elemento, Archivo)}</td>
+
+
+                                        <td>{PuntajeEntrega}</td>
+                                        <td>{verifEntrega(PuntajeVideojuego)}</td>
+                                        <td>{verifFecha(Fecha)}</td>
+
+
+                                        <td>{veriBotonEntrega(Revisado, PuntajeVideojuego)}</td>
+
+
+
+
+
+                                    </tr>
+
+
+
+                                ))}
 
                         </tbody>
                     </table>
