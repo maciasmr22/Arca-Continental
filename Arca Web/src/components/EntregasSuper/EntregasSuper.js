@@ -96,7 +96,7 @@ function EntregasSuper() {
         }
 
         return (
-            <button disabled>
+            <button type="button"  class="btn button-certi" disabled>
                 No disponible
             </button>
         )
