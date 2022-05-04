@@ -19,5 +19,7 @@ router.get('/getSupervisor/:identi', UsersControllers.getSuper)
 router.put('/setOper', UsersControllers.setOper)
 router.put('/setMejoras', UsersControllers.setMejoras)
 router.get('/getSumMedKPI',UsersControllers.getSumMedKPI)
+router.get('/getAllSuperUs',UsersControllers.getAllSuperUs)
+router.get('/getAllSuperUs/:identi', UsersControllers.getAllSuperUs2)
 
 module.exports = router

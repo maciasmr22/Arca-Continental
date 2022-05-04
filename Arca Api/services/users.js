@@ -167,6 +167,15 @@ const getSumMedKPI = () => {
     return dbService.querypromise(sql);
 }
 
+const getAllSuperUs =() => {
+    sql = `SELECT * FROM usuario WHERE Tipo_Usuario = "Supervisor"`
+    return dbService.querypromise(sql);
+}
+const getAllSuperUs2 = (identi) => {
+    sql = `SELECT * FROM usuario WHERE Tipo_Usuario = "Supervisor" AND Nombre LIKE "%${identi}%"` 
+    return dbService.querypromise(sql);
+}
+
 module.exports = {
     getAllUsers,
     getRankJI,
@@ -181,5 +190,7 @@ module.exports = {
     getSuper,
     setOper,
     setMejoras,
-    getSumMedKPI
+    getSumMedKPI,
+    getAllSuperUs,
+    getAllSuperUs2
 }

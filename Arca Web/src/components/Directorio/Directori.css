@@ -1,0 +1,33 @@
+.container-directorio {
+  float: right;
+  left: 200px;
+  width: 70%;
+}
+
+.tableDir {
+  width: 80%;
+}
+
+.buscador {
+  margin-top: 12px;
+  float: right;
+  margin-right: 50px;
+  
+}
+
+.buscador > label{
+    padding-right:20px ;
+    font-weight: bolder;
+}
+
+.title-entre {
+  float: left;
+}
+
+.rowDir:hover {
+  background-color: rgb(177, 171, 171);
+}
+
+.contentre {
+  clear: both;
+}

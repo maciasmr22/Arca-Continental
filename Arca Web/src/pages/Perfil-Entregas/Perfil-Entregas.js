@@ -71,11 +71,11 @@ function Perfil_Entregas() {
 
   return (
 
-    <div className = "container-general">
+    <div className="container-general">
       <div className="list-groupentrepadre">
         <div className="perfilcontent">
           <div className="about-cont">
-            <img  src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e"
+            <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e"
               alt='Foto de perfil'
               onClick={() => {
                 setShow(!show);
@@ -83,7 +83,7 @@ function Perfil_Entregas() {
               onError={(e) => (
                 e.target.onError = null, e.target.src = imgPred
               )}
-              ></img>
+            ></img>
 
           </div>
 
@@ -91,27 +91,27 @@ function Perfil_Entregas() {
 
 
           {show ? (
-            <div className = "container-form-perfil">
+            <div className="container-form-perfil">
               <form onSubmit={handleSubmit}>
-                <p className = "texto-foto-per">
+                <p className="texto-foto-per">
                   Sube tu foto de perfil a drive, dale click <br />
                   dereho a tu imagen y haz clic obtener enlace,<br />
                   copia el link, pegalo en el cuadro de texto.<br />
-                  <div className ="texto-b-foto-per">*IMPORTANTE* </div>
+                  <div className="texto-b-foto-per">*IMPORTANTE* </div>
                   Si aparece "restringido" cambiar a <br /> "cualquier persona
                   que tenga el vinculo".
                   <br />
                   Por ultimo presiona "subir"
                 </p>
 
-                <label className = "label-foto-per" htmlFor='imgURL'>Url de tu imagen</label> <br />
+                <label className="label-foto-per" htmlFor='imgURL'>Url de tu imagen</label> <br />
                 <input type="url" id="imgURL" onChange={e => setNewImg(e.target.value)} required></input>
                 <br />
 
-                <div className = "container-button-foto-per">
-                  <button className = "button-foto-per" type="submit">subir</button>
+                <div className="container-button-foto-per">
+                  <button className="button-foto-per" type="submit">subir</button>
                 </div>
-                
+
               </form>
             </div>
 
@@ -125,14 +125,14 @@ function Perfil_Entregas() {
             <p>Correo: {localStorage.getItem("correo")}</p>
 
           </div>
-            <div className = "centrar-kpis">
-              <SubirKPIS />
-            </div>
+          <div className="centrar-kpis">
+            <SubirKPIS />
+          </div>
 
-          </div>
-          <div className = "entregas-perfil">
-            <EntregasSuper />
-          </div>
+        </div>
+        <div className="entregas-perfil">
+          <EntregasSuper />
+        </div>
       </div>
     </div>
   )

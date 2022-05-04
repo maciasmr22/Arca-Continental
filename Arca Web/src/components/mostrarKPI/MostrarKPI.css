@@ -8,6 +8,7 @@
 
 .imgMedKPI{
     width: 100px;
+    
 }
 
 .imgMedKPI:hover{
@@ -20,7 +21,10 @@
     font-weight: 800;
     margin: auto;
     text-align: center;
+}
 
+.tableNumCerti td {
+    padding: 15px;
 }
 
 .pieChart{

@@ -87,17 +87,17 @@ function MostrarKPI() {
                 </table>
 
                 {pieBronc ? <div>
-                    <h2>% certificados bronce</h2>
+                    <h2> Certificados bronce</h2>
                     <PieChartCerti total = {ctSuperTotales} nombre = "bronce" certi = {ctCertiBronce}/>
                 </div> : <div></div>}
 
                 {piePlat ? <div>
-                    <h2>% certificados plata</h2>
+                    <h2> Certificados plata</h2>
                     <PieChartCerti total = {ctSuperTotales} nombre = "plata" certi = {ctCertiPlata} />
                 </div> : <div></div>}
 
                 {pieOro ? <div>
-                    <h2>% certificados oro</h2>
+                    <h2> Certificados oro</h2>
                     <PieChartCerti total = {ctSuperTotales} nombre = "oro" certi = {ctCertiOro}/>
                 </div> : <div></div>}
 

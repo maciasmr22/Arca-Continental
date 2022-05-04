@@ -105,7 +105,7 @@ function EntregasSuper() {
 
     function verifEntrega(xd) {
 
-        if (xd == null) {
+        if (xd === null) {
             return "---"
         }
         return xd
@@ -114,7 +114,7 @@ function EntregasSuper() {
 
     function verifFecha(xd) {
 
-        if (xd == null) {
+        if (xd === null) {
             return "---"
         }
         return xd.slice(0, -14)
