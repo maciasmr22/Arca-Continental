@@ -72,7 +72,7 @@ function Perfil_Entregas() {
   return (
 
     <div className="container-general">
-      
+
       <div className="list-groupentrepadre">
         <div className="perfilcontent">
           <div className="about-cont">
@@ -126,6 +126,8 @@ function Perfil_Entregas() {
             <p>Correo: {localStorage.getItem("correo")}</p>
 
           </div>
+
+          
           <div className="centrar-kpis">
             <SubirKPIS />
           </div>
