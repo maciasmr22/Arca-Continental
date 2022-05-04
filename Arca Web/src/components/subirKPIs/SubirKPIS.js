@@ -101,7 +101,7 @@ function SubirKPIS() {
     return (
         <div className="Op-general">
             <div className="Op-certi">
-                <button className="button-certi" onClick={() => {
+                <button  type="button"  class="btn button-certi"  onClick={() => {
                     setShowOperarios(!showOperarios)
                 }}>
                     <h5 className="title-op-certi">Captura de operarios certificados</h5>
@@ -128,14 +128,15 @@ function SubirKPIS() {
                             ></input>
                         </div>
                         <br />
-                        <button className="submit-op-certi" type="submit"> Subir </button>
+                        
+                        <button class="btn submit-op-certi" type="submit"> Subir </button>
 
                     </form>
                 ) : <div></div>}
             </div>
 
             <div className="Op-mejoras">
-                <button className="button-certi" onClick={() => {
+                <button type="button" class="btn button-certi" onClick={() => {
                     setShowKPIS(!showKPIS)
                 }}>
                     <h5 className="title-op-certi">Captura de mejoras en indicadores de procesos</h5>
@@ -218,7 +219,7 @@ function SubirKPIS() {
             
             <br />
             <div className = "rev-op-certi">
-                {(revisadoA == 0) ? (<p style={{ color: "red" }}>No Revisado</p>) : (<p style={{ color: "green" }}>Revisado</p>)}
+                {(revisadoA == 0) ? (<p style={{ color: "#adb5bd" }}>No Revisado</p>) : (<p style={{ color: "#adb5bd" }}>Revisado</p>)}
             </div>
         </div>
     )

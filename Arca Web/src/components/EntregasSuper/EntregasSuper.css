@@ -1,27 +1,30 @@
-
-
-.pop-Up-Intrucciones > h1{
-    font-size: x-large;
-    font-weight: bold;
+@charset "utf-8";
+:root {
+  --line-border-fill: darkred;
+  --line-border-empty: #bdbdbd;
+}
+.pop-Up-Intrucciones > h1 {
+  font-size: x-large;
+  font-weight: bold;
 }
 
 .container-entregas {
   float: right;
   left: 200px;
-  width: 70%;
+  width: 80%;
 }
 
 .title-entre {
   color: darkred;
 }
-.nombre-entrega:hover{
-    color: red;
-    cursor: pointer;
-    background-color: rgb(250, 223, 223);
+.nombre-entrega:hover {
+  color: red;
+  cursor: pointer;
+  background-color: rgb(250, 223, 223);
 }
 
-.title-med-ent{
-  color:  darkred;
+.title-med-ent {
+  color: darkred;
   padding-top: 2%;
 }
 
@@ -29,7 +32,7 @@
   width: 70px;
 }
 .container-med-ent {
-  padding-left: 10%;
+  padding-left: 1%;
 }
 .progress-container-med {
   margin-left: 10%;
@@ -41,19 +44,6 @@
   width: 700px;
 }
 
-.progress-container-med::before {
-  content: "";
-  background-color: var(--line-border-empty);
-  position: absolute;
-  top: 20%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 4px;
-  width: 100%;
-  z-index: -1;
-  transition: 0.4s ease;
-}
-
 .progress {
   background-color: var(--line-border-fill);
   position: absolute;
@@ -61,21 +51,22 @@
   left: 0;
   transform: translateY(-50%);
   height: 4px;
-  width: 14.3%;
+  width: 0%;
   z-index: -1;
   transition: 0.4s ease;
 }
+.progress.uno {
+  width: 17.3%;
+}
 .progress.dos {
-  width: 42.5%;
+  width: 44.8%;
 }
 .progress.tres {
-  width: 71.5%;
+  width: 72%;
 }
-
 .progress.cuatro {
   width: 100%;
 }
-
 .circle {
   background-color: none;
   color: #999;
