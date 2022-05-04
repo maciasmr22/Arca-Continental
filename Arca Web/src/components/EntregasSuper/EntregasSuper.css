@@ -11,7 +11,7 @@
 .container-entregas {
   float: right;
   left: 200px;
-  width: 70%;
+  width: 80%;
 }
 
 .title-entre {
@@ -32,7 +32,7 @@
   width: 70px;
 }
 .container-med-ent {
-  padding-left: 10%;
+  padding-left: 1%;
 }
 .progress-container-med {
   margin-left: 10%;
