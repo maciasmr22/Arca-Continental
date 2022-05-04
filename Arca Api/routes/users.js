@@ -21,5 +21,8 @@ router.put('/setMejoras', UsersControllers.setMejoras)
 router.get('/getSumMedKPI',UsersControllers.getSumMedKPI)
 router.get('/getAllSuperUs',UsersControllers.getAllSuperUs)
 router.get('/getAllSuperUs/:identi', UsersControllers.getAllSuperUs2)
+router.get('/getSuUs/:identi', UsersControllers.getSuUs)
+
+
 
 module.exports = router

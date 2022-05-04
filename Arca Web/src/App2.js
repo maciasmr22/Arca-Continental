@@ -11,6 +11,7 @@ import Ranking from './pages/Ranking/Ranking';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import PerfilAdmin from './pages Admin/PerfilAdmin/PerfilAdmin'
+import PerfilSuper from './pages Admin/PerfilUsuario/PerfilSuper'
 
 class App extends Component {
 
@@ -57,6 +58,7 @@ class App extends Component {
               <Route path='/profile' element={<PerfilAdmin />} />
               <Route path='/ranking' element={<Ranking />} />
               <Route path='/about-us' element={<AboutUs />} />
+              <Route path="/perfilSuper" element={<PerfilSuper/>}/>
             </Routes>
           </Router>
         </div>

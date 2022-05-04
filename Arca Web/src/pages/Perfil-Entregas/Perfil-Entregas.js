@@ -72,6 +72,7 @@ function Perfil_Entregas() {
   return (
 
     <div className="container-general">
+      
       <div className="list-groupentrepadre">
         <div className="perfilcontent">
           <div className="about-cont">

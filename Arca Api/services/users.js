@@ -176,6 +176,13 @@ const getAllSuperUs2 = (identi) => {
     return dbService.querypromise(sql);
 }
 
+const getSuUs = (identi) => {
+    sql = `SELECT * FROM usuario WHERE Usuario_ID = "${identi}"` 
+    return dbService.querypromise(sql);
+}
+
+
+
 module.exports = {
     getAllUsers,
     getRankJI,
@@ -192,5 +199,6 @@ module.exports = {
     setMejoras,
     getSumMedKPI,
     getAllSuperUs,
-    getAllSuperUs2
+    getAllSuperUs2,
+    getSuUs
 }

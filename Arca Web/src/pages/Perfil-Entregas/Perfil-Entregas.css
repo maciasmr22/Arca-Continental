@@ -40,6 +40,7 @@ td > .btn {
   width: 30%;
   /*background-color: rgb(0, 255, 76);*/
   text-align: center;
+  
 }
 
 .entregacontent {
@@ -115,10 +116,11 @@ td > .btn {
   border-radius: 20px;
   text-align: center;
   padding-right: 15%;
+  
+  
 }
 
 .about-tex {
-
   margin-top: 30%;
   color: darkred;
   font-size: 18px;
@@ -139,8 +141,8 @@ td > .btn {
   left: 18%;
   width: 78%;
   text-align: center;
+  z-index: -1;
   
-
 }
 
 .centrar-kpis {
@@ -249,6 +251,7 @@ progress {
 
 .img-Perfil-e{
   margin-top: 5%;
-  max-width: 70%;
+  max-width: 20%;
   min-width: 70%;
+  
 }

@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { ApiUrlXD } from '../../const/global';
 import './Directori.css'
 
+import PerfilSuper from '../../pages Admin/PerfilUsuario/PerfilSuper'
+import { Link, useNavigate  } from 'react-router-dom';
+
 function Directorio() {
     const [datSupUs, setDatSupUs] = useState();
-    const [buscNombre, setBuscNombre] = useState();
+    const [buscNombre, setBuscNombre] = useState("");
+    const navigate = useNavigate();
+
+    
 
     useEffect(() => {
         fetch(ApiUrlXD + `getAllSuperUs/${buscNombre}`)
@@ -15,7 +21,9 @@ function Directorio() {
                 setDatSupUs(json);
             })
 
-    }, [buscNombre])
+    },[buscNombre])
+
+
 
     return (
         <div className="container-directorio">
@@ -46,17 +54,20 @@ function Directorio() {
                         </thead>
                         <tbody className="cuerpotable">
 
-
+                            
                             {datSupUs &&
                                 datSupUs.usSu.map(({ Nombre, Correo, Planta, Usuario_ID }) => (
-                                    <tr key={Usuario_ID} className = "rowDir" onClick={()=>{
-                                        console.log("jajassjhdasj");
-                                    }}>
+                                    
+                                    <tr key={Usuario_ID} className = "rowDir"
+                                    onClick={()=>{navigate("/perfilSuper", {state:{usid:Usuario_ID }})}}
+                                    >
                                         <th scope="col">{Nombre}</th>
                                         <td scope="col">{Correo}</td>
                                         <td scope="col">{Planta}</td>
                                     </tr>
+                                    
                                 ))}
+                            
 
                         </tbody>
 

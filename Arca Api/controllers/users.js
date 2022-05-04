@@ -129,6 +129,14 @@ module.exports = {
         } catch(err) {
             res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
         }
+    }, 
+    getSuUs : async (req,res,next) => {
+        try {
+            const SuUs = await UsersService.getSuUs(req.params.identi);
+            res.status(200).json({SuUs})
+        } catch(err) {
+            res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
+        }
     } 
     
 };
