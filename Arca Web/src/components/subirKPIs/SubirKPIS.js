@@ -208,7 +208,7 @@ function SubirKPIS() {
                         </div>
 
                         <div className="Esp-button">
-                            <button className="submit-op-certi" type="submit"> Subir</button>
+                            <button class="btn submit-op-certi" type="submit"> Subir</button>
                         </div>
 
 
