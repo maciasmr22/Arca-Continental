@@ -131,6 +131,7 @@ function Perfil_Entregas() {
           </div>
 
         </div>
+        
         <div className="entregas-perfil">
           <EntregasSuper />
         </div>

@@ -12,9 +12,11 @@
   float: right;
   left: 200px;
   width: 80%;
+  text-align: center;
 }
 
 .title-entre {
+  padding-left: 40%;
   color: darkred;
 }
 .nombre-entrega:hover {
@@ -35,7 +37,7 @@
   padding-left: 1%;
 }
 .progress-container-med {
-  margin-left: 10%;
+  margin-left: 20%;
   display: flex;
   justify-content: space-between;
   position: relative;

@@ -29,33 +29,31 @@ td > .btn {
 .list-groupentrepadre {
   text-align: center;
   margin-top: 8%;
-
   overflow: hidden;
-  margin-left: 5%;
+  height: 100%;
+  z-index: 1;
 }
 
 .perfilcontent {
+  position: relative;
   float: left;
-  left: 200px;
+  margin-left: 5%;
   width: 30%;
-  /*background-color: rgb(0, 255, 76);*/
+  z-index: 3;
   text-align: center;
   
 }
 
-.entregacontent {
-  float: left;
-  left: 200px;
-  width: 70%;
-}
 
 .container-form-perfil {
+  
   padding-top: 3%;
   margin-right: 20%;
   
 }
 
 .texto-foto-per {
+  padding-top: 30%;
   color: darkred;
   font-size: 105%;
 }
@@ -121,13 +119,15 @@ td > .btn {
 }
 
 .about-tex {
-  margin-top: 30%;
+  margin-top: 25%;
+  padding-top: 1%;
   color: darkred;
   font-size: 18px;
   line-height: 15px;
   font-style: normal;
   padding-left: 10%;
   padding-right: 10%;
+  word-break: break-word;
 }
 
 .about-tex p {
@@ -136,13 +136,14 @@ td > .btn {
 
 
 .entregas-perfil {
+  z-index: 0;
   position: fixed;
-  right: 0;
-  left: 18%;
-  width: 78%;
+  right: 4;
+  left: 23%;
+  width: 74%;
+  padding-left: 0%;
   text-align: center;
-  z-index: -1;
-  
+
 }
 
 .centrar-kpis {
