@@ -181,6 +181,11 @@ const getSuUs = (identi) => {
     return dbService.querypromise(sql);
 }
 
+const confirmarKPI = (identi) => {
+    sql = `UPDATE supervisor SET Revisado = 1 WHERE Usuario_ID = "${identi}"`
+    return dbService.querypromise(sql);
+}
+
 
 
 module.exports = {
@@ -200,5 +205,6 @@ module.exports = {
     getSumMedKPI,
     getAllSuperUs,
     getAllSuperUs2,
-    getSuUs
+    getSuUs,
+    confirmarKPI
 }

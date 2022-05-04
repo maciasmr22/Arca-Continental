@@ -15,46 +15,30 @@ function About() {
   const [dataUs, setDataUs] = useState();
   const [datSup, setDatSup] = useState();
   
+  async function recolectarData(){
+    let response = await fetch(ApiUrlXD + `getSuUs/${idU}`)
+    response = await response.json();
+    setDataUs(response.SuUs[0]);
+
+    
+
+    let response3 = await fetch(ApiUrlXD + `imgPerfil/${idU}`)
+    response3 = await response3.json();
+    setImagen(response3.users[0].Imagen)
+
+  }
+
+  async function recDataSup(){
+    let response2 = await fetch(ApiUrlXD + `getSupervisor/${idU}`);
+    response2 = await response2.json();
+    setDatSup(response2.sup[0])
+  }
 
   useEffect(() => {
-    // sacamos los datos de la tabla usuario
-    fetch(ApiUrlXD + `getSuUs/${idU}`)
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((json) => {
-        setDataUs(json.SuUs[0]);
+    recolectarData();
+    recDataSup();
 
-      })
-
-
-
-    //sacamos los datos de la tabla supervisor
-    fetch(ApiUrlXD + `getSupervisor/${idU}`)
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((json) => {
-        setDatSup(json.sup[0]);
-      })
-
-    fetch(ApiUrlXD + `imgPerfil/${idU}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
-        }
-        return response.json();
-      })
-      .then((json) => {
-        setImagen(json.users[0].Imagen)
-      })
-
-     
-      
-
-  }, [])
+  },[])
 
   return (
 
@@ -119,16 +103,34 @@ function About() {
             </table>
             
 
-            
-            <button>
+            {datSup && !datSup.Revisado ? <button
+              onClick={()=>{
+                fetch(ApiUrlXD + `confirmarKPI/${idU}`, {
+                  method: 'PUT'
+                })
+                .then((resp)=>{
+                  return resp.json()
+                })
+                .then((json) => {
+                  console.log("kaka" + json);
+                })
+                recDataSup();   
+              }}
+            >
                 Confirmar datos de supervisor 
-            </button>
+            </button> : <button disabled>
+                Datos ya confirmados 
+            </button>}
+            
 
           </div>
 
 
         </div>
 
+        <div className="entregas-perfil">
+
+        </div>
 
       </div>
     </div>

@@ -137,6 +137,14 @@ module.exports = {
         } catch(err) {
             res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
         }
+    },
+    confirmarKPI : async (req,res,next) => {
+        try {
+            const us = await UsersService.confirmarKPI(req.params.identi);
+            res.status(200).json({us})
+        } catch(err) {
+            res.status(500).json({"message": `Error al obtener los usuarios. Err: ${err}`});
+        }
     } 
     
 };
