@@ -18,10 +18,15 @@ function RevEntregas(props) {
     const idU = props.usId;
 
     const [datSubNiv, setDatSubNiv] = useState();
-
+    const [idSup, setIdSup] = useState(); // id Supervisor
     const [certiBron, setCertiBron] = useState();
     const [certiPla, setCertiPla] = useState();
     const [certiOr, setCertiOr] = useState();
+
+    //hooks para calificar
+
+    const [nuevaCali, setNuevaCali] = useState();
+    const [nuevoCom, setNuevoCom] = useState();
 
     function verifFecha(xd) {
 
@@ -32,29 +37,91 @@ function RevEntregas(props) {
 
     }
 
-    function veriBotonEntrega(rev, pVid) {
-        let c;
-        if(rev == 1){
-             c="green"
+    function handleCalificar(e, com, cali, subniv){
+        e.preventDefault();
+
+        // en el siguiente fetch sacamos el id del supervisor para poderlo usar en el proximo fetch
+        fetch(ApiUrlXD + `getSupervisor/${idU}`)
+        .then((resp) => {
+            return resp.json()
+
+        })
+        .then((json) => {   
+            setIdSup(json.sup[0].Super_ID)
+        })
+
+
+
+        let credentials = {
+            com,
+            cali, 
+            subniv, 
+            idSup
         }
-        else{
-             c="red"
+
+        const options = {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(credentials)
+        }
+
+        fetch(ApiUrlXD + `calificar`, options)
+
+    }
+
+    function veriBotonEntrega( rev, pVid, subniv) {
+
+
+        let c;
+        if (rev == 1) {
+            c = "green"
+        }
+        else {
+            c = "red"
         }
 
 
         if (pVid < 70) {
             return (
-               <button disabled>Calificar</button>
+                <button disabled>Calificar</button>
             );
         }
-        
-        
-        return(
-            <button style={{color: c}} >
-                Calificar
-            </button>
-        )
-        
+
+        return (
+
+            <Popup trigger={
+                <button style={{ color: c }} >
+                    Calificar
+                </button>}>
+                <div className='popUp-ccalificar'>
+                    <h5>Calificar</h5>
+                    <form onSubmit={e => handleCalificar(e, nuevoCom, nuevaCali, subniv)}>
+                        <label htmlFor='comentarioXD'>
+                            Comentario
+                        </label>
+                        <input type="text" id="comentarioXD"
+                            onChange={e => setNuevoCom(e.target.value)}
+                        ></input>
+
+                        <label htmlFor='calificacionXD'>
+                            Calificacion
+                        </label>
+                        <input type="number" max="100" min = "0" 
+                            onChange={e => setNuevaCali(e.target.value)}
+                        ></input>
+
+                        <button type='submit'>
+                            calificar
+                        </button>
+
+                    </form>
+
+                </div>
+            </Popup>
+        );
+
 
 
     }
@@ -165,7 +232,7 @@ function RevEntregas(props) {
                                         <td>{verifFecha(Fecha)}</td>
 
 
-                                        <td>{veriBotonEntrega(Revisado, PuntajeVideojuego)}</td>
+                                        <td>{veriBotonEntrega(Revisado, PuntajeVideojuego, Sub_ID)}</td>
 
 
 

@@ -188,6 +188,14 @@ const confirmarKPI = (identi) => {
     return dbService.querypromise(sql);
 }
 
+const calificar = (body) => {
+    const {com, cali, subniv, idSup} = body;
+    sql = `UPDATE entrega SET PuntajeEntrega = ${cali}, Comentario = "${com}", Revisado = 1
+        WHERE Super_ID = ${idSup} AND Sub_ID = ${subniv} `
+    return dbService.querypromise(sql);
+
+}
+
 
 
 module.exports = {
@@ -208,5 +216,6 @@ module.exports = {
     getAllSuperUs,
     getAllSuperUs2,
     getSuUs,
-    confirmarKPI
+    confirmarKPI,
+    calificar
 }

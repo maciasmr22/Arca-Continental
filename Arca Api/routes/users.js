@@ -23,7 +23,7 @@ router.get('/getAllSuperUs',UsersControllers.getAllSuperUs)
 router.get('/getAllSuperUs/:identi', UsersControllers.getAllSuperUs2)
 router.get('/getSuUs/:identi', UsersControllers.getSuUs)
 router.put('/confirmarKPI/:identi', UsersControllers.confirmarKPI)
-
+router.put('/calificar', UsersControllers.calificar)
 
 
 module.exports = router
