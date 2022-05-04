@@ -84,3 +84,19 @@
 .circle.active {
   border-color: var(--line-border-fill);
 }
+.button-certi {
+  background-color: var(--line-border-fill);
+  color: #fff;
+}
+
+.button-certi:disabled {
+  background-color: var(--line-border-empty);
+  color: #fff;
+}
+.button-certi-peque {
+  margin-top: 6px;
+  height: 30%;
+  width: 40%;
+  background-color: var(--line-border-fill);
+  color: #fff;
+}

@@ -81,14 +81,14 @@ function EntregasSuper() {
         if (xd >= 70) {
             return (
                 <Popup trigger={
-                    <button>
+                    <button type="button"  class="btn button-certi" >
                         Entregar
                     </button>} >
 
                     <form onSubmit={e => subirEntrega(e, Sub_id)} >
                         <label htmlFor='entregaUrl'> Sube el link de drive de tu entrega: </label>
                         <input type="url" id="entregaUrl" onChange={e => setLinkEntrega(e.target.value)}></input>
-                        <button type="submit">subir</button>
+                        <button  class="btn button-certi-peque" type="submit">subir</button>
                     </form>
 
                 </Popup>
