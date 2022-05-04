@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import Chart from 'react-apexcharts'
 
 
@@ -8,9 +8,11 @@ function PieChartCerti(props) {
 
   const series = [no, props.certi];
   const labels = ['No certificados', 'Certificados'];
-  
+  const colors = ['#FE0000','#00FE08'];
+
  
-  const options = {labels};
+ 
+  const options = {labels,colors};
 
   return (
     <div className='pie'>

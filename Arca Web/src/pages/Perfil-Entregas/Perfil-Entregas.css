@@ -141,12 +141,14 @@ td > .btn {
   left: 18%;
   width: 78%;
   text-align: center;
-  z-index: -1;
+  
   
 }
 
 .centrar-kpis {
   padding-left: 10%;
+  
+  
 }
 
 .progress-element {
