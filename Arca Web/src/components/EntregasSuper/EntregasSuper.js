@@ -125,14 +125,14 @@ function EntregasSuper() {
     useEffect(() => {
 
         fetch(ApiUrlXD + `getSupervisor/${idU}`)
-        .then((response) => {
-            return response.json();
-        })
-        .then((json) => {
-            setCertiBron(json.sup[0].CertiBronce);
-            setCertiPla(json.sup[0].CertiPlata);
-            setCertiOr(json.sup[0].CertiOro);
-        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((json) => {
+                setCertiBron(json.sup[0].CertiBronce);
+                setCertiPla(json.sup[0].CertiPlata);
+                setCertiOr(json.sup[0].CertiOro);
+            })
 
         let credentials = {
             idU
@@ -155,7 +155,7 @@ function EntregasSuper() {
                 setDatSubNiv(actualData);
             })
 
-    },[])
+    }, [])
 
 
     return (
@@ -216,17 +216,17 @@ function EntregasSuper() {
                 </div>
             </div>
 
-            <h1 className = "title-med-ent">Medallas</h1>
+            <h1 className="title-med-ent">Medallas</h1>
 
-            <div class="container-med-ent"> 
-            <div className="progress-container-med ">
-            
-            {certiBron ?  <div className="circle active"><img  className='medalla'  src = {ini}/> <div className="progress" id="uno"></div></div>:  <div className="circle active"><img  className='medalla'  src = {ini}/> </div>}
-            {certiBron ?  <div className="circle active"><img  className='medalla'  src = {medBron}/> <div className="progress dos" ></div></div>:  <div className="circle"><img  className='medalla'  src = {medNada}/> </div>}
-            {certiPla ? <div className="circle active"><img  className='medalla'  src = {medPla}/> <div className="progress tres" ></div></div> :  <div className="circle"><img  className='medalla'  src = {medNada}/> </div>}
-            {certiOr ?  <div className="circle active"><img  className='medalla'  src = {medOro}/> <div className="progress cuatro" ></div></div> :  <div className="circle"><img  className='medalla'  src = {medNada}/> </div>}
-        </div>
-        </div>
+            <div class="container-med-ent">
+                <div className="progress-container-med ">
+
+                    {certiBron ? <div className="circle active"><img className='medalla' src={ini} /> <div className="progress" id="uno"></div></div> : <div className="circle active"><img className='medalla' src={ini} /> </div>}
+                    {certiBron ? <div className="circle active"><img className='medalla' src={medBron} /> <div className="progress dos" ></div></div> : <div className="circle"><img className='medalla' src={medNada} /> </div>}
+                    {certiPla ? <div className="circle active"><img className='medalla' src={medPla} /> <div className="progress tres" ></div></div> : <div className="circle"><img className='medalla' src={medNada} /> </div>}
+                    {certiOr ? <div className="circle active"><img className='medalla' src={medOro} /> <div className="progress cuatro" ></div></div> : <div className="circle"><img className='medalla' src={medNada} /> </div>}
+                </div>
+            </div>
 
 
         </div>

@@ -4,6 +4,7 @@ import imgPred from './entregasimg/empresario.png'
 import { ApiUrlXD } from '../../const/global'
 
 import perfil from "./entregasimg/empresario.png"
+import RevEntregas from '../../components/RevEntregas/RevEntregas'
 
 
 
@@ -129,7 +130,7 @@ function About() {
         </div>
 
         <div className="entregas-perfil">
-
+            <RevEntregas usId = {idU}/>
         </div>
 
       </div>
