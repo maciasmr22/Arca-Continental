@@ -8,12 +8,10 @@
   }
 
 .container-twi {
-    position: fixed;
     width: 90%;
     top: 0%;   
     display: inline-block;
     align-content:center;
-    padding-bottom: 20%;
 }
 
 .divplane-twi {
