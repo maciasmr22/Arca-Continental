@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import imgPred from './entregasimg/empresario.png'
 import { ApiUrlXD } from '../../const/global'
-
 import perfil from "./entregasimg/empresario.png"
 import RevEntregas from '../../components/RevEntregas/RevEntregas'
+
+import "./PerfilSuper.css"
 
 
 
@@ -44,11 +45,11 @@ function About() {
   return (
 
     <div className="container-general">
-      <div className="list-groupentrepadre">
-        <div className="perfilcontent">
-          <div className="about-cont">
+      <div className="list-groupentrepadre-adm">
+        <div className="perfilcontent-adm">
+          <div className="about-cont-adm">
 
-            <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e"
+            <img src={"https://drive.google.com/uc?export=view&id=" + imagen.slice(32).slice(0, -17)} className="img-Perfil-e2"
               alt='Foto de perfil'
               onError={(e) => (
                 e.target.onError = null, e.target.src = imgPred
@@ -58,8 +59,7 @@ function About() {
 
           </div>
 
-
-          <div className="about-tex">
+          <div className="about-tex-adm">
             {dataUs ? <p>Nombre: {dataUs.Nombre}</p> : <div>Cargando...</div>}
             {dataUs ? <p>Correo: {dataUs.Correo}</p> : <div>Cargando...</div>}
             {dataUs ? <p>Planta: {dataUs.Planta}</p> : <div>Cargando..</div>}
@@ -70,8 +70,8 @@ function About() {
             <table className='table'>
               <thead>
                 <tr>
-                  <th>KPI</th>
-                  <th>Datos</th>
+                  <th className = "title-mkpis">KPI</th>
+                  <th className = "title-mkpis">Datos</th>
                 </tr>
               </thead>
               <tbody>
@@ -104,25 +104,26 @@ function About() {
             </table>
             
 
-            {datSup && !datSup.Revisado ? <button
-              onClick={()=>{
-                fetch(ApiUrlXD + `confirmarKPI/${idU}`, {
-                  method: 'PUT'
-                })
-                .then((resp)=>{
-                  return resp.json()
-                })
-                .then((json) => {
-                  console.log("kaka" + json);
-                })
-                recDataSup();   
-              }}
-            >
-                Confirmar datos de supervisor 
-            </button> : <button disabled>
-                Datos ya confirmados 
-            </button>}
-            
+            <div className = "container-button1">
+              {datSup && !datSup.Revisado ? <button className = "button1-adm" 
+                onClick={()=>{
+                  fetch(ApiUrlXD + `confirmarKPI/${idU}`, {
+                    method: 'PUT'
+                  })
+                  .then((resp)=>{
+                    return resp.json()
+                  })
+                  .then((json) => {
+                    console.log("kaka" + json);
+                  })
+                  recDataSup();   
+                }}
+              >
+                  Confirmar datos de supervisor 
+              </button> : <button disabled>
+                  Datos ya confirmados 
+              </button>}
+            </div>
 
           </div>
 

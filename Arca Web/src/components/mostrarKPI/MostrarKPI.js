@@ -45,10 +45,10 @@ function MostrarKPI() {
             <div>
 
 
-                <h3>Supervisores totales:  {ctSuperTotales} </h3>
+                <h3 className = "title-st">Supervisores totales:  {ctSuperTotales} </h3>
                 <br />
 
-                <h2>Supervisores certificados</h2>
+                <h2 className = "title-sc">Supervisores certificados</h2>
 
                 <table className='tableNumCerti'>
 
@@ -77,9 +77,9 @@ function MostrarKPI() {
                         /> </td>
                     </tr>
                     <tr>
-                        <td>{ctCertiBronce}</td>
-                        <td>{ctCertiPlata}</td>
-                        <td>{ctCertiOro}</td>
+                        <td className = "text-sc">{ctCertiBronce}</td>
+                        <td className = "text-sc">{ctCertiPlata}</td>
+                        <td className = "text-sc">{ctCertiOro}</td>
 
                     </tr>
 
@@ -87,17 +87,17 @@ function MostrarKPI() {
                 </table>
 
                 {pieBronc ? <div>
-                    <h2> Certificados bronce</h2>
+                    <h2 className = "text-sc"> Certificados bronce</h2>
                     <PieChartCerti total = {ctSuperTotales} nombre = "bronce" certi = {ctCertiBronce}/>
                 </div> : <div></div>}
 
                 {piePlat ? <div>
-                    <h2> Certificados plata</h2>
+                    <h2 className = "text-sc"> Certificados plata</h2>
                     <PieChartCerti total = {ctSuperTotales} nombre = "plata" certi = {ctCertiPlata} />
                 </div> : <div></div>}
 
                 {pieOro ? <div>
-                    <h2> Certificados oro</h2>
+                    <h2 className = "text-sc"> Certificados oro</h2>
                     <PieChartCerti total = {ctSuperTotales} nombre = "oro" certi = {ctCertiOro}/>
                 </div> : <div></div>}
 

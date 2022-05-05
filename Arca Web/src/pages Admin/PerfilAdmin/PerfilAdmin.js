@@ -5,12 +5,12 @@ import './PerfilAdmin.css'
 
 function PerfilAdmin() {
     return (
-        <div className="list-groupentrepadre">
-            <div className="perfilcontentAdmin">
+        <div className="container-general-peradmin">
+            <div className="perfilcontent-admin">
                 <MostrarKPI />
             </div>
 
-            <div >
+            <div className = "peradmin-dir">
                 <Directorio />
             </div>
 

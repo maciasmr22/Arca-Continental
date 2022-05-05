@@ -1,17 +1,24 @@
+@font-face {
+  font-family: letrapalpancho;
+  src: url("../../../gothamlight.otf");
+}
+
+* {
+  font-family: letrapalpancho;
+}
+
 .container-directorio {
   float: right;
   left: 200px;
   width: 70%;
 }
 
-.tableDir {
-  width: 80%;
-}
 
 .buscador {
   margin-top: 12px;
   float: right;
   margin-right: 50px;
+  color: darkred;
   
 }
 

@@ -1,9 +1,28 @@
+@font-face {
+    font-family: letrapalpancho;
+    src: url("../../../gothamlight.otf");
+}
+
+* {
+font-family: letrapalpancho;
+}
+
 .MostrarKPIPAPA{
     margin:auto;
     width: 80%;        
 }
 
+.title-st {
+    color: darkred;
+    text-decoration: underline;
+    text-decoration-color: darkred;
+    text-decoration-thickness: 1%;
+}
 
+.title-sc {
+    color: darkred;
+    font-weight: bold;
+}
 
 .imgMedKPI{
     width: 100px;
@@ -28,4 +47,9 @@
 
 .pieChart{
     width: min-content;
+}
+
+.text-sc {
+    padding-top: 5%;
+    color: darkred;
 }

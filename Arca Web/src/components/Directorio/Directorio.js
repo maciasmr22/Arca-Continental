@@ -39,7 +39,7 @@ function Directorio() {
                 }}></input>
             </div>
 
-            <div className="contentre justify-content-center">
+            <div className="contentre">
                 <div className="scrolltable1">
 
 

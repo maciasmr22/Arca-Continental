@@ -8,7 +8,7 @@ function PieChartCerti(props) {
 
   const series = [no, props.certi];
   const labels = ['No certificados', 'Certificados'];
-  const colors = ['#FE0000','#00FE08'];
+  const colors = ['#990000','#FFB266'];
 
  
  
