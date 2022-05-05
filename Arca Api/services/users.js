@@ -196,6 +196,32 @@ const calificar = (body) => {
 
 }
 
+const reviCerti = (body) => {
+    const {superviId, colorcert} = body;
+    sql = `select entrega.PuntajeEntrega
+    from entrega, subnivel, medalla, supervisor
+    WHERE entrega.Super_ID = supervisor.Super_ID
+    AND supervisor.Usuario_ID = "${superviId}" 
+    AND entrega.Sub_ID = subnivel.Sub_ID
+    AND subnivel.Meda_ID = medalla.Meda_ID
+    AND medalla.Color = "${colorcert}" `
+    return dbService.querypromise(sql);
+}
+
+const certifiBron = (identi) => {
+    sql = `UPDATE supervisor SET CertiBronce = 1 WHERE Usuario_ID = "${identi}"`
+    return dbService.querypromise(sql);
+}
+
+const certifiPlat = (identi) => {
+    sql = `UPDATE supervisor SET CertiBronce = 1 WHERE Usuario_ID = "${identi}"`
+    return dbService.querypromise(sql);
+}
+
+const certifiOro = (identi) => {
+    sql = `UPDATE supervisor SET CertiBronce = 1 WHERE Usuario_ID = "${identi}"`
+    return dbService.querypromise(sql);
+}
 
 
 module.exports = {
@@ -217,5 +243,9 @@ module.exports = {
     getAllSuperUs2,
     getSuUs,
     confirmarKPI,
-    calificar
+    calificar,
+    reviCerti,
+    certifiBron,
+    certifiPlat,
+    certifiOro
 }

@@ -86,7 +86,7 @@ function EntregasSuper() {
                     </button>} >
 
                     <form onSubmit={e => subirEntrega(e, Sub_id)} >
-                        <label htmlFor='entregaUrl'> Sube el link de drive de tu entrega: </label>
+                        <label className="avisos" htmlFor='entregaUrl'> Sube el link de drive de tu entrega: </label>
                         <input type="url" id="entregaUrl" onChange={e => setLinkEntrega(e.target.value)}></input>
                         <button  class="btn button-certi-peque" type="submit">subir</button>
                     </form>
@@ -145,8 +145,6 @@ function EntregasSuper() {
             },
             body: JSON.stringify(credentials)
         }
-        console.log("jasid " + certiBron)
-
         fetch(ApiUrlXD + 'getSubNiv', options)
             .then((response) => {
                 return response.json();
@@ -161,7 +159,7 @@ function EntregasSuper() {
     return (
         <div className="container-entregas">
             <div className="title-entre">
-                <center><h1>Entregas</h1></center>
+                <center><h1 className="titulo">Entregas</h1></center>
             </div>
             <div className="contentre justify-content-center">
                 <div className="scrolltable1">
@@ -201,7 +199,7 @@ function EntregasSuper() {
                                             <Popup trigger={<div className='nombre-entrega'>{verifEntrega(PuntajeEntrega)}</div>}>
                                                 <div className='pop-Up-Intrucciones'>
                                                     <h1>Comentario</h1>
-                                                    {Revisado ? (<p style={{ color: "green" }}>Revisado</p>) : (<p style={{ color: "red" }}>Falta revisar</p>)}
+                                                    {Revisado ? (<p style={{ color: "green" }}>Revisado</p>) : (<p className ="avisos" style={{ color: "red" }}>Falta revisar</p>)}
                                                     <p>{verifEntrega(Comentario)}</p>
                                                 </div>
                                             </Popup>

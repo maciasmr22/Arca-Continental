@@ -28,6 +28,10 @@ function RevEntregas(props) {
     const [nuevaCali, setNuevaCali] = useState();
     const [nuevoCom, setNuevoCom] = useState();
 
+    //Hooks para medallas
+
+    const [calificaciones, setCalificaciones] = useState();
+
     function verifFecha(xd) {
 
         if (xd === null) {
@@ -37,25 +41,71 @@ function RevEntregas(props) {
 
     }
 
-    function handleCalificar(e, com, cali, subniv){
+    function certificarMedalla(superviId, colorcert) {
+        let credentials = {
+            superviId,
+            colorcert
+        }
+        const options = {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(credentials)
+        }
+
+        fetch(ApiUrlXD + "revisaCertificaciones", options)
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
+                setCalificaciones(json.certi)
+            })
+
+        if (calificaciones.length === 4) {
+            if (calificaciones[0] >= 70 &&
+                calificaciones[1] >= 70 &&
+                calificaciones[2] >= 70 &&
+                calificaciones[3] >= 70) {
+                if (colorcert === "Bronce") {
+                    fetch(ApiUrlXD + `certificarBronce/${superviId}`)
+                        .then((response) => {
+                            return response.json()
+                        })
+                } else if (colorcert === "Plata") {
+                    fetch(ApiUrlXD + `certificarPlata/${superviId}`)
+                        .then((response) => {
+                            return response.json()
+                        })
+                } else if (colorcert === "Oro") {
+                    fetch(ApiUrlXD + `certificarOro/${superviId}`)
+                        .then((response) => {
+                            return response.json()
+                        })
+                }
+            }
+        }
+    }
+
+    function handleCalificar(e, com, cali, subniv, color) {
         e.preventDefault();
 
         // en el siguiente fetch sacamos el id del supervisor para poderlo usar en el proximo fetch
         fetch(ApiUrlXD + `getSupervisor/${idU}`)
-        .then((resp) => {
-            return resp.json()
+            .then((resp) => {
+                return resp.json()
 
-        })
-        .then((json) => {   
-            setIdSup(json.sup[0].Super_ID)
-        })
+            })
+            .then((json) => {
+                setIdSup(json.sup[0].Super_ID)
+            })
 
 
 
         let credentials = {
             com,
-            cali, 
-            subniv, 
+            cali,
+            subniv,
             idSup
         }
 
@@ -69,9 +119,11 @@ function RevEntregas(props) {
 
         fetch(ApiUrlXD + `calificar`, options)
 
+        certificarMedalla(idU, color)
+
     }
 
-    function veriBotonEntrega( rev, pVid, subniv) {
+    function veriBotonEntrega(rev, pVid, subniv, color) {
 
 
         let c;
@@ -97,7 +149,7 @@ function RevEntregas(props) {
                 </button>}>
                 <div className='popUp-ccalificar'>
                     <h5>Calificar</h5>
-                    <form onSubmit={e => handleCalificar(e, nuevoCom, nuevaCali, subniv)}>
+                    <form onSubmit={e => handleCalificar(e, nuevoCom, nuevaCali, subniv, color)}>
                         <label htmlFor='comentarioXD'>
                             Comentario
                         </label>
@@ -108,7 +160,7 @@ function RevEntregas(props) {
                         <label htmlFor='calificacionXD'>
                             Calificacion
                         </label>
-                        <input type="number" max="100" min = "0" 
+                        <input type="number" max="100" min="0"
                             onChange={e => setNuevaCali(e.target.value)}
                         ></input>
 
@@ -232,7 +284,7 @@ function RevEntregas(props) {
                                         <td>{verifFecha(Fecha)}</td>
 
 
-                                        <td>{veriBotonEntrega(Revisado, PuntajeVideojuego, Sub_ID)}</td>
+                                        <td>{veriBotonEntrega(Revisado, PuntajeVideojuego, Sub_ID, Color)}</td>
 
 
 

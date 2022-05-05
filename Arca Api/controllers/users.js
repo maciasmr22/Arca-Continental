@@ -153,6 +153,38 @@ module.exports = {
         } catch(err) {
             res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
         } 
-    } 
+    },
+    reviCerti : async(req, res, next) => {
+        try {
+            const certi = await UsersService.reviCerti(req.body);
+            res.status(200).json({certi})
+        } catch(err) {
+            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
+        } 
+    },
+    certifiBron : async(req, res, next) => {
+        try {
+            const certi = await UsersService.certifiBron(req.params.identi);
+            res.status(200).json({certi})
+        } catch(err) {
+            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
+        } 
+    },
+    certifiPlat : async(req, res, next) => {
+        try {
+            const certi = await UsersService.certifiPlat(req.params.identi);
+            res.status(200).json({certi})
+        } catch(err) {
+            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
+        } 
+    },
+    certifiOro : async(req, res, next) => {
+        try {
+            const certi = await UsersService.certifiOro(req.params.identi);
+            res.status(200).json({certi})
+        } catch(err) {
+            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
+        } 
+    },
     
 };
