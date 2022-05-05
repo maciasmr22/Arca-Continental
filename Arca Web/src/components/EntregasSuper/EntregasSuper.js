@@ -145,8 +145,6 @@ function EntregasSuper() {
             },
             body: JSON.stringify(credentials)
         }
-        console.log("jasid " + certiBron)
-
         fetch(ApiUrlXD + 'getSubNiv', options)
             .then((response) => {
                 return response.json();
