@@ -169,17 +169,17 @@ const getSumMedKPI = () => {
     return dbService.querypromise(sql);
 }
 
-const getAllSuperUs =() => {
+const getAllSuperUs = () => {
     sql = `SELECT * FROM usuario WHERE Tipo_Usuario = "Supervisor"`
     return dbService.querypromise(sql);
 }
 const getAllSuperUs2 = (identi) => {
-    sql = `SELECT * FROM usuario WHERE Tipo_Usuario = "Supervisor" AND Nombre LIKE "%${identi}%"` 
+    sql = `SELECT * FROM usuario WHERE Tipo_Usuario = "Supervisor" AND Nombre LIKE "%${identi}%"`
     return dbService.querypromise(sql);
 }
 
 const getSuUs = (identi) => {
-    sql = `SELECT * FROM usuario WHERE Usuario_ID = "${identi}"` 
+    sql = `SELECT * FROM usuario WHERE Usuario_ID = "${identi}"`
     return dbService.querypromise(sql);
 }
 
@@ -189,7 +189,7 @@ const confirmarKPI = (identi) => {
 }
 
 const calificar = (body) => {
-    const {com, cali, subniv, idSup} = body;
+    const { com, cali, subniv, idSup } = body;
     sql = `UPDATE entrega SET PuntajeEntrega = ${cali}, Comentario = "${com}", Revisado = 1
         WHERE Super_ID = ${idSup} AND Sub_ID = ${subniv} `
     return dbService.querypromise(sql);
@@ -197,7 +197,7 @@ const calificar = (body) => {
 }
 
 const reviCerti = (body) => {
-    const {superviId, colorcert} = body;
+    const { superviId, colorcert } = body;
     sql = `select entrega.PuntajeEntrega
     from entrega, subnivel, medalla, supervisor
     WHERE entrega.Super_ID = supervisor.Super_ID
@@ -223,7 +223,40 @@ const certifiOro = (identi) => {
     return dbService.querypromise(sql);
 }
 
+//QUERYS PARA VIDEOGAME
 
+const verifJuegoNivel = (body) => {
+    const { usID, subID } = body;
+    sql = `select PuntajeVideojuego, entrega.Super_ID
+        from entrega, supervisor
+        where entrega.Sub_ID = ${subID}
+        AND entrega.Super_ID = supervisor.Super_ID
+        AND supervisor.Usuario_ID = "${usID}"`
+    return dbService.querypromise(sql);
+}
+
+
+
+
+//SE BORRARÁN DESPUÉS...
+
+const pruebaGet = () => {
+    sql = "select * from pruebas"
+    return dbService.querypromise(sql);
+}
+
+const pruebaPost = (body) => {
+    const {col1, col2} = body
+    sql = `INSERT INTO pruebas (colum1, colum2) VALUES (${col1}, ${col2}) `
+    return dbService.querypromise(sql);
+}
+
+const pruebaPut = (body) => {
+    const {col1, col2} = body
+    sql = `UPDATE pruebas set colum1 = ${col1}, colum2 = ${col2}`
+    return dbService.querypromise(sql);
+}
+ 
 module.exports = {
     getAllUsers,
     getRankJI,
@@ -247,5 +280,13 @@ module.exports = {
     reviCerti,
     certifiBron,
     certifiPlat,
-    certifiOro
+    certifiOro,
+
+    verifJuegoNivel,
+
+
+    //SE BORRAN DESPUÉS...
+    pruebaGet,
+    pruebaPost,
+    pruebaPut
 }

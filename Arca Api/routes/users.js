@@ -29,4 +29,15 @@ router.get('/certificarBronce/:identi', UsersControllers.certifiBron)
 router.get('/certificarPlata/:identi', UsersControllers.certifiPlat)
 router.get('/certificarOro/:identi', UsersControllers.certifiOro)
 
+//Rutas Videojuego
+
+router.get('/juegonivel', UsersControllers.verifJuegoNivel)
+
+
+
+//SE BORRAN DESPUÉS
+router.get('/pruebaGet', UsersControllers.pruebaGet)
+router.post('/pruebaPost', UsersControllers.pruebaPost)
+router.put('/pruebaPut', UsersControllers.pruebaPut)
+
 module.exports = router
