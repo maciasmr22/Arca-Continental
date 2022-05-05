@@ -24,9 +24,9 @@ router.get('/getAllSuperUs/:identi', UsersControllers.getAllSuperUs2)
 router.get('/getSuUs/:identi', UsersControllers.getSuUs)
 router.put('/confirmarKPI/:identi', UsersControllers.confirmarKPI)
 router.put('/calificar', UsersControllers.calificar)
-router.get('/revisaCertificaciones', UsersControllers.reviCerti)
-router.put('/certificarBronce/:identi', UsersControllers.certifiBron)
-router.put('/certificarPlata/:identi', UsersControllers.certifiPlat)
-router.put('/certificarOro/:identi', UsersControllers.certifiOro)
+router.put('/revisaCertificaciones', UsersControllers.reviCerti)
+router.get('/certificarBronce/:identi', UsersControllers.certifiBron)
+router.get('/certificarPlata/:identi', UsersControllers.certifiPlat)
+router.get('/certificarOro/:identi', UsersControllers.certifiOro)
 
 module.exports = router

@@ -27,7 +27,6 @@ export default function Login({ setUser }) {
 
       })
       .then((json) => {
-        console.log(json.user[0])
         setUser(json.user[0])
 
       })

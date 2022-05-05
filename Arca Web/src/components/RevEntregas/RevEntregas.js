@@ -47,7 +47,7 @@ function RevEntregas(props) {
             colorcert
         }
         const options = {
-            method: 'GET',
+            method: 'PUT',
             headers: {
                 "Content-Type": "application/json"
             },
@@ -61,27 +61,25 @@ function RevEntregas(props) {
             .then((json) => {
                 setCalificaciones(json.certi)
             })
-
-        if (calificaciones.length === 4) {
-            if (calificaciones[0] >= 70 &&
-                calificaciones[1] >= 70 &&
-                calificaciones[2] >= 70 &&
-                calificaciones[3] >= 70) {
-                if (colorcert === "Bronce") {
-                    fetch(ApiUrlXD + `certificarBronce/${superviId}`)
-                        .then((response) => {
-                            return response.json()
-                        })
-                } else if (colorcert === "Plata") {
-                    fetch(ApiUrlXD + `certificarPlata/${superviId}`)
-                        .then((response) => {
-                            return response.json()
-                        })
-                } else if (colorcert === "Oro") {
-                    fetch(ApiUrlXD + `certificarOro/${superviId}`)
-                        .then((response) => {
-                            return response.json()
-                        })
+        if (!calificaciones) {
+            console.log("Recibiendo datos...")
+        } else {
+            if (calificaciones.length === 4) {
+                if (calificaciones[0].PuntajeEntrega >= 70 &&
+                    calificaciones[1].PuntajeEntrega >= 70 &&
+                    calificaciones[2].PuntajeEntrega >= 70 &&
+                    calificaciones[3].PuntajeEntrega >= 70) {
+                        console.log(superviId)
+                    if (colorcert == "Bronce") {
+                        fetch(ApiUrlXD + `certificarBronce/${superviId}`)
+                            
+                    } else if (colorcert === "Plata") {
+                        fetch(ApiUrlXD + `certificarPlata/${superviId}`)
+                            
+                    } else if (colorcert === "Oro") {
+                        fetch(ApiUrlXD + `certificarOro/${superviId}`)
+                            
+                    }
                 }
             }
         }
@@ -119,7 +117,7 @@ function RevEntregas(props) {
 
         fetch(ApiUrlXD + `calificar`, options)
 
-        certificarMedalla(idU, color)
+        
 
     }
 
@@ -305,12 +303,12 @@ function RevEntregas(props) {
 
             <h1 className="title-med-ent">Medallas</h1>
 
-            <div class="container-med-ent">
+            <div className="container-med-ent">
                 <div className="progress-container-med ">
                     {certiBron ? <div className="circle active"><img className='medalla' src={ini} /> <div className="progress" id="uno"></div></div> : <div className="circle active"><img className='medalla' src={ini} /> </div>}
-                    {certiBron ? <div className="circle active"><img className='medalla' src={medBron} /> <div className="progress dos" ></div></div> : <div className="circle"><img className='medalla' src={medNada} /> </div>}
-                    {certiPla ? <div className="circle active"><img className='medalla' src={medPla} /> <div className="progress tres" ></div></div> : <div className="circle"><img className='medalla' src={medNada} /> </div>}
-                    {certiOr ? <div className="circle active"><img className='medalla' src={medOro} /> <div className="progress cuatro" ></div></div> : <div className="circle"><img className='medalla' src={medNada} /> </div>}
+                    {certiBron ? <div className="circle active"><img className='medalla' src={medBron} /> <div className="progress dos" ></div></div> : <div className="circle"><img className='medalla' src={medNada} onClick={()=>{certificarMedalla(idU,"Bronce")}} /> </div>}
+                    {certiPla ? <div className="circle active"><img className='medalla' src={medPla} /> <div className="progress tres" ></div></div> : <div className="circle"><img className='medalla' src={medNada} onClick={()=>{certificarMedalla(idU,"Plata")}}/> </div>}
+                    {certiOr ? <div className="circle active"><img className='medalla' src={medOro} /> <div className="progress cuatro" ></div></div> : <div className="circle"><img className='medalla' src={medNada} onClick={()=>{certificarMedalla(idU,"Oro")}}/> </div>}
 
 
                 </div>
