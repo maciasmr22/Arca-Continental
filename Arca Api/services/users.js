@@ -247,13 +247,13 @@ const pruebaGet = () => {
 
 const pruebaPost = (body) => {
     const {col1, col2} = body
-    sql = `INSERT INTO pruebas (colum1, colum2) VALUES (${col1}, ${col2}) `
+    sql = `INSERT INTO pruebas (colum1, colum2) VALUES ("${col1}", "${col2}") `
     return dbService.querypromise(sql);
 }
 
 const pruebaPut = (body) => {
     const {col1, col2} = body
-    sql = `UPDATE pruebas set colum1 = ${col1}, colum2 = ${col2}`
+    sql = `UPDATE pruebas set colum1 = "${col1}", colum2 = "${col2}"`
     return dbService.querypromise(sql);
 }
  
