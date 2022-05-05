@@ -95,14 +95,12 @@ function Perfil_Entregas() {
             <div className="container-form-perfil">
               <form onSubmit={handleSubmit}>
                 <p className="texto-foto-per">
-                  Sube tu foto de perfil a drive, dale click <br />
-                  dereho a tu imagen y haz clic obtener enlace,<br />
-                  copia el link, pegalo en el cuadro de texto.<br />
+                  Sube tu foto de perfil a drive, dale click 
+                  dereho a tu imagen y haz clic obtener enlace,
+                  copia el link, pegalo en el cuadro de texto.
                   <div className="texto-b-foto-per">*IMPORTANTE* </div>
-                  Si aparece "restringido" cambiar a <br /> "cualquier persona
-                  que tenga el vinculo".
-                  <br />
-                  Por ultimo presiona "subir"
+                  Si aparece "restringido" cambiar a "cualquier persona
+                  que tenga el vinculo". Por ultimo presiona "subir"
                 </p>
 
                 <label className="label-foto-per" htmlFor='imgURL'>Url de tu imagen</label> <br />
@@ -110,7 +108,7 @@ function Perfil_Entregas() {
                 <br />
 
                 <div className="container-button-foto-per">
-                  <button className="button-foto-per" type="submit">subir</button>
+                  <button class="btn button-certi" type="submit">subir</button>
                 </div>
 
               </form>

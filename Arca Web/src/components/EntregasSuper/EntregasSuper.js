@@ -201,7 +201,7 @@ function EntregasSuper() {
                                             <Popup trigger={<div className='nombre-entrega'>{verifEntrega(PuntajeEntrega)}</div>}>
                                                 <div className='pop-Up-Intrucciones'>
                                                     <h1>Comentario</h1>
-                                                    {Revisado ? (<p style={{ color: "green" }}>Revisado</p>) : (<p style={{ color: "red" }}>Falta revisar</p>)}
+                                                    {Revisado ? (<p style={{ color: "green" }}>Revisado</p>) : (<p className ="avisos" style={{ color: "red" }}>Falta revisar</p>)}
                                                     <p>{verifEntrega(Comentario)}</p>
                                                 </div>
                                             </Popup>
