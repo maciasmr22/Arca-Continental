@@ -209,7 +209,7 @@ module.exports = {
             const  iEntrega = await UsersService.insertEntrega(req.body);
             res.status(200).json({iEntrega})
         } catch(err) {
-            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
+            res.status(500).json({"message": `Error insert videojuego. Err: ${err}`});
         } 
     },
     updateEntrega : async(req, res, next) => {
@@ -217,7 +217,7 @@ module.exports = {
             const  uEntrega = await UsersService.updateEntrega(req.body);
             res.status(200).json({uEntrega})
         } catch(err) {
-            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
+            res.status(500).json({"message": `Error update videojuego. Err: ${err}`});
         } 
     }
     
