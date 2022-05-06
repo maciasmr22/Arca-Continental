@@ -87,17 +87,17 @@ function About() {
 
                 <tr>
                   <th> Mejora mins de paro</th>
-                  {datSup ? <td>{datSup.Mjrs_Mins_Paro_Porcentaje} %</td> : <td>Cargando...</td>}
+                  {datSup ? <td>{datSup.Mjrs_Mins_Paro_Porcentaje.toFixed(2)} %</td> : <td>Cargando...</td>}
                 </tr>
 
                 <tr>
                   <th> Mejora envases desechados</th>
-                  {datSup ? <td>{datSup.Mjrs_Envs_Dsechds_Porcentaje} %</td> : <td>Cargando...</td>}
+                  {datSup ? <td>{datSup.Mjrs_Envs_Dsechds_Porcentaje.toFixed(2)} %</td> : <td>Cargando...</td>}
                 </tr>
 
                 <tr>
                   <th> Mejora minutos por cambio de formato</th>
-                  {datSup ? <td>{datSup.Mjrs_Mins_CambioFormato_Porcentaje} %</td> : <td>Cargando...</td>}
+                  {datSup ? <td>{datSup.Mjrs_Mins_CambioFormato_Porcentaje.toFixed(2)} %</td> : <td>Cargando...</td>}
                 </tr>
 
               </tbody>

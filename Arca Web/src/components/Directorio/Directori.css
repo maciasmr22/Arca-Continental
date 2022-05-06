@@ -9,16 +9,16 @@
 
 .container-directorio {
   float: right;
-  left: 200px;
-  width: 70%;
+  width: 68%;
+  margin-left: 2%;
 }
 
 
 .buscador {
   margin-top: 12px;
   float: right;
-  margin-right: 50px;
   color: darkred;
+  margin-bottom: 1%;
   
 }
 
@@ -29,6 +29,11 @@
 
 .title-entre {
   float: left;
+  padding-left: 0;
+}
+
+.title-entre h1 {
+  font-family: verdana;
 }
 
 .rowDir:hover {
@@ -37,4 +42,9 @@
 
 .contentre {
   clear: both;
+}
+
+.buscaDirect {
+  border-color: 1px solid;
+  margin-left: 5px;
 }

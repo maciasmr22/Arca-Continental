@@ -2,7 +2,7 @@ import React from 'react';
 import './SideDrawer.css';
 
 import { Link } from "react-router-dom";
-import { FaGamepad, FaCrown, FaInfoCircle } from "react-icons/fa";
+import { FaGamepad, FaCrown, FaInfoCircle, FaBook } from "react-icons/fa";
 
 const sideDrawer = props => {
     let drawerClasses = 'side-drawer';
@@ -38,10 +38,16 @@ const sideDrawer = props => {
             </nav>
         );
     }
-    else if(localStorage.getItem("tipoU") === "Administrador"){
+    else if (localStorage.getItem("tipoU") === "Administrador") {
         return (
             <nav className={drawerClasses}>
                 <ul>
+                    <li>
+                        <a id="about" className="menu-item" href='/about-us'>
+                            <FaBook />
+                            <Link className="link-txt" to='/profile'>Directorio</Link>
+                        </a>
+                    </li>
                     <li>
                         <a id="ranking" className="menu-item" href='/ranking'>
                             <FaCrown />
@@ -58,8 +64,8 @@ const sideDrawer = props => {
             </nav>
         );
     }
-    else{
-        return(
+    else {
+        return (
             <h1>Error</h1>
         );
     }

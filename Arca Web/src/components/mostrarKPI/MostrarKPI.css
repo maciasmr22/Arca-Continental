@@ -9,7 +9,11 @@ font-family: letrapalpancho;
 
 .MostrarKPIPAPA{
     margin:auto;
-    width: 80%;        
+    width: 80%;    
+}
+
+.MostrarKPIPAPA div {
+    margin-top: 5%;
 }
 
 .title-st {
@@ -25,7 +29,7 @@ font-family: letrapalpancho;
 }
 
 .imgMedKPI{
-    width: 100px;
+    width: 100%;
     
 }
 
