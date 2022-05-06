@@ -46,9 +46,6 @@
 padding-bottom: 2%;
 }
 
-.mostrar-kpis {
-
-}
 
 .title-mkpis {
     color: darkred;
@@ -72,6 +69,10 @@ padding-bottom: 2%;
     border-width: 3px;
     color: burlywood;
     background-color: rgb(116, 0, 0);
+}
+
+.button2-adm {
+    border-radius: 10px;
 }
 
   .img-Perfil-e2 { 

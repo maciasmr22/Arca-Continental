@@ -120,7 +120,7 @@ function About() {
                 }}
               >
                   Confirmar datos de supervisor 
-              </button> : <button disabled>
+              </button> : <button className = "button2-adm" disabled>
                   Datos ya confirmados 
               </button>}
             </div>
