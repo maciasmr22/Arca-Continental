@@ -1,59 +1,62 @@
 @font-face {
-    font-family: letrapalpancho;
-    src: url("../../../gothamlight.otf");
+  font-family: letrapalpancho;
+  src: url("../../../gothamlight.otf");
 }
 
 * {
-font-family: letrapalpancho;
+  font-family: letrapalpancho;
 }
 
-.MostrarKPIPAPA{
-    margin:auto;
-    width: 80%;    
+.MostrarKPIPAPA {
+  margin: auto;
+  width: 80%;
 }
 
 .MostrarKPIPAPA div {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .title-st {
-    color: darkred;
-    text-decoration: underline;
-    text-decoration-color: darkred;
-    text-decoration-thickness: 1%;
+  color: #000000;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 90%;
+  margin-bottom: none;
 }
 
 .title-sc {
-    color: darkred;
-    font-weight: bold;
+  color: darkred;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 
-.imgMedKPI{
-    width: 100%;
-    
+.imgMedKPI {
+  width: 100%;
 }
 
-.imgMedKPI:hover{
-
-    filter: brightness(0.7);
+.imgMedKPI:hover {
+  filter: brightness(0.7);
 }
 
-.tableNumCerti{
-    font-size: xx-large;
-    font-weight: 800;
-    margin: auto;
-    text-align: center;
+.tableNumCerti {
+  font-size: xx-large;
+  font-weight: 800;
+  margin: auto;
+  text-align: center;
 }
 
 .tableNumCerti td {
-    padding: 15px;
+  padding: 15px;
 }
 
-.pieChart{
-    width: min-content;
+.pieChart {
+  width: min-content;
 }
 
 .text-sc {
-    padding-top: 5%;
-    color: darkred;
+  padding-top: 5%;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 90%;
 }

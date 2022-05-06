@@ -46,8 +46,8 @@ function MostrarKPI() {
 
 
                 <h3 className = "title-st">Supervisores totales:  {ctSuperTotales} </h3>
-                <br />
-
+                
+                <hr></hr>
                 <h2 className = "title-sc">Supervisores certificados</h2>
 
                 <table className='tableNumCerti'>
@@ -85,7 +85,7 @@ function MostrarKPI() {
 
 
                 </table>
-
+                <hr></hr>
                 {pieBronc ? <div>
                     <h2 className = "text-sc"> Certificados bronce</h2>
                     <PieChartCerti total = {ctSuperTotales} nombre = "bronce" certi = {ctCertiBronce}/>
