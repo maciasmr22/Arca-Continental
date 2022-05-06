@@ -14,7 +14,7 @@ import ini from './img/inicio.png'
 
 import { ApiUrlXD } from '../../const/global';
 
-
+import "./EntregasSuper.css"
 
 
 function EntregasSuper() {
@@ -81,13 +81,13 @@ function EntregasSuper() {
         if (xd >= 70) {
             return (
                 <Popup trigger={
-                    <button type="button"  class="btn button-certi" >
+                    <button type="button"  className="btn button-certi" >
                         Entregar
                     </button>} >
 
                     <form onSubmit={e => subirEntrega(e, Sub_id)} >
                         <label className="avisos" htmlFor='entregaUrl'> Sube el link de drive de tu entrega: </label>
-                        <input type="url" id="entregaUrl" onChange={e => setLinkEntrega(e.target.value)}></input>
+                            <input className = "avisos-es" type="url" id="entregaUrl" onChange={e => setLinkEntrega(e.target.value)}></input>
                         <button  class="btn button-certi-peque" type="submit">subir</button>
                     </form>
 

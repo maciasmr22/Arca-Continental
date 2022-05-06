@@ -225,35 +225,18 @@ const certifiOro = (identi) => {
 
 //QUERYS PARA VIDEOGAME
 
-const verifJuegoNivel = (body) => {
-    const { usID, subID } = body;
-    sql = `select PuntajeVideojuego, entrega.Super_ID
-        from entrega, supervisor
-        where entrega.Sub_ID = ${subID}
-        AND entrega.Super_ID = supervisor.Super_ID
-        AND supervisor.Usuario_ID = "${usID}"`
+const verifJuegoNivel = (supID, subID) => {
+    
+    sql = `SELECT entrega.PuntajeVideojuego, entrega.Super_ID
+        FROM entrega, 
+        WHERE Sub_ID = ${subID} 
+        AND Super_ID = ${supID}`
     return dbService.querypromise(sql);
 }
 
 
-
-
-//SE BORRARÁN DESPUÉS...
-
-const pruebaGet = (identi) => {
-    sql = `select * from pruebas where colum1 = "${identi}"`
-    return dbService.querypromise(sql);
-}
-
-const pruebaPost = (body) => {
-    const {col1, col2} = body
-    sql = `INSERT INTO pruebas (colum1, colum2) VALUES ("${col1}", "${col2}") `
-    return dbService.querypromise(sql);
-}
-
-const pruebaPut = (body) => {
-    const {col1, col2} = body
-    sql = `UPDATE pruebas set colum2 = "${col2}" where colum1 = "${col1}"`
+const tranformASuperID = (identi) => {
+    sql = `SELECT Super_ID FROM supervisor WHERE Usuario_ID = "${identi}"`
     return dbService.querypromise(sql);
 }
  
@@ -283,10 +266,8 @@ module.exports = {
     certifiOro,
 
     verifJuegoNivel,
+    tranformASuperID
 
 
-    //SE BORRAN DESPUÉS...
-    pruebaGet,
-    pruebaPost,
-    pruebaPut
+    
 }
