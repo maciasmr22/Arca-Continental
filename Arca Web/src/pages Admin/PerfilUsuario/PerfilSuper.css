@@ -1,85 +1,72 @@
 @font-face {
-    font-family: letrapalpancho;
-    src: url("../../../gothamlight.otf");
-  }
-  
-  * {
-    font-family: letrapalpancho;
-  }
+  font-family: letrapalpancho;
+  src: url("../../../gothamlight.otf");
+}
+
+* {
+  font-family: letrapalpancho;
+}
 
 .list-groupentrepadre-adm {
-    text-align: center;
-    margin-top: 8%;
-    overflow: hidden;
-    height: 100%;
-    z-index: 1;
+  text-align: center;
+  margin-top: 8%;
+  overflow: hidden;
+  height: 100%;
+  z-index: 1;
 }
 
 .perfilcontent-adm {
-    position: relative;
-    float: left;
-    margin-left: 5%;
-    width: 30%;
-    z-index: 3;
-    text-align: center;
+  position: relative;
+  float: left;
+  margin-left: 5%;
+  width: 30%;
+  z-index: 3;
+  text-align: center;
 }
 
 .about-cont-adm {
-    height: 230px;
-    border-radius: 20px;
-    text-align: center;
-    padding-right: 15%;
+  height: 230px;
+  border-radius: 20px;
+  text-align: center;
+  padding-right: 15%;
 }
-
-
 
 .about-tex-adm {
-    margin-top: 2%;
-    padding-top: 4%;
-    color: darkred;
-    font-size: 18px;
-    line-height: 15px;
-    font-style: normal;
-    padding-left: 10%;
-    padding-right: 10%;
-    word-break: break-word;
-padding-bottom: 2%;
+  margin-top: 2%;
+  padding-top: 4%;
+  color: darkred;
+  font-size: 18px;
+  line-height: 15px;
+  font-style: normal;
+  padding-left: 10%;
+  padding-right: 10%;
+  word-break: break-word;
+  padding-bottom: 2%;
 }
 
-
 .title-mkpis {
-    color: darkred;
-    font-weight: bold;
-    font-size: 110%;
-    text-align: center;
+  color: darkred;
+  font-weight: bold;
+  font-size: 110%;
+  text-align: center;
 }
 
 .container-button1 {
-    padding-top: 4%;
+  padding-top: 4%;
 }
 
-.button1-adm {
-    border-radius: 10px;
-    background-color: darkred;
-    color: bisque;
+.img-Perfil-e2 {
+  max-width: 55%;
+  min-width: 55%;
+  height: 100%;
+  padding-left: 10%;
 }
 
-.button1-adm:hover {
-    border-color: grey;
-    border-width: 3px;
-    color: burlywood;
-    background-color: rgb(116, 0, 0);
+.button-certi {
+  background-color: darkred;
+  color: #fff;
 }
-
-.button2-adm {
-    border-radius: 10px;
+.button-certi:disabled {
+  background-color: #bdbdbd;
+  color: #fff;
 }
-
-  .img-Perfil-e2 { 
-    max-width: 55%;
-    min-width: 55%;
-    height: 100%;
-    padding-left: 10%;
-  }
-
-

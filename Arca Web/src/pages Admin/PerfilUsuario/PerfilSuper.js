@@ -112,7 +112,7 @@ function About() {
             
 
             <div className = "container-button1">
-              {datSup && !datSup.Revisado ? <button className = "button1-adm" 
+              {datSup && !datSup.Revisado ? <button type="button"  class="btn button-certi" 
                 onClick={()=>{
                   fetch(ApiUrlXD + `confirmarKPI/${idU}`, {
                     method: 'PUT'
@@ -127,7 +127,7 @@ function About() {
                 }}
               >
                   Confirmar datos de supervisor 
-              </button> : <button className = "button2-adm" disabled>
+              </button> : <button type="button"  class="btn button-certi" disabled>
                   Datos ya confirmados 
               </button>}
             </div>

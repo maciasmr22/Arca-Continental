@@ -144,32 +144,26 @@ function RevEntregas(props) {
         return (
 
             <Popup className = "popup-formrev" trigger={
-                <button className = "button-reventregas" style={{ color: c, backgroundColor: "lightgrey" }} >
+                <button type="button"  class="btn button-certi"  >
                     Calificar
                 </button>}>
                 <div className='popUp-ccalificar'>
-                    <h5 className = "title-formrev">Calificar</h5>
+                   
                     <form onSubmit={e => handleCalificar(e, nuevoCom, nuevaCali, subniv, color)}>
-                        <label htmlFor='comentarioXD'>
-                            Comentarios:
-                        </label>
                         <div className = "container-comentrev">
-                            <input className = "comentario-reventregas" type="text" id="comentarioXD"
+                            <input className = "comentario-reventregas" type="text" id="comentarioXD" placeholder="Comentarios"
                                 onChange={e => setNuevoCom(e.target.value)}
                             ></input>
                         </div>
 
-                        <label htmlFor='calificacionXD'>
-                            Calificacion: 
-                        </label>
                         <div className = "container-comentrev">
-                            <input type="number" max="100" min="0"
+                            <input type="number" max="100" min="0" placeholder="Calificacion"
                                 onChange={e => setNuevaCali(e.target.value)}
                             ></input>
                         </div>
 
                         <div className = "container-button2">
-                            <button className = "button2-formrev" type='submit'>
+                            <button type="button"  class="btn button-certi"  type='submit'>
                                 calificar
                             </button>
                         </div>
