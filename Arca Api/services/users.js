@@ -225,8 +225,8 @@ const certifiOro = (identi) => {
 
 //QUERYS PARA VIDEOGAME
 
-const verifJuegoNivel = (body) => {
-    const { supID, subID } = body;
+const verifJuegoNivel = (supID, subID) => {
+    
     sql = `SELECT entrega.PuntajeVideojuego, entrega.Super_ID
         FROM entrega, 
         WHERE Sub_ID = ${subID} 
