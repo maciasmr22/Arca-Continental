@@ -203,7 +203,7 @@ module.exports = {
     //SE BORRAN DESPUÉS
     pruebaGet : async(req, res, next) => {
         try {
-            const prueba = await UsersService.pruebaGet();
+            const prueba = await UsersService.pruebaGet(req.params.identi);
             res.status(200).json({prueba})
         } catch(err) {
             res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});

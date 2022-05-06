@@ -240,8 +240,8 @@ const verifJuegoNivel = (body) => {
 
 //SE BORRARÁN DESPUÉS...
 
-const pruebaGet = () => {
-    sql = "select * from pruebas"
+const pruebaGet = (identi) => {
+    sql = `select * from pruebas where colum1 = "${identi}"`
     return dbService.querypromise(sql);
 }
 
@@ -253,7 +253,7 @@ const pruebaPost = (body) => {
 
 const pruebaPut = (body) => {
     const {col1, col2} = body
-    sql = `UPDATE pruebas set colum1 = "${col1}", colum2 = "${col2}"`
+    sql = `UPDATE pruebas set colum2 = "${col2}" where colum1 = "${col1}"`
     return dbService.querypromise(sql);
 }
  
