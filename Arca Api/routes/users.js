@@ -32,6 +32,6 @@ router.get('/certificarOro/:identi', UsersControllers.certifiOro)
 //Rutas Videojuego
 
 router.get('/juegonivel/:supID/:subID', UsersControllers.verifJuegoNivel)
-router.get('/tranformASuperID', UsersControllers.tranformASuperID)
+router.get('/tranformASuperID/:identi', UsersControllers.tranformASuperID)
 
 module.exports = router
