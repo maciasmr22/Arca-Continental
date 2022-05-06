@@ -30,10 +30,17 @@ function About() {
 
   }
 
-  async function recDataSup(){
-    let response2 = await fetch(ApiUrlXD + `getSupervisor/${idU}`);
-    response2 = await response2.json();
-    setDatSup(response2.sup[0])
+  function recDataSup(){
+
+    console.log("HOLAAAAAAAAA")
+    fetch(ApiUrlXD + `getSupervisor/${idU}`)
+    .then((resp) => {
+      return(resp.json())
+    })
+    .then((json) => {
+      setDatSup(json.sup[0])
+      
+    })
   }
 
   useEffect(() => {
@@ -87,17 +94,17 @@ function About() {
 
                 <tr>
                   <th> Mejora mins de paro</th>
-                  {datSup ? <td>{datSup.Mjrs_Mins_Paro_Porcentaje.toFixed(2)} %</td> : <td>Cargando...</td>}
+                  {datSup ? <td>{datSup.Mjrs_Mins_Paro_Porcentaje} %</td> : <td>Cargando...</td>}
                 </tr>
 
                 <tr>
                   <th> Mejora envases desechados</th>
-                  {datSup ? <td>{datSup.Mjrs_Envs_Dsechds_Porcentaje.toFixed(2)} %</td> : <td>Cargando...</td>}
+                  {datSup ? <td>{datSup.Mjrs_Envs_Dsechds_Porcentaje} %</td> : <td>Cargando...</td>}
                 </tr>
 
                 <tr>
                   <th> Mejora minutos por cambio de formato</th>
-                  {datSup ? <td>{datSup.Mjrs_Mins_CambioFormato_Porcentaje.toFixed(2)} %</td> : <td>Cargando...</td>}
+                  {datSup ? <td>{datSup.Mjrs_Mins_CambioFormato_Porcentaje} %</td> : <td>Cargando...</td>}
                 </tr>
 
               </tbody>
