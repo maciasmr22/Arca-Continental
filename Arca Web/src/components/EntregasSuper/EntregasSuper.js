@@ -159,7 +159,8 @@ function EntregasSuper() {
     return (
         <div className="container-entregas">
             <div className="title-entre">
-                <center><h1 className="titulo">Entregas</h1></center>
+                <center><h1 className="titulo">ENTREGAS</h1></center>
+                <hr></hr>
             </div>
             <div className="contentre justify-content-center">
                 <div className="scrolltable1">
@@ -168,13 +169,13 @@ function EntregasSuper() {
                     <table className="table">
                         <thead className="encabetable">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">P. entrega</th>
-                                <th scope="col">P. juego</th>
-                                <th scope="col">Sobre</th>
-                                <th scope="col">Fecha</th>
+                                <th className="nombresblan" scope="col">#</th>
+                                <th className="nombresblan" scope="col">Nombre</th>
+                                <th className="nombresblan" scope="col">Estado</th>
+                                <th className="nombresblan" scope="col">P. entrega</th>
+                                <th className="nombresblan" scope="col">P. juego</th>
+                                <th className="nombresblan" scope="col">Sobre</th>
+                                <th sclassName="nombresblan" cope="col">Fecha</th>
                             </tr>
                         </thead>
                         <tbody className="cuerpotable">
@@ -214,7 +215,8 @@ function EntregasSuper() {
                 </div>
             </div>
 
-            <h1 className="title-med-ent">Medallas</h1>
+            <h1 className="title-med-ent">MEDALLAS GLOBAL</h1>
+            <hr></hr>
 
             <div class="container-med-ent">
                 <div className="progress-container-med ">

@@ -111,10 +111,10 @@ td > .btn {
 }
 
 .about-tex {
-  margin-top: 25%;
-  padding-top: 4%;
+  margin-top: 15%;
+  padding-top: 1%;
   color: darkred;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 15px;
   font-style: normal;
   padding-left: 10%;
@@ -124,6 +124,7 @@ td > .btn {
 
 .about-tex p {
   text-align: left;
+  color: black;
 }
 
 .entregas-perfil {
