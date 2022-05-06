@@ -1,0 +1,44 @@
+@font-face {
+    font-family: letrapalpancho;
+    src: url("../../../gothamlight.otf");
+  }
+  
+* {
+    font-family: letrapalpancho;
+}
+
+.button-reventregas {
+    border-radius: 7px;
+    
+}
+
+.title-formrev {
+    color: darkred;
+    font-weight: bold;
+    padding-top: 4%;
+}
+
+.text-formrev {
+    color: darkred;
+}
+
+.container-comentrev {
+    padding-bottom: 3%;
+}
+
+.comentario-reventregas {
+    max-width: 90%;
+    padding-bottom: 1%;
+}
+
+.container-button2 {
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
+
+.button2-formrev {
+    border-radius: 10px;
+    background-color: darkred;
+    color: bisque;
+}
