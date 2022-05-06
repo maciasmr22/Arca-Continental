@@ -12,6 +12,7 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import PerfilAdmin from './pages Admin/PerfilAdmin/PerfilAdmin'
 import PerfilSuper from './pages Admin/PerfilUsuario/PerfilSuper'
+import Videojuego from "./pages/VideoJuego/videojuego";
 
 class App extends Component {
 
@@ -77,6 +78,7 @@ class App extends Component {
             <Routes>
               <Route exact path='/' element={<Inicio />} />
               <Route path='/profile' element={<PerfilEntregas />} />
+              <Route path="/videojuego" element={<Videojuego />} />
               <Route path='/ranking' element={<Ranking />} />
               <Route path='/about-us' element={<AboutUs />} />
             </Routes>
