@@ -3,6 +3,16 @@
   --line-border-fill: darkred;
   --line-border-empty: #bdbdbd;
 }
+
+@font-face {
+  font-family: letrapalpancho;
+  src: url("../../../gothamlight.otf");
+}
+
+* {
+  font-family: letrapalpancho;
+}
+
 .pop-Up-Intrucciones > h1 {
   font-size: x-large;
   font-weight: bold;
@@ -101,9 +111,13 @@
   color: #fff;
 }
 .avisos {
-  font-family: "Rockwell";
-  font-size: 70%;
+  font-size: 100%;
 }
+
+.avisos-es {
+  width: 90%;
+}
+
 .titulo {
   font-size: 50px;
   color: darkred;
