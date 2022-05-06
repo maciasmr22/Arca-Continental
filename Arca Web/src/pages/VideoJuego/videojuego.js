@@ -2,24 +2,31 @@ import React, { useEffect } from 'react'
 import Unity, { UnityContext } from "react-unity-webgl";
 
 const unityContext = new UnityContext({
-    loaderUrl: "build/myunityapp.loader.js",
-    dataUrl: "build/myunityapp.data",
-    frameworkUrl: "build/myunityapp.framework.js",
-    codeUrl: "build/myunityapp.wasm",
+    loaderUrl: 'unity/Build/JuegoGL2.loader.js',
+    dataUrl: 'unity/Build/JuegoGL2.data',
+    frameworkUrl: 'unity/Build/JuegoGL2.framework.js',
+    codeUrl: 'unity/Build/JuegoGL2.wasm',
 });
+
+const mystyle = {
+    width: "100%",
+    height: "auto"
+}
 
 function Videojuego() {
 
-    
-
-    //VARIABLES
-    useEffect(() => {         //clase             //método
-        unityContext.send("GameController", "SpawnEnemies", localStorage.getItem("usId"))
-    })
-
-    return (
-        //ES EL VIDEOJUEGO
-        <Unity unityContext={unityContext} />
+    useEffect(() => {     
+        unityContext.on("progress",(progress)=>{
+            if(progress === 1){
+                setTimeout(()=>{
+                    unityContext.send("id","getUser",localStorage.getItem("usId"))
+                },0)
+            }
+        })
+        
+    },[])
+    return (        
+        <Unity style={mystyle} unityContext={unityContext} />
     );
 
 
