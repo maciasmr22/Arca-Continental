@@ -214,7 +214,7 @@ module.exports = {
     },
     updateEntrega : async(req, res, next) => {
         try {
-            const  uEntrega = await UsersService.insertEntrega(req.params.subid, req.params.supid, req.params.puntaje);
+            const  uEntrega = await UsersService.updateEntrega(req.params.subid, req.params.supid, req.params.puntaje);
             res.status(200).json({uEntrega})
         } catch(err) {
             res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});

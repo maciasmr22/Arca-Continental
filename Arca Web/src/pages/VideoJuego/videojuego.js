@@ -17,9 +17,14 @@ function videojuego() {
         //ES EL VIDEOJUEGO
         <Unity unityContext={unityContext} />
     );
+
+        ----------localStorage.getItem("usId")----------
+    
 }
 */
 function videojuego() {
+    
+
     return (
         <div>videojuego</div>
     )
