@@ -33,7 +33,7 @@ router.get('/certificarOro/:identi', UsersControllers.certifiOro)
 
 router.get('/juegonivel/:supID/:subID', UsersControllers.verifJuegoNivel)
 router.get('/tranformASuperID/:identi', UsersControllers.tranformASuperID)
-router.get('/insertEntrega/:subid/:supid/:puntaje', UsersControllers.insertEntrega)
-router.get('/updateEntrega/:subid/:supid/:puntaje', UsersControllers.updateEntrega)
+router.post('/insertEntrega', UsersControllers.insertEntrega)
+router.put('/updateEntrega', UsersControllers.updateEntrega)
 
 module.exports = router

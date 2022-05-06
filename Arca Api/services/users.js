@@ -239,14 +239,16 @@ const tranformASuperID = (identi) => {
     return dbService.querypromise(sql);
 }
  
-const insertEntrega = (subid,supid,puntaje) => {
+const insertEntrega = (body) => {
+    const {subid,supid,puntaje} = body
     sql = `INSERT INTO entrega (Sub_ID, Super_ID, Archivo, Fecha, PuntajeEntrega, PuntajeVideojuego, Comentario, Revisado)
         VALUES (${subid},${supid}, NULL, NULL, NULL, ${puntaje}, NULL, 0)`
     return dbService.querypromise(sql);
 
 }
 
-const updateEntrega = (subid,supid,puntaje) => {
+const updateEntrega = (body) => {
+    const {subid,supid,puntaje} = body
     sql = `UPDATE entrega SET PuntajeVideojuego = ${puntaje}
         WHERE Sub_ID = ${subid} AND Super_ID = ${supid}`
     return dbService.querypromise(sql);
