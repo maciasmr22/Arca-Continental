@@ -190,10 +190,10 @@ module.exports = {
     //VIDEOJUEGO
     verifJuegoNivel : async(req, res, next) => {
         try {
-            const verif = await UsersService.verifJuegoNivel(req.params.supID,req.params.subID);
+            const verif = await UsersService.verifJuegoNivel(req.params.supID, req.params.subID);
             res.status(200).json({verif})
         } catch(err) {
-            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
+            res.status(500).json({"message": `error en verificarjuego. Err: ${err}`});
         } 
     },
     tranformASuperID : async(req, res, next) => {

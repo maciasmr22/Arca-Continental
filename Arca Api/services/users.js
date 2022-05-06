@@ -227,10 +227,9 @@ const certifiOro = (identi) => {
 
 const verifJuegoNivel = (supID, subID) => {
     
-    sql = `SELECT entrega.PuntajeVideojuego, entrega.Super_ID
-        FROM entrega, 
-        WHERE Sub_ID = ${subID} 
-        AND Super_ID = ${supID}`
+    sql = `SELECT PuntajeVideojuego, Super_ID
+        FROM entrega 
+        WHERE Sub_ID = ${subID} AND Super_ID = ${supID}`
     return dbService.querypromise(sql);
 }
 
