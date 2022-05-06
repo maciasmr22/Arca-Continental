@@ -157,52 +157,41 @@ function SubirKPIS() {
                         <br />
                         <div>
                             <p className="textform-op-certi2">Minutos de paro (mins/mes)</p>
-                            <div className="form-op-mejoras">
-                                <label className="textlabel-op-certi" htmlFor='mdpST'>Medicion sin TWI  </label>
-                            </div>
-                            <input id="mdpST" type="number" min="0" required
+                            
+                            <input id="mdpST" placeholder="Medición sin TWI " type="number" min="0" required
                                 onChange={e => setMjMinParoST(e.target.value)}
                             ></input>
 
                             <br />
-                            <div className="form-op-mejoras">
-                                <label className="textlabel-op-certi" htmlFor='mdpCT'>Medicion con TWI</label>
-                            </div>
-                            <input id="mdpCT" type="number" min="0" required
+                            <br/>
+                            
+                            <input id="mdpCT" placeholder="Medición con TWI " type="number" min="0" required
                                 onChange={e => setMjMinParoCT(e.target.value)}
                             ></input>
                         </div>
                         <br />
                         <div>
                             <p className="textform-op-certi2">Envases desechados (tarimas/mes)​</p>
-                            <div className="form-op-mejoras">
-                                <label className="textlabel-op-certi" htmlFor='edST'>Medicion sin TWI  </label>
-                            </div>
-                            <input id="edST" type="number" min="0" required
+                            
+                            <input id="edST" type="number" min="0" placeholder="Medición sin TWI " required
                                 onChange={e => setMjEnvDesST(e.target.value)}
                             ></input>
                             <br />
-                            <div className="form-op-mejoras">
-                                <label className="textlabel-op-certi" htmlFor='edCT'>Medicion con TWI</label>
-                            </div>
-                            <input id="edCT" type="number" min="0" required
+                           <br/>
+                            <input id="edCT" placeholder="Medición con TWI " type="number" min="0" required
                                 onChange={e => setMjEnvDesCT(e.target.value)}
                             ></input>
                         </div>
                         <br />
                         <div>
                             <p className="textform-op-certi2">Minutos por cambio de formato (mins/mes)​</p>
-                            <div className="form-op-mejoras">
-                                <label className="textlabel-op-certi" htmlFor='mpcfST'>Medicion sin TWI  </label>
-                            </div>
-                            <input id="mpcfST" type="number" min="0" required
+                        
+                            <input id="mpcfST" type="number" min="0"  placeholder="Medición sin TWI " required
                                 onChange={e => setMjMinCamForST(e.target.value)}
                             ></input>
                             <br />
-                            <div className="form-op-mejoras">
-                                <label className="textlabel-op-certi" htmlFor='mpcfCT'>Medicion con TWI</label>
-                            </div>
-                            <input id="mpcfCT" type="number" min="0" required
+                            <br/>
+                            <input id="mpcfCT" placeholder="Medición con TWI " type="number" min="0" required
                                 onChange={e => setMjMinCamForCT(e.target.value)}
                             ></input>
                         </div>

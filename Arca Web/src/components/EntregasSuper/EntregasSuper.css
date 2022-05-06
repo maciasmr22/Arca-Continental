@@ -38,6 +38,7 @@
 .title-med-ent {
   color: darkred;
   padding-top: 2%;
+  margin-bottom: 0.8px;
 }
 
 .medalla {
@@ -119,6 +120,14 @@
 }
 
 .titulo {
-  font-size: 50px;
+  font-size: 25px;
   color: darkred;
+  margin-bottom: 0.7px;
+}
+.nombresblan {
+  color: #fff;
+  font-weight: bold;
+}
+.hr {
+  padding-bottom: 1px;
 }
