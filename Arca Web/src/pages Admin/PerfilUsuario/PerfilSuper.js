@@ -67,9 +67,9 @@ function About() {
           </div>
 
           <div className="about-tex-adm">
-            {dataUs ? <p>Nombre: {dataUs.Nombre}</p> : <div>Cargando...</div>}
-            {dataUs ? <p>Correo: {dataUs.Correo}</p> : <div>Cargando...</div>}
-            {dataUs ? <p>Planta: {dataUs.Planta}</p> : <div>Cargando..</div>}
+            {dataUs ? <p className="cambiarletra">Nombre: {dataUs.Nombre}</p> : <div>Cargando...</div>}
+            {dataUs ? <p className="cambiarletra">Correo: {dataUs.Correo}</p> : <div>Cargando...</div>}
+            {dataUs ? <p className="cambiarletra">Planta: {dataUs.Planta}</p> : <div>Cargando..</div>}
 
           </div>
 

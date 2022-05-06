@@ -248,7 +248,8 @@ function RevEntregas(props) {
     return (
         <div className="container-entregas">
             <div className="title-entre">
-                <center><h1>Entregas</h1></center>
+                <h1 className='tituloentregas '>ENTREGAS</h1>
+                <th></th>
             </div>
             <div className="contentre justify-content-center">
                 <div className="scrolltable1">
@@ -303,7 +304,7 @@ function RevEntregas(props) {
                 </div>
             </div>
 
-            <h1 className="title-med-ent">Medallas</h1>
+            <h1 className="title-med-ent">MEDALLAS GLOBALES</h1>
 
             <div className="container-med-ent">
                 <div className="progress-container-med ">

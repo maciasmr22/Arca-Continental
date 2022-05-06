@@ -32,16 +32,16 @@
 }
 
 .about-tex-adm {
-  margin-top: 2%;
   padding-top: 4%;
   color: darkred;
-  font-size: 18px;
+  font-size: 13px;
   line-height: 15px;
-  font-style: normal;
   padding-left: 10%;
   padding-right: 10%;
-  word-break: break-word;
   padding-bottom: 2%;
+}
+.cambiarletra {
+  font-family: sans-serif;
 }
 
 .title-mkpis {
@@ -56,8 +56,6 @@
 }
 
 .img-Perfil-e2 {
-  max-width: 55%;
-  min-width: 55%;
   height: 100%;
   padding-left: 10%;
 }
