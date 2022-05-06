@@ -196,36 +196,15 @@ module.exports = {
             res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
         } 
     },
-
-
-
-
-    //SE BORRAN DESPUÉS
-    pruebaGet : async(req, res, next) => {
+    tranformASuperID : async(req, res, next) => {
         try {
-            const prueba = await UsersService.pruebaGet(req.params.identi);
-            res.status(200).json({prueba})
-        } catch(err) {
-            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
-        } 
-    },
-
-    pruebaPost : async(req, res, next) => {
-        try {
-            const prueba = await UsersService.pruebaPost(req.body);
-            res.status(200).json({prueba})
-        } catch(err) {
-            res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
-        } 
-    },
-
-    pruebaPut : async(req, res, next) => {
-        try {
-            const prueba = await UsersService.pruebaPut(req.body);
-            res.status(200).json({prueba})
+            const supid = await UsersService.tranformASuperID(req.params.identi);
+            res.status(200).json({supid})
         } catch(err) {
             res.status(500).json({"message": `Datos de la Sesión no encontrados. Err: ${err}`});
         } 
     }
+
+
     
 };
