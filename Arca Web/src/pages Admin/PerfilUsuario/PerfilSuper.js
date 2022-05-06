@@ -104,7 +104,7 @@ function About() {
 
                 <tr>
                   <th> Mejora minutos por cambio de formato</th>
-                  {datSup ? <td>{datSup.Mjrs_Mins_CambioFormato_Porcentaje} %</td> : <td>Cargando...</td>}
+                  {datSup ? <td>{datSup.Mjrs_Mins_CambioFormato_Porcentaje  } %</td> : <td>Cargando...</td>}
                 </tr>
 
               </tbody>
