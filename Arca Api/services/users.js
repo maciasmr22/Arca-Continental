@@ -234,12 +234,25 @@ const verifJuegoNivel = (supID, subID) => {
     return dbService.querypromise(sql);
 }
 
-
 const tranformASuperID = (identi) => {
     sql = `SELECT Super_ID FROM supervisor WHERE Usuario_ID = "${identi}"`
     return dbService.querypromise(sql);
 }
  
+const insertEntrega = (subid,supid,puntaje) => {
+    sql = `INSERT INTO entrega (Sub_ID, Super_ID, Archivo, Fecha, PuntajeEntrega, PuntajeVideojuego, Comentario, Revisado)
+        VALUES (${subid},${supid}, NULL, NULL, NULL, ${puntaje}, NULL, 0)`
+    return dbService.querypromise(sql);
+
+}
+
+const updateEntrega = (subid,supid,puntaje) => {
+    sql = `UPDATE entrega SET PuntajeVideojuego = ${puntaje}
+        WHERE Sub_ID = ${subid} AND Super_ID = ${supid}`
+    return dbService.querypromise(sql);
+}
+
+
 module.exports = {
     getAllUsers,
     getRankJI,
@@ -266,7 +279,9 @@ module.exports = {
     certifiOro,
 
     verifJuegoNivel,
-    tranformASuperID
+    tranformASuperID,
+    insertEntrega,
+    updateEntrega
 
 
     
