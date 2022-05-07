@@ -74,6 +74,7 @@ function RevEntregas(props) {
                         console.log(superviId)
                     if (colorcert == "Bronce") {
                         fetch(ApiUrlXD + `certificarBronce/${superviId}`)
+                        
                             
                     } else if (colorcert === "Plata") {
                         fetch(ApiUrlXD + `certificarPlata/${superviId}`)
@@ -163,7 +164,7 @@ function RevEntregas(props) {
                         </div>
 
                         <div className = "container-button2">
-                            <button type="button"  class="btn button-certi"  type='submit'>
+                            <button class="btn button-certi"  type='submit'>
                                 calificar
                             </button>
                         </div>

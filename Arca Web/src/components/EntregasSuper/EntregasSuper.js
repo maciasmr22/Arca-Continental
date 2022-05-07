@@ -175,7 +175,7 @@ function EntregasSuper() {
                                 <th className="nombresblan" scope="col">P. entrega</th>
                                 <th className="nombresblan" scope="col">P. juego</th>
                                 <th className="nombresblan" scope="col">Sobre</th>
-                                <th sclassName="nombresblan" cope="col">Fecha</th>
+                                <th className="nombresblan" cope="col">Fecha</th>
                             </tr>
                         </thead>
                         <tbody className="cuerpotable">
