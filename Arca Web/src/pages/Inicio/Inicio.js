@@ -14,6 +14,7 @@ function Inicio() {
    return (
 
       <div className="container">
+         
          <div className='containerchild'>
             <div className="divplane-inicio">
                
