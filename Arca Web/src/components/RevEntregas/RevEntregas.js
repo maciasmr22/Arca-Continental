@@ -56,32 +56,46 @@ function RevEntregas(props) {
             body: JSON.stringify(credentials)
         }
 
-        fetch(ApiUrlXD + "revisaCertificaciones", options)
+        fetch(ApiUrlXD + "revisaCertificaciones", options) // revisa las calificaciones de cada tarea de la medalla correspondiente 
             .then((response) => {
                 return response.json()
             })
             .then((json) => {
                 setCalificaciones(json.certi)
+                console.log(colorcert);
+                
             })
+
+
         if (!calificaciones) {
             console.log("Recibiendo datos...")
         } else {
+            
             if (calificaciones.length === 4) {
+                console.log("1: " + calificaciones[0].PuntajeEntrega);
+                console.log("2: " + calificaciones[1].PuntajeEntrega);
+                console.log("3: " + calificaciones[2].PuntajeEntrega);
+                console.log("4: " + calificaciones[3].PuntajeEntrega);
+                
+
                 if (calificaciones[0].PuntajeEntrega >= 70 &&
                     calificaciones[1].PuntajeEntrega >= 70 &&
                     calificaciones[2].PuntajeEntrega >= 70 &&
                     calificaciones[3].PuntajeEntrega >= 70) {
-                        console.log(superviId)
+                    
+                    
+                    
                     if (colorcert == "Bronce") {
+
                         fetch(ApiUrlXD + `certificarBronce/${superviId}`)
-                        
-                            
-                    } else if (colorcert === "Plata") {
+                        setCertiBron(1); 
+                          
+                    } else if (colorcert == "Plata" && certiBron == 1) {
                         fetch(ApiUrlXD + `certificarPlata/${superviId}`)
-                            
-                    } else if (colorcert === "Oro") {
+                        setCertiPla(1);
+                    } else if (colorcert == "Oro" && certiPla == 1) {
                         fetch(ApiUrlXD + `certificarOro/${superviId}`)
-                            
+                        setCertiOr(1);
                     }
                 }
             }
@@ -309,10 +323,17 @@ function RevEntregas(props) {
 
             <div className="container-med-ent">
                 <div className="progress-container-med ">
-                    {certiBron ? <div className="circle active"><img className='medalla' src={ini} /> <div className="progress" id="uno"></div></div> : <div className="circle active"><img className='medalla' src={ini} /> </div>}
-                    {certiBron ? <div className="circle active"><img className='medalla medbot' src={medBron} /> <div className="progress dos" ></div></div> : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Bronce")}} /> </div>}
-                    {certiPla ? <div className="circle active"><img className='medalla medbot' src={medPla} /> <div className="progress tres" ></div></div> : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Plata")}}/> </div>}
-                    {certiOr ? <div className="circle active"><img className='medalla medbot' src={medOro} /> <div className="progress cuatro" ></div></div> : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Oro")}}/> </div>}
+
+                    <div className="circle active"><img className='medalla' src={ini} /> <div className="progress" id="uno"></div></div> 
+                    
+                    {certiBron ? <div className="circle active"><img className='medalla medbot' src={medBron} /> <div className="progress dos" ></div></div> 
+                    : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Bronce")}} /> </div>}
+
+                    {certiPla ? <div className="circle active"><img className='medalla medbot' src={medPla} /> <div className="progress tres" ></div></div> 
+                    : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Plata")}}/> </div>}
+
+                    {certiOr ? <div className="circle active"><img className='medalla medbot' src={medOro} /> <div className="progress cuatro" ></div></div> 
+                    : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Oro")}}/> </div>}
 
 
                 </div>

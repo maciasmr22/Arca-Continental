@@ -214,12 +214,12 @@ const certifiBron = (identi) => {
 }
 
 const certifiPlat = (identi) => {
-    sql = `UPDATE supervisor SET CertiBronce = 1 WHERE Usuario_ID = "${identi}"`
+    sql = `UPDATE supervisor SET CertiPlata = 1 WHERE Usuario_ID = "${identi}"`
     return dbService.querypromise(sql);
 }
 
 const certifiOro = (identi) => {
-    sql = `UPDATE supervisor SET CertiBronce = 1 WHERE Usuario_ID = "${identi}"`
+    sql = `UPDATE supervisor SET CertiOro = 1 WHERE Usuario_ID = "${identi}"`
     return dbService.querypromise(sql);
 }
 
