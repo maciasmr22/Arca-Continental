@@ -32,7 +32,7 @@ function About() {
 
   function recDataSup(){
 
-    console.log("HOLAAAAAAAAA")
+    
     fetch(ApiUrlXD + `getSupervisor/${idU}`)
     .then((resp) => {
       return(resp.json())

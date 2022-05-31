@@ -12,6 +12,7 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
 import PerfilAdmin from './pages Admin/PerfilAdmin/PerfilAdmin'
 import PerfilSuper from './pages Admin/PerfilUsuario/PerfilSuper'
+
 import Videojuego from "./pages/VideoJuego/Videojuego";
 
 class App extends Component {

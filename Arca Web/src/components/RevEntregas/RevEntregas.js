@@ -163,7 +163,7 @@ function RevEntregas(props) {
                         </div>
 
                         <div className = "container-button2">
-                            <button type="button"  class="btn button-certi"  type='submit'>
+                            <button   className="btn button-certi"  type='submit'>
                                 calificar
                             </button>
                         </div>
@@ -309,9 +309,9 @@ function RevEntregas(props) {
             <div className="container-med-ent">
                 <div className="progress-container-med ">
                     {certiBron ? <div className="circle active"><img className='medalla' src={ini} /> <div className="progress" id="uno"></div></div> : <div className="circle active"><img className='medalla' src={ini} /> </div>}
-                    {certiBron ? <div className="circle active"><img className='medalla' src={medBron} /> <div className="progress dos" ></div></div> : <div className="circle"><img className='medalla' src={medNada} onClick={()=>{certificarMedalla(idU,"Bronce")}} /> </div>}
-                    {certiPla ? <div className="circle active"><img className='medalla' src={medPla} /> <div className="progress tres" ></div></div> : <div className="circle"><img className='medalla' src={medNada} onClick={()=>{certificarMedalla(idU,"Plata")}}/> </div>}
-                    {certiOr ? <div className="circle active"><img className='medalla' src={medOro} /> <div className="progress cuatro" ></div></div> : <div className="circle"><img className='medalla' src={medNada} onClick={()=>{certificarMedalla(idU,"Oro")}}/> </div>}
+                    {certiBron ? <div className="circle active"><img className='medalla medbot' src={medBron} /> <div className="progress dos" ></div></div> : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Bronce")}} /> </div>}
+                    {certiPla ? <div className="circle active"><img className='medalla medbot' src={medPla} /> <div className="progress tres" ></div></div> : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Plata")}}/> </div>}
+                    {certiOr ? <div className="circle active"><img className='medalla medbot' src={medOro} /> <div className="progress cuatro" ></div></div> : <div className="circle"><img className='medalla medbot' src={medNada} onClick={()=>{certificarMedalla(idU,"Oro")}}/> </div>}
 
 
                 </div>
