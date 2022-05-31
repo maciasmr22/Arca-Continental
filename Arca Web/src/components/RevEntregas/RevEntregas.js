@@ -32,7 +32,7 @@ function RevEntregas(props) {
 
     //Hooks para medallas
 
-    const [calificaciones, setCalificaciones] = useState();
+    //const [calificaciones, setCalificaciones] = useState();
 
     function verifFecha(xd) {
 
@@ -43,7 +43,8 @@ function RevEntregas(props) {
 
     }
 
-    function certificarMedalla(superviId, colorcert) {
+    async function revisaCertif(superviId,colorcert){
+        
         let credentials = {
             superviId,
             colorcert
@@ -56,26 +57,25 @@ function RevEntregas(props) {
             body: JSON.stringify(credentials)
         }
 
-        fetch(ApiUrlXD + "revisaCertificaciones", options) // revisa las calificaciones de cada tarea de la medalla correspondiente 
-            .then((response) => {
-                return response.json()
-            })
-            .then((json) => {
-                setCalificaciones(json.certi)
-                console.log(colorcert);
-                
-            })
+        const response =  await fetch(ApiUrlXD + "revisaCertificaciones", options);
+        const data =  await response.json();
+        const xd = data.certi
+        
+        return xd; // revisa las calificaciones de cada tarea de la medalla correspondiente 
+        
 
+    }
+
+    async function certificarMedalla(superviId, colorcert) {
+        
+        let calificaciones = await revisaCertif(superviId, colorcert);
+       
 
         if (!calificaciones) {
             console.log("Recibiendo datos...")
         } else {
             
             if (calificaciones.length === 4) {
-                console.log("1: " + calificaciones[0].PuntajeEntrega);
-                console.log("2: " + calificaciones[1].PuntajeEntrega);
-                console.log("3: " + calificaciones[2].PuntajeEntrega);
-                console.log("4: " + calificaciones[3].PuntajeEntrega);
                 
 
                 if (calificaciones[0].PuntajeEntrega >= 70 &&
