@@ -74,6 +74,7 @@ function RevEntregas(props) {
                         console.log(superviId)
                     if (colorcert == "Bronce") {
                         fetch(ApiUrlXD + `certificarBronce/${superviId}`)
+                        
                             
                     } else if (colorcert === "Plata") {
                         fetch(ApiUrlXD + `certificarPlata/${superviId}`)
